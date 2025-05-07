@@ -54,7 +54,10 @@ header {
       display: none;
    }
 }
+// === header end ===
 
+
+// === sec01 ===
 .sec01 {
    width: 100%;
    height: 937px;
@@ -74,7 +77,9 @@ header {
       }
    }
 }
+// === sec01 end ===
 
+// === sec02 ===
 .sec02 {
    position: relative;
 
@@ -142,7 +147,9 @@ header {
       }
    }
 }
+// === sec02 ===
 
+// === sec03 ===
 .sec03 {
    padding: map-get(var.$spacers, 14) map-get(var.$spacers, 0);
 
@@ -166,7 +173,9 @@ header {
       }
    }
 }
+// === sec03 end ===
 
+// === sec04 ===
 .sec04 {
    padding: map-get(var.$spacers, 14) map-get(var.$spacers, 0);
 
@@ -208,7 +217,9 @@ header {
       }
    }
 }
+// === sec04 end ===
 
+// === sec05 ===
 .sec05 {
    padding: map-get(var.$spacers, 14) map-get(var.$spacers, 0);
 
@@ -232,7 +243,9 @@ header {
       }
    }
 }
+// === sec05 end ===
 
+// === sec06 ===
 .sec06 {
    padding: map-get(var.$spacers, 11) map-get(var.$spacers, 0); //70px
 
@@ -280,7 +293,9 @@ header {
       color: var.$color-white;
    }
 }
+// === sec06 end ===
 
+// === footer ===
 .footer {
    padding: map-get(var.$spacers, 11) map-get(var.$spacers, 0) map-get(var.$spacers, 9);
    background: var.$color-primary;
@@ -339,3 +354,4 @@ header {
       }
    }
 }
+// === footer end ===
