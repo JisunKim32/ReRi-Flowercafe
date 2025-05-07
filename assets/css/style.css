@@ -1,0 +1,319 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+body {
+  font-family: pretendard;
+}
+
+ul {
+  margin: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  padding: 0;
+}
+
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+a {
+  list-style: none;
+  text-decoration: none;
+}
+
+button {
+  padding-block: 0;
+  padding-inline: 0;
+}
+
+body {
+  font-size: 16px;
+}
+
+.font {
+  line-height: 140%;
+  letter-spacing: 0.1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.btn-bn {
+  background: transparent;
+  border: none;
+}
+
+.btn-order {
+  background: #000000;
+  border: none;
+  border-radius: 300px;
+  padding: 12px 40px;
+}
+
+.flower-box {
+  box-shadow: 0 0 0 1px #a0a0a0 inset;
+  border-radius: 5px;
+  padding: 37px 36px;
+}
+
+.flower-nametag {
+  border: 1px solid #717171;
+  border-radius: 300px;
+  padding: 0.6rem 1rem;
+  line-height: 0.625rem 0.625rem;
+}
+
+header {
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  z-index: 999;
+  background: transparent;
+}
+header .navbar {
+  padding: 1.125rem auto;
+}
+header .navbar .nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+header .navbar .nav a {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #ff3a1e;
+}
+header .hamburger {
+  display: none;
+}
+
+.sec01 {
+  width: 100%;
+  height: 937px;
+  position: relative;
+  overflow: hidden;
+}
+.sec01 .frame {
+  width: 100%;
+  height: 100%;
+}
+.sec01 .frame img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.sec02 {
+  position: relative;
+}
+.sec02 .sec02_bg {
+  position: relative;
+  width: 45%;
+  height: 754px;
+}
+.sec02 .sec02_bg .sec02__img {
+  height: 100%;
+}
+.sec02 .sec02_main-content {
+  position: absolute;
+  top: 0;
+  left: 314px;
+  padding: 6.25rem 0;
+}
+.sec02 .sec02_main-content .sec02__title {
+  margin-bottom: 100px;
+}
+.sec02 .sec02_main-content .sec02__title h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 6.25rem;
+}
+.sec02 .sec02_main-content .sec02__list {
+  color: #fff;
+  font-size: 1.5rem;
+  margin-bottom: 3.125rem;
+}
+.sec02 .sec02_main-content .sec02__right-content {
+  margin-top: 76px;
+}
+.sec02 .sec02_main-content .sec02__right-content .sec02__subtitle h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #000000;
+  text-transform: uppercase;
+  margin-bottom: 2.5rem;
+}
+.sec02 .sec02_main-content .sec02__right-content .sec02__menu-content {
+  display: flex;
+  justify-content: space-between;
+}
+.sec02 .sec02_main-content .sec02__right-content .sec02__menu-content .menu-img {
+  margin-bottom: 1.875rem;
+}
+.sec02 .sec02_main-content .sec02__right-content .sec02__menu-content .menu-name h4 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #000000;
+}
+
+.sec03 {
+  padding: 6.25rem 0;
+}
+.sec03 .sec03_frame {
+  margin: 3.75rem auto;
+}
+.sec03 .sec03_frame .sec03__title {
+  margin: 1.875rem;
+}
+.sec03 .sec03_frame .sec03__title h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #ff3a1e;
+}
+.sec03 .sec03_frame .sec03__subtitle h4 {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #000000;
+}
+
+.sec04 {
+  padding: 6.25rem 0;
+}
+.sec04 .sec04_title {
+  margin-bottom: 3.75rem;
+}
+.sec04 .sec04_title h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #ff3a1e;
+}
+.sec04 .sec04__img {
+  max-width: 312px;
+  margin-bottom: 0.938rem;
+}
+.sec04 .sec04__img img {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.sec04 .sec04__f-name h4 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #4b4b4b;
+  margin-bottom: 1.375rem;
+}
+.sec04 .sec04__f-name .sec04__f-tag {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #717171;
+  display: flex;
+  gap: 10px;
+}
+
+.sec05 {
+  padding: 6.25rem 0;
+}
+.sec05 .sec05_title {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-bottom: 3.75rem;
+}
+.sec05 .sec05_title .sec05__instagram-icon {
+  width: 57px;
+}
+.sec05 .sec05_title .sec05__instagram-icon img {
+  width: 100%;
+}
+.sec05 .sec05_title h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #ff3a1e;
+}
+
+.sec06 {
+  padding: 4.375rem 0;
+}
+.sec06 .sec06__text {
+  margin-bottom: 1.875rem;
+}
+.sec06 .sec06__text h4 {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #000000;
+}
+.sec06 .sec06__iconbox {
+  width: 23px;
+  margin: 0 auto 1.875rem;
+}
+.sec06 .sec06__iconbox img {
+  width: 100%;
+}
+.sec06 .sec06__title {
+  margin-bottom: 3.125rem;
+}
+.sec06 .sec06__title span {
+  font-family: "Cabinest", serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #000000;
+}
+.sec06 .sec06__title h4 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #000000;
+}
+.sec06 .sec06__button {
+  font-size: 1rem;
+  font-weight: 300;
+  letter-spacing: 0.1rem;
+  color: #ffffff;
+}
+
+.footer {
+  padding: 4.375rem 0 3.125rem;
+  background: #ff3a1e;
+}
+.footer .footer__logo {
+  margin-bottom: 1.25rem;
+}
+.footer .footer__line {
+  width: 100%;
+  height: 1px;
+  background: #ffffff;
+  margin-bottom: 1.25rem;
+}
+.footer .footer__info-bar {
+  display: flex;
+  list-style: none;
+  text-decoration: none;
+  margin-bottom: 1.563rem;
+}
+.footer .footer__info-bar .footer__info-list {
+  font-size: 1rem;
+  font-weight: 300;
+  color: #ffffff;
+}
+.footer .footer__info-bar .footer__info-list + .footer__info-list::before {
+  content: "|";
+  margin: 0.625rem;
+  color: inherit;
+}
+.footer .copyright p {
+  font-size: 1rem;
+  font-weight: 200;
+  color: #ffffff;
+}
+.footer .footer__right-info {
+  text-align: right;
+  font-size: 1rem;
+  font-weight: 200;
+  color: #ffffff;
+}
+.footer .footer__right-info ul {
+  margin-bottom: 0.625rem;
+}/*# sourceMappingURL=style.css.map */
