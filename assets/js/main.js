@@ -15,8 +15,6 @@ $(window).on('scroll', function () {
 });
 
 // === floating menu ===
-// document.addEventListener('DOMContentLoaded', () => {
-// });
 const kakao = document.querySelector('.kakaotalk-btn');
 
 kakao.addEventListener('mouseenter', () => {
@@ -63,6 +61,3 @@ tabItem.forEach((item, index) => {
         tabContent[index].classList.add("active");
     });
 });
-
-
-// === section04 image hover ===
