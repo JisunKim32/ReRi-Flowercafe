@@ -1,0 +1,12 @@
+@use 'variables' as vars;
+
+@mixin respond-to($key) {
+  @if map-has-key(vars.$breakpoints, $key) {
+    $size: map-get(vars.$breakpoints, $key);
+    @media (max-width: $size) {
+      @content;
+    }
+  } @else {
+    @warn "Unknown breakpoint “#{$key}”. Available breakpoints are: #{map-keys(vars.$breakpoints)}.";
+  }
+}

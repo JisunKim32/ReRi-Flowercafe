@@ -49,6 +49,35 @@
    </section>
    <!-- section01 end -->
 
+   <!-- floating menu -->
+   <aside class="utility-buttons" aria-label="플로팅메뉴">
+      <div class="kakaotalk-btn">
+         <button type="button" class="fab" aria-label="카카오톡으로 예약하기">
+            <img src="assets/images/icon/chat-icon.svg" alt="카카오톡 예약 아이콘">
+         </button>
+         <div class="fac">
+            <a href="https://open.kakao.com/o/sZyIxUgb" target="_blank" rel="noopener noreferrer">
+               카카오톡으로 예약하기
+            </a>
+         </div>
+      </div>
+      <div class="kakaotalk-btn02">
+         <button type="button" class="fab02" aria-label="카카오톡으로 예약하기">
+            <img src="assets/images/icon/kakaotalk-btn.svg" alt="카카오톡 예약 아이콘">
+         </button>
+         <div class="fac02">
+            <a href="https://open.kakao.com/o/sZyIxUgb" target="_blank" rel="noopener noreferrer">
+               카카오톡으로 예약하기
+            </a>
+         </div>
+      </div>
+
+      <button type="button" class="btn-top" aria-label="페이지 상단으로 이동">
+         <img src="assets/images/icon/arrow-top.svg" alt="화살표">
+      </button>
+   </aside>
+   <!-- floating menu end -->
+
    <!-- section02 -->
    <section class="sec02 font">
       <div class="sec02_bg">
@@ -65,97 +94,99 @@
                      <!-- <li><button class="sec02__list btn-bn">SIGNATURE COFFEE</button></li>
                      <li><button class="sec02__list btn-bn">SIGNATURE DRINK</button></li>
                      <li><button class="sec02__list btn-bn">SIGNATURE DESSERT</button></li> -->
-                     <li class="sec02__tab-list active" id="coffee"><a href="#coffee">SIGNATURE COFFEE</a></li>
+                     <li class="sec02__tab-list " id="coffee"><a href="#coffee" class="active">SIGNATURE COFFEE</a></li>
                      <li class="sec02__tab-list" id="drink"><a href="#drink">SIGNATURE DRINK</a></li>
                      <li class="sec02__tab-list" id="dessert"><a href="#dessert">SIGNATURE DESSERT</a></li>
                   </ul>
                </div>
             </div>
             <div class="col-md-1"></div>
-            <div class="col-md-6 sec02__right-content text-center">
+            <div class="col-md-6 sec02__right-content">
                <div class="sec02__subtitle">
                   <h2>signature</h2>
                </div>
-               <div id="coffee" class="sec02__tab-menu active">
-                  <div class="sec02__menu-content">
-                     <div class="signature-menu">
-                        <div class="menu-img">
-                           <img src="assets/images/signature-coffee-menu01.png" alt="">
+               <div class="sec02__signature-content text-center">
+                  <div id="coffee" class="sec02__tab-menu active">
+                     <div class="sec02__menu-content">
+                        <div class="signature-menu">
+                           <div class="menu-img">
+                              <img src="assets/images/signature-coffee-menu01.png" alt="">
+                           </div>
+                           <div class="menu-name">
+                              <h4>아포가토</h4>
+                           </div>
                         </div>
-                        <div class="menu-name">
-                           <h4>아포가토</h4>
+                        <div class="signature-menu">
+                           <div class="menu-img">
+                              <img src="assets/images/signature-coffee-menu02.png" alt="">
+                           </div>
+                           <div class="menu-name">
+                              <h4>아포가토</h4>
+                           </div>
                         </div>
-                     </div>
-                     <div class="signature-menu">
-                        <div class="menu-img">
-                           <img src="assets/images/signature-coffee-menu02.png" alt="">
-                        </div>
-                        <div class="menu-name">
-                           <h4>아포가토</h4>
-                        </div>
-                     </div>
-                     <div class="signature-menu">
-                        <div class="menu-img">
-                           <img src="assets/images/signature-coffee-menu03.png" alt="">
-                        </div>
-                        <div class="menu-name">
-                           <h4>아포가토</h4>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div id="drink" class="sec02__tab-menu">
-                  <div class="sec02__menu-content">
-                     <div class="signature-menu">
-                        <div class="menu-img">
-                           <img src="assets/images/signature-coffee-menu01.png" alt="">
-                        </div>
-                        <div class="menu-name">
-                           <h4>수박주스</h4>
-                        </div>
-                     </div>
-                     <div class="signature-menu">
-                        <div class="menu-img">
-                           <img src="assets/images/signature-coffee-menu02.png" alt="">
-                        </div>
-                        <div class="menu-name">
-                           <h4>유자청에이드</h4>
-                        </div>
-                     </div>
-                     <div class="signature-menu">
-                        <div class="menu-img">
-                           <img src="assets/images/signature-coffee-menu03.png" alt="">
-                        </div>
-                        <div class="menu-name">
-                           <h4>딸기청에이드</h4>
+                        <div class="signature-menu">
+                           <div class="menu-img">
+                              <img src="assets/images/signature-coffee-menu03.png" alt="">
+                           </div>
+                           <div class="menu-name">
+                              <h4>아포가토</h4>
+                           </div>
                         </div>
                      </div>
                   </div>
-               </div>
-               <div id="dessert" class="sec02__tab-menu">
-                  <div class="sec02__menu-content">
-                     <div class="signature-menu">
-                        <div class="menu-img">
-                           <img src="assets/images/signature-coffee-menu01.png" alt="">
+                  <div id="drink" class="sec02__tab-menu">
+                     <div class="sec02__menu-content">
+                        <div class="signature-menu">
+                           <div class="menu-img">
+                              <img src="assets/images/signature-coffee-menu01.png" alt="">
+                           </div>
+                           <div class="menu-name">
+                              <h4>수박주스</h4>
+                           </div>
                         </div>
-                        <div class="menu-name">
-                           <h4>아포가토</h4>
+                        <div class="signature-menu">
+                           <div class="menu-img">
+                              <img src="assets/images/signature-coffee-menu02.png" alt="">
+                           </div>
+                           <div class="menu-name">
+                              <h4>유자청에이드</h4>
+                           </div>
+                        </div>
+                        <div class="signature-menu">
+                           <div class="menu-img">
+                              <img src="assets/images/signature-coffee-menu03.png" alt="">
+                           </div>
+                           <div class="menu-name">
+                              <h4>딸기청에이드</h4>
+                           </div>
                         </div>
                      </div>
-                     <div class="signature-menu">
-                        <div class="menu-img">
-                           <img src="assets/images/signature-coffee-menu02.png" alt="">
+                  </div>
+                  <div id="dessert" class="sec02__tab-menu">
+                     <div class="sec02__menu-content">
+                        <div class="signature-menu">
+                           <div class="menu-img">
+                              <img src="assets/images/signature-coffee-menu01.png" alt="">
+                           </div>
+                           <div class="menu-name">
+                              <h4>아포가토</h4>
+                           </div>
                         </div>
-                        <div class="menu-name">
-                           <h4>아포가토</h4>
+                        <div class="signature-menu">
+                           <div class="menu-img">
+                              <img src="assets/images/signature-coffee-menu02.png" alt="">
+                           </div>
+                           <div class="menu-name">
+                              <h4>아포가토</h4>
+                           </div>
                         </div>
-                     </div>
-                     <div class="signature-menu">
-                        <div class="menu-img">
-                           <img src="assets/images/signature-coffee-menu03.png" alt="">
-                        </div>
-                        <div class="menu-name">
-                           <h4>아포가토</h4>
+                        <div class="signature-menu">
+                           <div class="menu-img">
+                              <img src="assets/images/signature-coffee-menu03.png" alt="">
+                           </div>
+                           <div class="menu-name">
+                              <h4>아포가토</h4>
+                           </div>
                         </div>
                      </div>
                   </div>
@@ -201,63 +232,142 @@
                   <div class="sec04__img-box">
                      <img src="assets/images/sec04-flower01.png" alt="꽃다발 이미지01">
                   </div>
-                  <!-- 호버시 어두운 배경과 꽃다발 정보 나오게 할 예정 -->
-                  <div class="sec04__img-info text-center">
-                     <h5>
-                        used flowers
-                     </h5>
-                     <p>
-                        #카라
-                        <br>
-                        고결, 순수, 천년의 사랑
-                     </p>
-                     <p>
-                        #튤립
-                        <br>
-                     </p>
+                  <!-- hover info -->
+                  <div class="sec04__img-info-bg">
+                     <div class="flower-img-info">
+                        <div class="flower-nametag">
+                           <h5 class="extrabold">
+                              #특징
+                           </h5>
+                           <h6 class="medium">
+                              특대형 사이즈
+                           </h6>
+                        </div>
+                        <div class="flower-nametag">
+                           <h5 class="extrabold">
+                              #카라
+                           </h5>
+                           <h6 class="medium">
+                              고결, 순수, 천년의 사랑
+                           </h6>
+                        </div>
+                        <div class="flower-nametag">
+                           <h5 class="extrabold">
+                              #튤립
+                           </h5>
+                           <h6 class="medium">
+                              사랑의 고백, 영원한 사랑
+                           </h6>
+                        </div>
+                     </div>
                   </div>
                </div>
                <div class="sec04__f-name">
-                  <h4>꽃다발</h4>
+                  <h4>코랄 스펙타클 XL</h4>
                   <div class="sec04__f-tag text-center">
-                     <p class="flower-nametag">#카라</p>
-                     <p class="flower-nametag">#튤립</p>
-                  </div>
-               </div>
-            </div>
-            <div class="col-md-3 sec04__content">
-               <div class="sec04__img flower-box">
-                  <img src="assets/images/sec04-flower02.png" alt="">
-               </div>
-               <div class="sec04__f-name">
-                  <h4>꽃다발</h4>
-                  <div class="sec04__f-tag text-center">
-                     <p class="flower-nametag">#라너큘러스</p>
-                     <p class="flower-nametag">#후리지아</p>
-                  </div>
-               </div>
-            </div>
-            <div class="col-md-3 sec04__content">
-               <div class="sec04__img flower-box">
-                  <img src="assets/images/sec04-flower03.png" alt="">
-               </div>
-               <div class="sec04__f-name">
-                  <h4>꽃다발</h4>
-                  <div class="sec04__f-tag text-center">
-                     <p class="flower-nametag">#카라</p>
-                     <p class="flower-nametag">#튤립</p>
+                     <p class="flower-pricetag">₩150,000</p>
                   </div>
                </div>
             </div>
             <div class="col-md-3 sec04__content">
                <div class="sec04__img flower-box">
-                  <img src="assets/images/sec04-flower04.png" alt="">
+                  <div class="sec04__img-box">
+                     <img src="assets/images/sec04-flower02.png" alt="꽃다발 이미지02">
+                  </div>
+                  <!-- hover info -->
+                  <div class="sec04__img-info-bg">
+                     <div class="flower-img-info">
+                        <div class="flower-nametag">
+                           <h5 class="extrabold">
+                              #옐로우라넌큘러스
+                           </h5>
+                           <h6 class="medium">
+                              매력, 매혹
+                           </h6>
+                        </div>
+                        <div class="flower-nametag">
+                           <h5 class="extrabold">
+                              #옐로우프리지아
+                           </h5>
+                           <h6 class="medium">
+                              새로운 시작을 응원
+                           </h6>
+                        </div>
+                     </div>
+                  </div>
                </div>
                <div class="sec04__f-name">
-                  <h4>꽃다발</h4>
+                  <h4>선샤인 모먼트</h4>
                   <div class="sec04__f-tag text-center">
-                     <p class="flower-nametag">#카라</p>
-                     <p class="flower-nametag">#튤립</p>
+                     <p class="flower-nametag">₩60,000</p>
+                  </div>
+               </div>
+            </div>
+            <div class="col-md-3 sec04__content">
+               <div class="sec04__img flower-box">
+                  <div class="sec04__img-box">
+                     <img src="assets/images/sec04-flower03.png" alt="꽃다발 이미지03">
+                  </div>
+                  <!-- hover info -->
+                  <div class="sec04__img-info-bg">
+                     <div class="flower-img-info">
+                        <div class="flower-nametag">
+                           <h5 class="extrabold">
+                              #자나장미
+                           </h5>
+                           <h6 class="medium">
+                              영원한 사랑
+                           </h6>
+                        </div>
+                        <div class="flower-nametag">
+                           <h5 class="extrabold">
+                              #핑크거베라
+                           </h5>
+                           <h6 class="medium">
+                              숭고한 사랑, 친절, 감사
+                           </h6>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="sec04__f-name">
+                  <h4>피치 뮤즈</h4>
+                  <div class="sec04__f-tag text-center">
+                     <p class="flower-nametag">₩50,000</p>
+                  </div>
+               </div>
+            </div>
+            <div class="col-md-3 sec04__content">
+               <div class="sec04__img flower-box">
+                  <div class="sec04__img-box">
+                     <img src="assets/images/sec04-flower04.png" alt="꽃다발 이미지04">
+                  </div>
+                  <!-- hover info -->
+                  <div class="sec04__img-info-bg">
+                     <div class="flower-img-info">
+                        <div class="flower-nametag">
+                           <h5 class="extrabold">
+                              #레드장미
+                           </h5>
+                           <h6 class="medium">
+                              사랑, 열망, 존경, 용기
+                           </h6>
+                        </div>
+                        <div class="flower-nametag">
+                           <h5 class="extrabold">
+                              #화이트리시안셔스
+                           </h5>
+                           <h6 class="medium">
+                              변치 않는 사랑, 영원한 사랑
+                           </h6>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="sec04__f-name">
+                  <h4>미니 블룸</h4>
+                  <div class="sec04__f-tag text-center">
+                     <p class="flower-nametag">₩40,000</p>
                   </div>
                </div>
             </div>
@@ -281,16 +391,24 @@
          </div>
          <div class="row">
             <div class="col-md-3 sec05_content">
-               <img src="assets/images/sec05-poster01.png" alt="" class="img-fluid">
+               <a href="https://www.instagram.com/re_ri_flowercafe" target="_blank">
+                  <img src="assets/images/sec05-poster03.png" alt="" class="img-fluid">
+               </a>
             </div>
             <div class="col-md-3 sec05_content">
-               <img src="assets/images/sec05-poster02.png" alt="" class="img-fluid">
+               <a href="https://www.instagram.com/re_ri_flowercafe" target="_blank">
+                  <img src="assets/images/sec05-poster02.png" alt="" class="img-fluid">
+               </a>
             </div>
             <div class="col-md-3 sec05_content">
-               <img src="assets/images/sec05-poster03.png" alt="" class="img-fluid">
+               <a href="https://www.instagram.com/re_ri_flowercafe" target="_blank">
+                  <img src="assets/images/sec05-poster04.png" alt="" class="img-fluid">
+               </a>
             </div>
             <div class="col-md-3 sec05_content">
-               <img src="assets/images/sec05-poster04.png" alt="" class="img-fluid">
+               <a href="https://www.instagram.com/re_ri_flowercafe" target="_blank">
+                  <img src="assets/images/sec05-poster05.png" alt="" class="img-fluid">
+               </a>
             </div>
          </div>
       </div>
@@ -321,7 +439,10 @@
          </div>
          <div class="row">
             <div class="col-md-12">
-               <button class="sec06__button btn-order">주문하기</button>
+               <a href="https://open.kakao.com/o/sZyIxUgb" class="sec06__button btn-order" target="_blank"
+                  rel="noopener noreferrer">
+                  주문하기
+               </a>
             </div>
          </div>
       </div>
@@ -374,7 +495,10 @@
    <!-- footer end -->
 
 
+
+
    <script src="assets/js/bootstrap.bundle.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
    <script src="assets/js/main.js"></script>
 </body>
 

@@ -1,4 +1,5 @@
 @use "variables" as var;
+@use 'responsive' as *; // respond-to 믹스인 바로 사용
 
 // === Button ===
 .btn-bn {
@@ -19,12 +20,12 @@
    border-radius: 5px;
    padding: 37px 36px;
 }
-.flower-nametag {
-   border: 1px solid var.$color-gray-600;
-   border-radius: 300px;
-   padding: 0.6rem 1rem;
-   line-height: map-get(var.$spacers, 1) map-get(var.$spacers, 1);
-}
+// .flower-pricetag {
+//    border: 1px solid var.$color-gray-600;
+//    border-radius: 300px;
+//    padding: 0.6rem 1rem;
+//    line-height: map-get(var.$spacers, 1) map-get(var.$spacers, 1);
+// }
 
 // === Style ===
 header {
@@ -33,7 +34,14 @@ header {
    left: 0;
    position: fixed;
    z-index: 999;
+   transition: top 0.5s ease;
    background: transparent;
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+   &.hidden {
+      top: -100%;
+      z-index: 1000;
+   }
 
    .navbar {
       padding: map-get(var.$spacers, 3) map-get(var.$spacers, 16);
@@ -43,9 +51,14 @@ header {
          display: flex;
          justify-content: space-between;
          a {
-            font-size: var.$font-size-h5;
             font-weight: var.$font-weight-medium;
             color: var.$color-primary;
+
+            font-size: map-get(map-get(var.$font-sizes, default), h6);
+            @include respond-to(xl) {
+               font-size: map-get(map-get(var.$font-sizes, xl), h6);
+             }
+
          }
       }
    }
@@ -78,17 +91,171 @@ header {
 }
 // === sec01 end ===
 
+// === Floating menu ===
+.utility-buttons{
+   position: fixed; // 화면에 고정
+   bottom: 6rem; // 원하는 아래 여백
+   right: 2rem; // 원하는 오른쪽 여백
+   overflow: visible; // fac가 wrapper 밖으로 나와도 보이도록
+
+   .kakaotalk-btn {
+      width: 50px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      z-index: 1500;
+      margin-bottom: 10px;
+   
+      .fab {
+         width: 50px;
+         height: 50px;
+         border: none;
+         border-radius: 50%;
+         background: var.$color-primary;
+         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         z-index: 3;
+      }
+   
+      .fac {
+         width: 225px;
+         height: 50px;
+         padding-left: 20px;
+         border-radius: 64px;
+         border: 1px solid var.$color-primary;
+         background: #fff;
+         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+         position: absolute;
+         top: 0;
+         right: 0;
+         display: flex;
+         align-items: center;
+         z-index: 2;
+         opacity: 0;
+         transform: scaleX(0.9);
+         transform-origin: center right;
+         transition:transform 0.3s ease, opacity 0.3s ease;
+   
+         a {
+            color: #344955;
+            opacity: 0.8;
+   
+            &:hover {
+               opacity: 1;
+               color: darken(#344955, 2%);
+            }
+         }
+      }
+     
+      &.active .fac {
+         transform: scaleX(1);
+         opacity: 1;
+       }
+   }
+   .kakaotalk-btn02 {
+      width: 50px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      z-index: 1500;
+      margin-bottom: 10px;
+   
+      .fab02 {
+         width: 50px;
+         height: 50px;
+         border: none;
+         border-radius: 50%;
+         background: #3E2723;
+         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         z-index: 3;
+      }
+   
+      .fac02 {
+         width: 225px;
+         height: 50px;
+         padding-left: 20px;
+         border-radius: 64px;
+         border: 1px solid #3E2723;
+         background: #fff;
+         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+         position: absolute;
+         top: 0;
+         right: 0;
+         display: flex;
+         align-items: center;
+         z-index: 2;
+         opacity: 0;
+         transform: scaleX(0.9);
+         transform-origin: center right;
+         transition:transform 0.3s ease, opacity 0.3s ease;
+   
+         a {
+            color: #344955;
+            opacity: 0.8;
+   
+            &:hover {
+               opacity: 1;
+               color: darken(#344955, 2%);
+            }
+         }
+      }
+     
+      &.active .fac02 {
+         transform: scaleX(1);
+         opacity: 1;
+       }
+   }
+
+   .btn-top{
+      width: 50px;
+      height: 50px;
+      border: 1px solid var.$color-primary;
+      border-radius: 100%;
+      background: var.$color-white;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+   }
+}
+
 // === sec02 ===
 .sec02 {
    position: relative;
 
    .sec02_bg {
       position: relative;
-      // width: 45%;
-      max-height: 754px;
-
+      max-width: 862px;
+      width: 100%;
+      height: 754px;
+      
       .sec02__img {
-         height: 100%;
+         max-width: 100%;
+         height: auto;
+         // 1280px 이하 (xl)
+         @include respond-to(xl) {
+           width: 533px;
+           height: 594px;
+         }
+         // 768px 이하 (md)
+         @include respond-to(md) {
+           width: 768px;
+           height: 248px;
+         }
+         // 576px 이하 (sm)
+         @include respond-to(sm) {
+           width: 576px;
+           height: 218px;
+         }
       }
    }
 
@@ -105,6 +272,15 @@ header {
             font-weight: var.$font-weight-bold;
             color: var.$color-white;
             margin-bottom: map-get(var.$spacers, 14);
+            @include respond-to(xl) {
+               font-size: map-get(map-get(var.$font-sizes, xl), h1);
+             }
+            @include respond-to(md) {
+               font-size: map-get(map-get(var.$font-sizes, xl), h1);
+             }
+            @include respond-to(sm) {
+               font-size: map-get(map-get(var.$font-sizes, xl), h1);
+             }
          }
       }
       .sec02__tab-list {
@@ -112,7 +288,21 @@ header {
          a {
             color: #fff;
             font-size: var.$font-size-h4; //24px
-            //  cursor: pointer;
+            font-weight: var.$font-weight-regular;
+            padding: map-get(var.$spacers, 1);
+            @include respond-to(xl) {
+               font-size: map-get(map-get(var.$font-sizes, xl), h4);
+             }
+            @include respond-to(md) {
+               font-size: map-get(map-get(var.$font-sizes, xl), h4);
+             }
+            @include respond-to(sm) {
+               font-size: map-get(map-get(var.$font-sizes, xl), h4);
+             }
+         }
+         a.active {
+            font-weight: var.$font-weight-semibold;
+            border-bottom: 1px solid var.$color-white;
          }
       }
 
@@ -126,6 +316,16 @@ header {
                color: var.$color-black;
                text-transform: uppercase;
                margin-bottom: map-get(var.$spacers, 8); //40px
+
+               @include respond-to(xl) {
+                  font-size: map-get(map-get(var.$font-sizes, xl), h2);
+                }
+               @include respond-to(md) {
+                  font-size: map-get(map-get(var.$font-sizes, xl), h2);
+                }
+               @include respond-to(sm) {
+                  font-size: map-get(map-get(var.$font-sizes, xl), h2);
+                }
             }
          }
 
@@ -145,6 +345,16 @@ header {
                      font-size: var.$font-size-h4;
                      font-weight: var.$font-weight-regular;
                      color: var.$color-black;
+
+                     @include respond-to(xl) {
+                        font-size: map-get(map-get(var.$font-sizes, xl), h4);
+                      }
+                     @include respond-to(md) {
+                        font-size: map-get(map-get(var.$font-sizes, xl), h4);
+                      }
+                     @include respond-to(sm) {
+                        font-size: map-get(map-get(var.$font-sizes, xl), h4);
+                      }
                   }
                }
             }
@@ -171,6 +381,16 @@ header {
             font-size: var.$font-size-h2;
             font-weight: var.$font-weight-bold;
             color: var.$color-primary;
+
+            @include respond-to(xl) {
+               font-size: map-get(map-get(var.$font-sizes, xl), h2);
+             }
+            @include respond-to(md) {
+               font-size: map-get(map-get(var.$font-sizes, xl), h2);
+             }
+            @include respond-to(sm) {
+               font-size: map-get(map-get(var.$font-sizes, xl), h2);
+             }
          }
       }
 
@@ -178,6 +398,16 @@ header {
          font-size: var.$font-size-h4;
          font-weight: var.$font-weight-light;
          color: var.$color-black;
+
+         @include respond-to(xl) {
+            font-size: map-get(map-get(var.$font-sizes, xl), h4);
+          }
+         @include respond-to(md) {
+            font-size: map-get(map-get(var.$font-sizes, xl), h4);
+          }
+         @include respond-to(sm) {
+            font-size: map-get(map-get(var.$font-sizes, xl), h4);
+          }
       }
    }
 }
@@ -194,6 +424,16 @@ header {
          font-size: var.$font-size-h2;
          font-weight: var.$font-weight-bold;
          color: var.$color-primary;
+
+         @include respond-to(xl) {
+            font-size: map-get(map-get(var.$font-sizes, xl), h2);
+          }
+         @include respond-to(md) {
+            font-size: map-get(map-get(var.$font-sizes, xl), h2);
+          }
+         @include respond-to(sm) {
+            font-size: map-get(map-get(var.$font-sizes, xl), h2);
+          }
       }
    }
 
@@ -209,24 +449,66 @@ header {
             justify-content: center;
          }
 
-         .sec04__img-info {
+         .sec04__img-info-bg {
             width: 100%;
             height: 100%;
             align-items: center;
             position: absolute;
             left: 0;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.5);
-            opacity: 1;
+            background: var.$color-hover01;
+            backdrop-filter: blur(6px);
+            border-radius: 5px;
+            opacity: 0;
             transition: opacity 0.35s ease-in-out;
             z-index: 8;
 
-            h5{
-               font-size: var.$font-size-h5;
-               font-weight: var.$color-gray-600;
-               color: var.$color-white;
+            .flower-img-info {
+               position: absolute;
+               bottom: 0;
+               padding-left: map-get(var.$spacers, 7); //30px
+               padding-bottom: map-get(var.$spacers, 7); //30px
+               display: flex;
+               flex-direction: column;
+               gap: 20px;
+
+               .flower-nametag {
+                  .extrabold {
+                     font-size: var.$font-size-h5;
+                     font-weight: var.$font-weight-semibold;
+                     color: var.$color-white;
+
+                     @include respond-to(xl) {
+                        font-size: map-get(map-get(var.$font-sizes, xl), h5);
+                      }
+                     @include respond-to(md) {
+                        font-size: map-get(map-get(var.$font-sizes, xl), h5);
+                      }
+                     @include respond-to(sm) {
+                        font-size: map-get(map-get(var.$font-sizes, xl), h5);
+                      }
+                  }
+                  .medium {
+                     font-size: var.$font-size-h6;
+                     font-weight: var.$font-weight-regular;
+                     color: var.$color-white;
+                     @include respond-to(xl) {
+                        font-size: map-get(map-get(var.$font-sizes, xl), h6);
+                      }
+                     @include respond-to(md) {
+                        font-size: map-get(map-get(var.$font-sizes, xl), h6);
+                      }
+                     @include respond-to(sm) {
+                        font-size: map-get(map-get(var.$font-sizes, xl), h6);
+                      }
+                  }
+               }
             }
          }
+      }
+
+      .sec04__img:hover .sec04__img-info-bg {
+         opacity: 1;
       }
 
       .sec04__f-name {
@@ -235,6 +517,16 @@ header {
             font-weight: var.$font-weight-semibold;
             color: var.$color-gray-700;
             margin-bottom: map-get(var.$spacers, 5); //24px;
+
+            @include respond-to(xl) {
+               font-size: map-get(map-get(var.$font-sizes, xl), h4);
+             }
+            @include respond-to(md) {
+               font-size: map-get(map-get(var.$font-sizes, xl), h4);
+             }
+            @include respond-to(sm) {
+               font-size: map-get(map-get(var.$font-sizes, xl), h4);
+             }
          }
 
          .sec04__f-tag {
@@ -243,6 +535,16 @@ header {
             color: var.$color-gray-600;
             display: flex;
             gap: 10px;
+
+            @include respond-to(xl) {
+               font-size: map-get(map-get(var.$font-sizes, xl), p);
+             }
+            @include respond-to(md) {
+               font-size: map-get(map-get(var.$font-sizes, xl), p);
+             }
+            @include respond-to(sm) {
+               font-size: map-get(map-get(var.$font-sizes, xl), p);
+             }
          }
       }
    }
@@ -270,6 +572,16 @@ header {
          font-size: var.$font-size-h2;
          font-weight: var.$font-weight-bold;
          color: var.$color-primary;
+
+         @include respond-to(xl) {
+            font-size: map-get(map-get(var.$font-sizes, xl), h2);
+          }
+         @include respond-to(md) {
+            font-size: map-get(map-get(var.$font-sizes, xl), h2);
+          }
+         @include respond-to(sm) {
+            font-size: map-get(map-get(var.$font-sizes, xl), h2);
+          }
       }
    }
 
@@ -294,6 +606,16 @@ header {
          font-size: var.$font-size-h4;
          font-weight: var.$font-weight-light;
          color: var.$color-black;
+
+         @include respond-to(xl) {
+            font-size: map-get(map-get(var.$font-sizes, xl), h4);
+          }
+         @include respond-to(md) {
+            font-size: map-get(map-get(var.$font-sizes, xl), h4);
+          }
+         @include respond-to(sm) {
+            font-size: map-get(map-get(var.$font-sizes, xl), h4);
+          }
       }
    }
 
@@ -315,12 +637,32 @@ header {
          font-size: var.$font-size-h4;
          font-weight: var.$font-weight-regular;
          color: var.$color-black;
+
+         @include respond-to(xl) {
+            font-size: map-get(map-get(var.$font-sizes, xl), h4);
+          }
+         @include respond-to(md) {
+            font-size: map-get(map-get(var.$font-sizes, xl), h4);
+          }
+         @include respond-to(sm) {
+            font-size: map-get(map-get(var.$font-sizes, xl), h4);
+          }
       }
 
       h4 {
          font-size: var.$font-size-h4;
          font-weight: var.$font-weight-semibold;
          color: var.$color-black;
+
+         @include respond-to(xl) {
+            font-size: map-get(map-get(var.$font-sizes, xl), h4);
+          }
+         @include respond-to(md) {
+            font-size: map-get(map-get(var.$font-sizes, xl), h4);
+          }
+         @include respond-to(sm) {
+            font-size: map-get(map-get(var.$font-sizes, xl), h4);
+          }
       }
    }
 
@@ -364,6 +706,16 @@ header {
          font-weight: var.$font-weight-light;
          color: var.$color-white;
 
+         @include respond-to(xl) {
+            font-size: map-get(map-get(var.$font-sizes, xl), p);
+          }
+         @include respond-to(md) {
+            font-size: map-get(map-get(var.$font-sizes, xl), p);
+          }
+         @include respond-to(sm) {
+            font-size: map-get(map-get(var.$font-sizes, xl), p);
+          }
+
          & + .footer__info-list::before {
             content: "|";
             margin: map-get(var.$spacers, 1);
@@ -377,6 +729,16 @@ header {
          font-size: var.$font-size-p;
          font-weight: var.$font-weight-extralight;
          color: var.$color-white;
+
+         @include respond-to(xl) {
+            font-size: map-get(map-get(var.$font-sizes, xl), p);
+          }
+         @include respond-to(md) {
+            font-size: map-get(map-get(var.$font-sizes, xl), p);
+          }
+         @include respond-to(sm) {
+            font-size: map-get(map-get(var.$font-sizes, xl), p);
+          }
       }
    }
 
@@ -387,9 +749,21 @@ header {
       color: var.$color-white;
       // border-bottom: 1px solid var.$color-white;
 
+      @include respond-to(xl) {
+         font-size: map-get(map-get(var.$font-sizes, xl), p);
+       }
+      @include respond-to(md) {
+         font-size: map-get(map-get(var.$font-sizes, xl), p);
+       }
+      @include respond-to(sm) {
+         font-size: map-get(map-get(var.$font-sizes, xl), p);
+       }
+
       ul {
          margin-bottom: map-get(var.$spacers, 1); //10px;
       }
    }
 }
 // === footer end ===
+
+
