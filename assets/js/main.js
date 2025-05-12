@@ -14,6 +14,8 @@ $(window).on('scroll', function () {
     lastScroll = scrollTop;
 });
 
+
+
 // === floating menu ===
 const kakao = document.querySelector('.kakaotalk-btn');
 

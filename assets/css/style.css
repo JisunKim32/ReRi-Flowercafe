@@ -88,8 +88,18 @@ header .navbar .nav a {
     font-size: 16px;
   }
 }
+@media (max-width: 768px) {
+  header .navbar .nav {
+    display: none;
+  }
+}
 header .hamburger {
   display: none;
+}
+@media (max-width: 768px) {
+  header .hamburger {
+    display: block;
+  }
 }
 
 .sec01 {
@@ -115,6 +125,7 @@ header .hamburger {
   bottom: 6rem;
   right: 2rem;
   overflow: visible;
+  z-index: 1600;
 }
 .utility-buttons .kakaotalk-btn {
   width: 50px;

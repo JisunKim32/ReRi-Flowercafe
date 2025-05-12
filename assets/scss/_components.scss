@@ -60,11 +60,18 @@ header {
              }
 
          }
+         @include respond-to(md) {
+            display: none;
+          }
       }
    }
 
    .hamburger {
       display: none;
+       // 768px 이하 (md)
+       @include respond-to(md) {
+         display: block;
+       }
    }
 }
 // === header end ===
@@ -97,6 +104,7 @@ header {
    bottom: 6rem; // 원하는 아래 여백
    right: 2rem; // 원하는 오른쪽 여백
    overflow: visible; // fac가 wrapper 밖으로 나와도 보이도록
+   z-index: 1600;
 
    .kakaotalk-btn {
       width: 50px;
