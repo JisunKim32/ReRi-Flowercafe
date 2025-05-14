@@ -1,5 +1,5 @@
 @use "variables" as var;
-@use 'responsive' as *; // respond-to 믹스인 바로 사용
+@use 'responsive' as resp; // respond-to 믹스인 바로 사용
 
 // === Button ===
 .btn-bn {
@@ -55,12 +55,12 @@ header {
             color: var.$color-primary;
 
             font-size: map-get(map-get(var.$font-sizes, default), h6);
-            @include respond-to(xl) {
+            @include resp.respond-to(xl) {
                font-size: map-get(map-get(var.$font-sizes, xl), h6);
              }
 
          }
-         @include respond-to(md) {
+         @include resp.respond-to(md) {
             display: none;
           }
       }
@@ -69,7 +69,7 @@ header {
    .hamburger {
       display: none;
        // 768px 이하 (md)
-       @include respond-to(md) {
+       @include resp.respond-to(md) {
          display: block;
        }
    }
@@ -250,17 +250,17 @@ header {
          max-width: 100%;
          height: auto;
          // 1280px 이하 (xl)
-         @include respond-to(xl) {
+         @include resp.respond-to(xl) {
            width: 533px;
            height: 594px;
          }
          // 768px 이하 (md)
-         @include respond-to(md) {
+         @include resp.respond-to(md) {
            width: 768px;
-           height: 248px;
+           height: 244px;
          }
          // 576px 이하 (sm)
-         @include respond-to(sm) {
+         @include resp.respond-to(sm) {
            width: 576px;
            height: 218px;
          }
@@ -272,51 +272,145 @@ header {
       top: 0;
       left: 314px;
       padding: map-get(var.$spacers, 14) map-get(var.$spacers, 0);
+      @include resp.respond-to(xl) {
+         top: 0;
+         left: 82px;
+         padding: map-get(var.$spacers, 12) map-get(var.$spacers, 0);
+       }
+       // 768px 이하 (md)
+       @include resp.respond-to(md) {
+         width: 696px;
+         left: 28px;
+         padding: map-get(var.$spacers, 11) map-get(var.$spacers, 0);
+       }
+       // 576px 이하 (sm)
+       @include resp.respond-to(sm) {
+         width: 516px;
+         left: 30px;
+         padding: map-get(var.$spacers, 9) map-get(var.$spacers, 0);
+       }
+
+      .row{
+         margin-right: 0;
+         margin-left: 0;
+         padding: 0;
+
+         @include resp.respond-to(md) {
+            flex-direction: column;
+
+            >.col-md-1{
+               display: none;
+            }
+            > .sec02__left-content,
+            > .sec02__right-content {
+               // 100% 너비로 늘리기
+               flex: 0 0 100% !important;
+               max-width: 100% !important;
+               width: 100%;
+            }
+         }
+        @include resp.respond-to(sm) {
+           width: 516px;
+         }
+      }
+
+      @include resp.respond-to(xl) {
+         width: 1198px;
+      }
+      @include resp.respond-to(md) {
+         width: 696px;
+      }
+     @include resp.respond-to(sm) {
+        width: 516px;
+      }
+
 
       .sec02__title {
          margin-bottom: 100px;
+         @include resp.respond-to(xl) {
+            margin-bottom: 80px;
+          }
+         @include resp.respond-to(md) {
+            margin-bottom: 50px;
+            text-align: center;
+          }
+         @include resp.respond-to(sm) {
+            margin-bottom: 30px;
+          }
+        
          h1 {
             font-size: var.$font-size-h1;
             font-weight: var.$font-weight-bold;
             color: var.$color-white;
-            margin-bottom: map-get(var.$spacers, 14);
-            @include respond-to(xl) {
+            // margin-bottom: map-get(var.$spacers, 14);
+            @include resp.respond-to(xl) {
                font-size: map-get(map-get(var.$font-sizes, xl), h1);
              }
-            @include respond-to(md) {
+            @include resp.respond-to(md) {
                font-size: map-get(map-get(var.$font-sizes, xl), h1);
              }
-            @include respond-to(sm) {
+            @include resp.respond-to(sm) {
                font-size: map-get(map-get(var.$font-sizes, xl), h1);
              }
          }
       }
-      .sec02__tab-list {
-         margin-bottom: map-get(var.$spacers, 9);
-         a {
-            color: #fff;
-            font-size: var.$font-size-h4; //24px
-            font-weight: var.$font-weight-regular;
-            padding: map-get(var.$spacers, 1);
-            @include respond-to(xl) {
-               font-size: map-get(map-get(var.$font-sizes, xl), h4);
+      
+      .sec02__menu{
+         @include resp.respond-to(md) {
+
+         }
+        @include resp.respond-to(sm) {
+           width: 516px;
+         }
+         ul{
+            @include resp.respond-to(md) {
+               display: flex;
+               justify-content: space-between;
              }
-            @include respond-to(md) {
-               font-size: map-get(map-get(var.$font-sizes, xl), h4);
-             }
-            @include respond-to(sm) {
+            @include resp.respond-to(sm) {
                font-size: map-get(map-get(var.$font-sizes, xl), h4);
              }
          }
-         a.active {
-            font-weight: var.$font-weight-semibold;
-            border-bottom: 1px solid var.$color-white;
+
+         .sec02__tab-list {
+            margin-bottom: map-get(var.$spacers, 9);
+            
+            @include resp.respond-to(md) {
+               margin-bottom: map-get(var.$spacers, 0);
+             }
+            a {
+               color: #fff;
+               font-size: var.$font-size-h4; //24px
+               font-weight: var.$font-weight-regular;
+               padding: map-get(var.$spacers, 1);
+               @include resp.respond-to(xl) {
+                  font-size: map-get(map-get(var.$font-sizes, xl), h4);
+                }
+               @include resp.respond-to(md) {
+                  font-size: map-get(map-get(var.$font-sizes, xl), h4);
+                  margin: 0;
+                  padding: 0;
+                }
+               @include resp.respond-to(sm) {
+                  font-size: map-get(map-get(var.$font-sizes, xl), h4);
+                }
+            }
+            a.active {
+               font-weight: var.$font-weight-semibold;
+               border-bottom: 1px solid var.$color-white;
+            }
          }
       }
 
       .sec02__right-content {
          margin-top: 76px;
-
+         @include resp.respond-to(md) {
+            padding: 0;
+         }
+        @include resp.respond-to(sm) {
+           padding: 0;
+         }
+         
          .sec02__subtitle {
             h2 {
                font-size: var.$font-size-h2;
@@ -325,14 +419,15 @@ header {
                text-transform: uppercase;
                margin-bottom: map-get(var.$spacers, 8); //40px
 
-               @include respond-to(xl) {
+               @include resp.respond-to(xl) {
                   font-size: map-get(map-get(var.$font-sizes, xl), h2);
+                  // display: none;
                 }
-               @include respond-to(md) {
-                  font-size: map-get(map-get(var.$font-sizes, xl), h2);
+               @include resp.respond-to(md) {
+                  font-size: map-get(map-get(var.$font-sizes, md), h2);
                 }
-               @include respond-to(sm) {
-                  font-size: map-get(map-get(var.$font-sizes, xl), h2);
+               @include resp.respond-to(sm) {
+                  font-size: map-get(map-get(var.$font-sizes, sm), h2);
                 }
             }
          }
@@ -342,10 +437,19 @@ header {
 
             .sec02__menu-content {
                display: flex;
-               justify-content: space-between;
 
                .menu-img {
                   margin-bottom: map-get(var.$spacers, 7); //30px
+                  @include resp.respond-to(xl) {
+                     
+                   }
+                   @include resp.respond-to(md) {
+                     font-size: map-get(map-get(var.$font-sizes, xl), h4);
+                     justify-content: space-between;
+                   }
+                  @include resp.respond-to(sm) {
+                     font-size: map-get(map-get(var.$font-sizes, xl), h4);
+                   }
                }
 
                .menu-name {
@@ -354,13 +458,13 @@ header {
                      font-weight: var.$font-weight-regular;
                      color: var.$color-black;
 
-                     @include respond-to(xl) {
+                     @include resp.respond-to(xl) {
                         font-size: map-get(map-get(var.$font-sizes, xl), h4);
                       }
-                     @include respond-to(md) {
+                     @include resp.respond-to(md) {
                         font-size: map-get(map-get(var.$font-sizes, xl), h4);
                       }
-                     @include respond-to(sm) {
+                     @include resp.respond-to(sm) {
                         font-size: map-get(map-get(var.$font-sizes, xl), h4);
                       }
                   }
@@ -380,23 +484,23 @@ header {
    padding: map-get(var.$spacers, 14) map-get(var.$spacers, 0);
 
    .sec03_frame {
-      margin: map-get(var.$spacers, 10) map-get(var.$spacers, 16);
+      margin: map-get(var.$spacers, 10), 0;
 
       .sec03__title {
-         margin: map-get(var.$spacers, 7);
+         margin: map-get(var.$spacers, 7), 0;
 
          h2 {
             font-size: var.$font-size-h2;
             font-weight: var.$font-weight-bold;
             color: var.$color-primary;
 
-            @include respond-to(xl) {
+            @include resp.respond-to(xl) {
                font-size: map-get(map-get(var.$font-sizes, xl), h2);
              }
-            @include respond-to(md) {
+            @include resp.respond-to(md) {
                font-size: map-get(map-get(var.$font-sizes, xl), h2);
              }
-            @include respond-to(sm) {
+            @include resp.respond-to(sm) {
                font-size: map-get(map-get(var.$font-sizes, xl), h2);
              }
          }
@@ -407,13 +511,13 @@ header {
          font-weight: var.$font-weight-light;
          color: var.$color-black;
 
-         @include respond-to(xl) {
+         @include resp.respond-to(xl) {
             font-size: map-get(map-get(var.$font-sizes, xl), h4);
           }
-         @include respond-to(md) {
+         @include resp.respond-to(md) {
             font-size: map-get(map-get(var.$font-sizes, xl), h4);
           }
-         @include respond-to(sm) {
+         @include resp.respond-to(sm) {
             font-size: map-get(map-get(var.$font-sizes, xl), h4);
           }
       }
@@ -433,23 +537,45 @@ header {
          font-weight: var.$font-weight-bold;
          color: var.$color-primary;
 
-         @include respond-to(xl) {
+         @include resp.respond-to(xl) {
             font-size: map-get(map-get(var.$font-sizes, xl), h2);
           }
-         @include respond-to(md) {
+         @include resp.respond-to(md) {
             font-size: map-get(map-get(var.$font-sizes, xl), h2);
           }
-         @include respond-to(sm) {
+         @include resp.respond-to(sm) {
             font-size: map-get(map-get(var.$font-sizes, xl), h2);
           }
       }
    }
 
    .sec04_main-content {
+      // @include resp.respond-to(md) {
+      //    > .col-md-3 {
+      //       // 2개씩 한 줄에
+      //       flex: 0 0 50% !important;
+      //       max-width: 100% !important;
+      //     }
+      //  }
       .sec04__img {
-         max-width: 312px;
+            max-width: 312px;
          margin-bottom: map-get(var.$spacers, 2); //24px
          position: relative;
+
+         // @include resp.respond-to(xl) {
+         //    top: 0;
+         //    left: 82px;
+         //    padding: map-get(var.$spacers, 12) map-get(var.$spacers, 0);
+         //  }
+          // 768px 이하 (md)
+         //  @include resp.respond-to(md) {
+         //    max-width: 336px;
+
+         //  }
+         //  // 576px 이하 (sm)
+         //  @include resp.respond-to(sm) {
+         //    max-width: 246px;
+         //  }
 
          img {
             width: 100%;
@@ -486,13 +612,13 @@ header {
                      font-weight: var.$font-weight-semibold;
                      color: var.$color-white;
 
-                     @include respond-to(xl) {
+                     @include resp.respond-to(xl) {
                         font-size: map-get(map-get(var.$font-sizes, xl), h5);
                       }
-                     @include respond-to(md) {
+                     @include resp.respond-to(md) {
                         font-size: map-get(map-get(var.$font-sizes, xl), h5);
                       }
-                     @include respond-to(sm) {
+                     @include resp.respond-to(sm) {
                         font-size: map-get(map-get(var.$font-sizes, xl), h5);
                       }
                   }
@@ -500,13 +626,13 @@ header {
                      font-size: var.$font-size-h6;
                      font-weight: var.$font-weight-regular;
                      color: var.$color-white;
-                     @include respond-to(xl) {
+                     @include resp.respond-to(xl) {
                         font-size: map-get(map-get(var.$font-sizes, xl), h6);
                       }
-                     @include respond-to(md) {
+                     @include resp.respond-to(md) {
                         font-size: map-get(map-get(var.$font-sizes, xl), h6);
                       }
-                     @include respond-to(sm) {
+                     @include resp.respond-to(sm) {
                         font-size: map-get(map-get(var.$font-sizes, xl), h6);
                       }
                   }
@@ -526,13 +652,13 @@ header {
             color: var.$color-gray-700;
             margin-bottom: map-get(var.$spacers, 5); //24px;
 
-            @include respond-to(xl) {
+            @include resp.respond-to(xl) {
                font-size: map-get(map-get(var.$font-sizes, xl), h4);
              }
-            @include respond-to(md) {
+            @include resp.respond-to(md) {
                font-size: map-get(map-get(var.$font-sizes, xl), h4);
              }
-            @include respond-to(sm) {
+            @include resp.respond-to(sm) {
                font-size: map-get(map-get(var.$font-sizes, xl), h4);
              }
          }
@@ -544,13 +670,13 @@ header {
             display: flex;
             gap: 10px;
 
-            @include respond-to(xl) {
+            @include resp.respond-to(xl) {
                font-size: map-get(map-get(var.$font-sizes, xl), p);
              }
-            @include respond-to(md) {
+            @include resp.respond-to(md) {
                font-size: map-get(map-get(var.$font-sizes, xl), p);
              }
-            @include respond-to(sm) {
+            @include resp.respond-to(sm) {
                font-size: map-get(map-get(var.$font-sizes, xl), p);
              }
          }
@@ -560,47 +686,113 @@ header {
 // === sec04 end ===
 
 // === sec05 ===
+// .sec05 {
+//    padding: map-get(var.$spacers, 14) map-get(var.$spacers, 0);
+
+//    .sec05_title {
+//       display: flex;
+//       justify-content: center;
+//       gap: 50px;
+//       margin-bottom: map-get(var.$spacers, 10); //60px
+
+//       .sec05__instagram-icon {
+//          width: 57px;
+//          img {
+//             width: 100%;
+//          }
+//       }
+
+//       h2 {
+//          font-size: var.$font-size-h2;
+//          font-weight: var.$font-weight-bold;
+//          color: var.$color-primary;
+
+//          @include resp.respond-to(xl) {
+//             font-size: map-get(map-get(var.$font-sizes, xl), h2);
+//           }
+//          @include resp.respond-to(md) {
+//             font-size: map-get(map-get(var.$font-sizes, xl), h2);
+//           }
+//          @include resp.respond-to(sm) {
+//             font-size: map-get(map-get(var.$font-sizes, xl), h2);
+//           }
+//       }
+//    }
+
+//    .sec05_content {
+//       .img-fluid {
+//          max-width: 100%;
+//          height: auto;
+//          display: block;
+//       }
+
+//       // @include resp.respond-to(xl) {
+//       //    width: ;
+//       //  }
+//       @include resp.respond-to(md) {
+//          width: 336px;
+//        }
+//       @include resp.respond-to(sm) {
+//          width: 246px;
+//        }
+//    }
+// }
 .sec05 {
+   // 상하 패딩
    padding: map-get(var.$spacers, 14) map-get(var.$spacers, 0);
 
    .sec05_title {
-      display: flex;
-      justify-content: center;
-      gap: 50px;
-      margin-bottom: map-get(var.$spacers, 10); //60px
+     display: flex;
+     justify-content: center;
+     gap: 50px;
+     margin-bottom: map-get(var.$spacers, 10);
+ 
+     .sec05__instagram-icon {
+       width: 57px;
+ 
+       img {
+         width: 100%;
+       }
+     }
+ 
+     h2 {
+       font-size: var.$font-size-h2;
+       font-weight: var.$font-weight-bold;
+       color: var.$color-primary;
+ 
+       @include resp.respond-to(xl) {
+         font-size: map-get(map-get(var.$font-sizes, xl), h2);
+       }
+       @include resp.respond-to(md) {
+         font-size: map-get(map-get(var.$font-sizes, default), h2);
+       }
+       @include resp.respond-to(sm) {
+         font-size: map-get(map-get(var.$font-sizes, default), h2);
+       }
+     }
+   }
+   
+   .sec05__insta-content{
+      @include resp.respond-to(sm) {
+         gap: 24px 0;
+       }
 
-      .sec05__instagram-icon {
-         width: 57px;
-         img {
-            width: 100%;
-         }
-      }
-
-      h2 {
-         font-size: var.$font-size-h2;
-         font-weight: var.$font-weight-bold;
-         color: var.$color-primary;
-
-         @include respond-to(xl) {
-            font-size: map-get(map-get(var.$font-sizes, xl), h2);
-          }
-         @include respond-to(md) {
-            font-size: map-get(map-get(var.$font-sizes, xl), h2);
-          }
-         @include respond-to(sm) {
-            font-size: map-get(map-get(var.$font-sizes, xl), h2);
-          }
+      .sec05_content {
+        // 꼭 .img-fluid 로 타겟!
+        img.img-fluid {
+          max-width: 100%;
+          height: auto;
+          display: block;
+        }
+    
+        // ≤767px(md) 에 50% 너비 → 2열
+        @include resp.respond-to(md) {
+          flex: 0 0 50% !important;
+          max-width: 50% !important;
+        }
       }
    }
-
-   .sec05_content {
-      .img_fluid {
-         max-width: 100%;
-         height: auto;
-         display: block;
-      }
-   }
-}
+ }
 // === sec05 end ===
 
 // === sec06 ===
@@ -615,13 +807,13 @@ header {
          font-weight: var.$font-weight-light;
          color: var.$color-black;
 
-         @include respond-to(xl) {
+         @include resp.respond-to(xl) {
             font-size: map-get(map-get(var.$font-sizes, xl), h4);
           }
-         @include respond-to(md) {
+         @include resp.respond-to(md) {
             font-size: map-get(map-get(var.$font-sizes, xl), h4);
           }
-         @include respond-to(sm) {
+         @include resp.respond-to(sm) {
             font-size: map-get(map-get(var.$font-sizes, xl), h4);
           }
       }
@@ -646,13 +838,13 @@ header {
          font-weight: var.$font-weight-regular;
          color: var.$color-black;
 
-         @include respond-to(xl) {
+         @include resp.respond-to(xl) {
             font-size: map-get(map-get(var.$font-sizes, xl), h4);
           }
-         @include respond-to(md) {
+         @include resp.respond-to(md) {
             font-size: map-get(map-get(var.$font-sizes, xl), h4);
           }
-         @include respond-to(sm) {
+         @include resp.respond-to(sm) {
             font-size: map-get(map-get(var.$font-sizes, xl), h4);
           }
       }
@@ -662,13 +854,13 @@ header {
          font-weight: var.$font-weight-semibold;
          color: var.$color-black;
 
-         @include respond-to(xl) {
+         @include resp.respond-to(xl) {
             font-size: map-get(map-get(var.$font-sizes, xl), h4);
           }
-         @include respond-to(md) {
+         @include resp.respond-to(md) {
             font-size: map-get(map-get(var.$font-sizes, xl), h4);
           }
-         @include respond-to(sm) {
+         @include resp.respond-to(sm) {
             font-size: map-get(map-get(var.$font-sizes, xl), h4);
           }
       }
@@ -714,13 +906,13 @@ header {
          font-weight: var.$font-weight-light;
          color: var.$color-white;
 
-         @include respond-to(xl) {
+         @include resp.respond-to(xl) {
             font-size: map-get(map-get(var.$font-sizes, xl), p);
           }
-         @include respond-to(md) {
+         @include resp.respond-to(md) {
             font-size: map-get(map-get(var.$font-sizes, xl), p);
           }
-         @include respond-to(sm) {
+         @include resp.respond-to(sm) {
             font-size: map-get(map-get(var.$font-sizes, xl), p);
           }
 
@@ -738,13 +930,13 @@ header {
          font-weight: var.$font-weight-extralight;
          color: var.$color-white;
 
-         @include respond-to(xl) {
+         @include resp.respond-to(xl) {
             font-size: map-get(map-get(var.$font-sizes, xl), p);
           }
-         @include respond-to(md) {
+         @include resp.respond-to(md) {
             font-size: map-get(map-get(var.$font-sizes, xl), p);
           }
-         @include respond-to(sm) {
+         @include resp.respond-to(sm) {
             font-size: map-get(map-get(var.$font-sizes, xl), p);
           }
       }
@@ -757,13 +949,13 @@ header {
       color: var.$color-white;
       // border-bottom: 1px solid var.$color-white;
 
-      @include respond-to(xl) {
+      @include resp.respond-to(xl) {
          font-size: map-get(map-get(var.$font-sizes, xl), p);
        }
-      @include respond-to(md) {
+      @include resp.respond-to(md) {
          font-size: map-get(map-get(var.$font-sizes, xl), p);
        }
-      @include respond-to(sm) {
+      @include resp.respond-to(sm) {
          font-size: map-get(map-get(var.$font-sizes, xl), p);
        }
 
@@ -775,3 +967,8 @@ header {
 // === footer end ===
 
 
+// @media (min-width: 576px){
+//    .container, .container-sm{
+//       max-width: 696px;
+//    }
+// }
