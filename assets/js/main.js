@@ -18,16 +18,17 @@ $(function () {
     $('body').addClass('js');
 
     var $hamburger = $('.hamburger'),
-       $nav = $('#site-nav'),
-       $masthead = $('#masthead');
+        $nav       = $('.megamenu');
 
-    $hamburger.click(function () {
-       $(this).toggleClass('is-active');
-       $nav.toggleClass('is-active');
-       $masthead.toggleClass('is-active');
-       return false;
-    })
- });
+  // 초기 상태
+  $nav.hide();
+
+  $hamburger.on('click', function(){
+    $(this).toggleClass('is-active');  // 햄버거 X 형태 토글
+    $nav.slideToggle();             // 0.3초 동안 부드럽게 열고 닫음
+    return false;
+  });
+});
 
 
 // 현수님
