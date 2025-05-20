@@ -146,7 +146,9 @@ header .container .gnb .navbar .hamburger .hamburger-box .hamburger-inner::after
   background-color: #ff3a1e;
   border-radius: 4px;
   position: absolute;
+  transition-property: -webkit-transform;
   transition-property: transform;
+  transition-property: transform, -webkit-transform;
   transition-duration: 0.15s;
   transition-timing-function: ease;
 }
@@ -172,6 +174,7 @@ header .container .gnb .navbar .hamburger .hamburger-box .hamburger--boring .ham
   transition-property: none;
 }
 header .container .gnb .navbar .hamburger .hamburger-box .hamburger--boring.is-active .hamburger-inner {
+  -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
 }
 header .container .gnb .navbar .hamburger .hamburger-box .hamburger--boring.is-active .hamburger-inner::before {
@@ -180,6 +183,7 @@ header .container .gnb .navbar .hamburger .hamburger-box .hamburger--boring.is-a
 }
 header .container .gnb .navbar .hamburger .hamburger-box .hamburger--boring.is-active .hamburger-inner::after {
   bottom: 0;
+  -webkit-transform: rotate(-90deg);
   transform: rotate(-90deg);
 }
 header .container .gnb .navbar .hamburger .hamburger-box .hamburger-label {
@@ -313,8 +317,7 @@ header.active .col-md-4 .h-nav li a {
     top: 0;
     left: 0;
     background-color: rgba(0, 0, 0, 0.8);
-    -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
     padding-top: 5rem;
     overflow-y: auto;
     display: flex;
@@ -398,8 +401,7 @@ header.active .col-md-4 .h-nav li a {
   width: 100%;
   height: 100%;
   display: block;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .sec02 {
@@ -762,8 +764,7 @@ header.active .col-md-4 .h-nav li a {
   left: 0;
   bottom: 0;
   background: rgba(148, 66, 34, 0.4392156863);
-  -webkit-backdrop-filter: blur(6px);
-          backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
   border-radius: 5px;
   opacity: 0;
   transition: opacity 0.35s ease-in-out;
@@ -1085,4 +1086,31 @@ header.active .col-md-4 .h-nav li a {
 }
 .footer .footer__right-info ul {
   margin-bottom: 0.625rem;
+}
+
+.kv {
+  width: 100%;
+  background-color: #fffeef;
+  align-items: center;
+  justify-self: center;
+}
+.kv .container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.kv .kv-title__content {
+  margin-top: 100px;
+}
+
+.section02__content {
+  padding: 100px 0;
+}
+
+.title {
+  padding: 100px;
+}
+.title .title__content h2 {
+  margin-bottom: 50px;
 }/*# sourceMappingURL=style.css.map */

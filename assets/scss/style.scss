@@ -1,9 +1,8 @@
-@use 'common';
-@use 'variables' as var; // 스타일 에셋 (컬러/폰트)
-@use 'responsive';
-@use 'components'; // 컴포넌트
+@use "common";
+@use "variables" as var; // 스타일 에셋 (컬러/폰트)
+@use "responsive";
+@use "components"; // 컴포넌트
 // @import 'normalize.scss'
-
 
 // header{
 //    width: 100%;
@@ -20,11 +19,11 @@
 //          width: 100%;
 //          display: flex;
 //          justify-content: space-between;
-         
+
 //          li{
 //             list-style: none;
 //             text-decoration: none;
-            
+
 //             a{
 //                font-size: 18px;
 //                color: variables.$main-color;
@@ -90,7 +89,6 @@
 //    }
 // }
 
-
 // .sec04_main-content {
 //     --bs-gutter-x: 24px;
 //     margin-left: 0;
@@ -108,3 +106,36 @@
 //        }
 //     }
 // }
+
+.kv {
+    width: 100%;
+    background-color: #fffeef;
+    align-items: center;
+    justify-self: center;
+    .container{
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .kv-title__content{
+        margin-top: 100px;
+    }
+}
+
+
+.section02__content{
+    padding: 100px 0;   
+}
+
+.title{
+    padding: 100px;
+    .title__content{
+        h2{
+            margin-bottom: 50px;
+        }
+    }
+}
+
+
+
