@@ -1,141 +1,1050 @@
 @use "common";
 @use "variables" as var; // 스타일 에셋 (컬러/폰트)
-@use "responsive";
+@use "responsive" as resp;
 @use "components"; // 컴포넌트
 // @import 'normalize.scss'
 
-// header{
-//    width: 100%;
-//    top: 0;
-//    left: 0;
-//    position: fixed;
-//    z-index: 999;
-//    background: transparent;
+// header {
+//     width: 100%;
+//     padding: 1.125rem;
+//     margin: auto;
+//     position: fixed;
+//     text-align: center;
+//     align-items: center;
+//     // display: none;
+//     z-index: 999;
+//     top: 0;
+//     transition: top 0.4s ease-in-out;
+//     .container {
+//         width: 100%;
+//         margin: 0 auto;
+//         .gnb {
+//             align-items: center;
+//             flex-direction: row;
+//             .navbar {
+//                 display: flex;
+//                 align-items: center;
+//                 justify-content: space-between;
+//                 .nav-list {
+//                     width: 600px;
+//                     .nav {
+//                         width: 100%;
+//                         display: flex;
+//                         justify-content: space-between;
+//                         li {
+//                             a {
+//                                 list-style: none;
+//                                 text-decoration: none;
+//                                 text-align: center;
+//                                 color: var.$color-primary;
+//                                 cursor: pointer;
+//                                 &:hover {
+//                                     color: darken(var.$color-primary, 10%);
+//                                 }
+//                                 &:after {
+//                                     background-color: var.$color-primary;
+//                                 }
+//                             }
+//                             &.font {
+//                                 a {
+//                                     color: var.$color-primary;
+//                                     text-align: center;
+//                                     cursor: pointer;
+//                                     &:hover {
+//                                         color: darken(var.$color-primary, 10%);
+//                                     }
+//                                     &:after {
+//                                         background-color: var.$color-primary;
+//                                     }
+//                                 }
+//                             }
+//                         }
+//                     }
+//                 }
+//                 .hamburger {
+//                     background-color: transparent;
+//                     border: 0;
+//                     color: #ff3a1e;
+//                     cursor: pointer;
+//                     display: inline-block;
+//                     // float: left;
+//                     font: inherit;
+//                     margin: 0.8125em 0 0;
+//                     overflow: visible;
+//                     outline: none;
+//                     padding: 0;
+//                     text-transform: none;
+//                     transition: opacity 0.15s;
+//                     // -webkit-appearance: none;
 
-//    .navbar{
-//       padding: 18px 0;
+//                     .hamburger-box {
+//                         width: 30px;
+//                         height: 24px;
+//                         display: inline-block;
+//                         position: relative;
 
-//       .nav{
-//          width: 100%;
-//          display: flex;
-//          justify-content: space-between;
+//                         .hamburger-inner {
+//                             display: block;
+//                             top: 10%;
+//                             /* margin-top: -2px;  */
+//                         }
 
-//          li{
-//             list-style: none;
-//             text-decoration: none;
+//                         .hamburger-inner,
+//                         .hamburger-inner::before,
+//                         .hamburger-inner::after {
+//                             width: 30px;
+//                             height: 2px;
+//                             background-color: #ff3a1e;
+//                             border-radius: 4px;
+//                             position: absolute;
+//                             transition-property: -webkit-transform;
+//                             transition-property: transform;
+//                             transition-property:
+//                                 transform,
+//                                 -webkit-transform;
+//                             transition-duration: 0.15s;
+//                             transition-timing-function: ease;
+//                         }
 
-//             a{
-//                font-size: 18px;
-//                color: variables.$main-color;
-//                list-style: none;
-//                text-decoration: none;
+//                         #masthead.is-active .hamburger-inner,
+//                         #masthead.is-active .hamburger-inner::before,
+//                         #masthead.is-active .hamburger-inner::after {
+//                             background-color: #ff3a1e;
+//                         }
+
+//                         .hamburger-inner::before,
+//                         .hamburger-inner::after {
+//                             content: "";
+//                             display: block;
+//                         }
+
+//                         .hamburger-inner::before {
+//                             top: -6px;
+//                         }
+
+//                         .hamburger-inner::after {
+//                             bottom: -6px;
+//                         }
+//                         .hamburger--boring .hamburger-inner,
+//                         .hamburger--boring .hamburger-inner::before,
+//                         .hamburger--boring .hamburger-inner::after {
+//                             transition-property: none;
+//                         }
+
+//                         .hamburger--boring.is-active .hamburger-inner {
+//                             -webkit-transform: rotate(45deg);
+//                             transform: rotate(45deg);
+//                         }
+
+//                         .hamburger--boring.is-active .hamburger-inner::before {
+//                             top: 0;
+//                             opacity: 0;
+//                         }
+
+//                         .hamburger--boring.is-active .hamburger-inner::after {
+//                             bottom: 0;
+//                             -webkit-transform: rotate(-90deg);
+//                             transform: rotate(-90deg);
+//                         }
+
+//                         .hamburger-label {
+//                             color: #fff;
+//                             display: inline-block;
+//                             font-weight: 700;
+//                             letter-spacing: 0.08em;
+//                             line-height: 1;
+//                             margin-left: 0.3125em;
+//                             text-transform: uppercase;
+//                         }
+
+//                         #masthead.is-active .hamburger-label {
+//                             color: #ff3a1e;
+//                         }
+
+//                         .hamburger-box,
+//                         .hamburger-label {
+//                             display: inline-block;
+//                             vertical-align: middle;
+//                         }
+//                     }
+//                 }
+//                 .hamburger:hover {
+//                     opacity: 0.7;
+//                 }
 //             }
-//          }
-//       }
-
-//       .hamburger{
-//          display: none;
-//       }
-//    }
-// }
-
-// .sec01{
-//    width: 100%;
-//    height: 937px;
-//    overflow: hidden;
-//    .sec02__img{
-//       width: 100%;
-//    }
-// }
-
-// .sec02{
-//    position: relative;
-//    .sec02_bg{
-//       position: relative;
-//       width: 45%;
-//       height: 754px;
-//    }
-//    .sec02_main-content{
-//       position: absolute;
-//       top: 120px;
-//       left: 314px;
-
-//       .sec02__title{
-//          margin-bottom: 100px;
-//          h1{
-//             font-weight: 700;
-//          }
-//       }
-//       .sec02__list{
-//          list-style: none;
-//          text-decoration: none;
-//          color: #fff;
-//          font-size: 24px;
-//          font-weight: 400;
-//          line-height: 140%;
-//          letter-spacing: 1%;
-//          margin-bottom: 60px;
-//       }
-//    }
-// }
-
-// .sec03{
-//    height: 584px;
-//    .sec03__title{
-//       h2{
-//          font-size: variables.$font-size-h2;
-//          color: variables.$color-primary;
-//       }
-//    }
-// }
-
-// .sec04_main-content {
-//     --bs-gutter-x: 24px;
-//     margin-left: 0;
-//     margin-right: 0;
-
-//     > .col-md-3 + .col-md-3 {
-//        padding-left: 24px;
+//             .hamburger {
+//                 display: none;
+//                 // 768px 이하 (md)
+//                 @include resp.respond-to(md) {
+//                     display: block;
+//                 }
+//             }
+//         }
 //     }
-
-//     .sec04__img {
-//        margin-bottom: map-get(var.$spacers, 2); //24px
-
-//        img {
-//           width: 240px;
-//        }
+//     .megamenu {
+//         // width: 750px;
+//         // margin: 0 auto;
+//         z-index: 998;
+//         .megamenu-box {
+//             width: 100%;
+//             display: flex;
+//             justify-content: center;
+//             // gap: 0 20px;
+//             text-align: left;
+//             padding: 1.5rem 0 0 4.5rem;
+//             .megamenu-list {
+//                 padding: 0 80px;
+//                 &:not(:first-child) {
+//                     border-left: 1px solid rgba(141, 108, 108, 0.5); /* 투명도 조정 */
+//                 }
+//                 ul {
+//                     list-style: none;
+//                     padding: 0;
+//                     margin: 0;
+//                     li {
+//                         margin: 1.2rem 0;
+//                         a {
+//                             font-size: var.$font-size-p;
+//                             font-weight: var.$font-weight-regular;
+//                             color: var.$color-secondary;
+//                             text-decoration: none;
+//                             transition: all 0.2s ease;
+//                             text-align: center;
+//                             position: relative;
+//                             cursor: pointer;
+//                             &:hover {
+//                                 color: var.$color-hover01;
+//                             }
+//                         }
+//                     }
+//                 }
+//             }
+//         }
+//     }
+//     .overlay {
+//         position: fixed;
+//         top: 0;
+//         left: 0;
+//         width: 100%;
+//         height: 40%;
+//         background: rgba(255, 217, 208, 0.6); /* 반투명 배경으로 변경 */
+//         backdrop-filter: blur(5px);
+//         -webkit-backdrop-filter: blur(5px);
+//         transform: translateY(-100%);
+//         opacity: 0;
+//         visibility: hidden;
+//         transition:
+//             transform 0.5s ease 0.25s,
+//             // 0.15s 지연 후 시작
+//             opacity 0.5s ease 0.1s,
+//             visibility 0s ease 0.4s; // 가시성은 슬라이드+전환 완료 뒤
+//         z-index: -1;
+//         &.is-active {
+//             transform: translateY(0);
+//             opacity: 1;
+//             visibility: visible;
+//             transition-delay: 0s, 0s, 0s;
+//         }
 //     }
 // }
+// header.active {
+//     background: #ffffff;
+//     // box-shadow: 0 0.125rem 0.5rem rgba(173, 173, 173, 0.1);
+//     color: var.$color-primary;
+//     transition: all 0.5s ease;
+//     border-bottom: 0.0625rem solid #e8e8e8;
+//     .col-md-4 {
+//         .h-nav {
+//             li {
+//                 a {
+//                     color: var.$color-primary;
+//                 }
+//             }
+//         }
+//     }
+// }
+// // 애니메이션 효과 추가
+// @keyframes fadeIn {
+//     from {
+//         opacity: 0;
+//         transform: translateY(-10px);
+//     }
+//     to {
+//         opacity: 1;
+//         transform: translateY(0);
+//     }
+// }
+// @keyframes slideDown {
+//     from {
+//         opacity: 0;
+//         transform: translateY(-20px);
+//     }
+//     to {
+//         opacity: 1;
+//         transform: translateY(0);
+//     }
+// }
+// //  반응형 스타일
+// // 모바일용 메가메뉴 스타일
+// @media (max-width: 1000px) {
+//     header {
+//         .container {
+//             .overlay.is-active {
+//                 display: none !important;
+//             }
+//             .navbar {
+//                 .nav-list {
+//                     display: none !important; // 모바일에서는 nav 숨김
+//                 }
+//             }
+//             #site-nav {
+//                 &.mobile-view {
+//                     position: fixed;
+//                     width: 100%;
+//                     height: 100vh;
+//                     top: 0;
+//                     left: 0;
+//                     background-color: rgba(0, 0, 0, 0.8);
+//                     backdrop-filter: blur(10px);
+//                     padding-top: 5rem;
+//                     overflow-y: auto;
+//                     display: flex;
+//                     flex-direction: column;
+//                     .mobile-nav-menu {
+//                         display: flex;
+//                         flex-direction: column;
+//                         padding: 0 1rem;
+//                         .mobile-nav-item {
+//                             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+//                             padding: 1rem 0;
+//                             a {
+//                                 color: #fff;
+//                                 font-size: 1.25rem;
+//                                 text-decoration: none;
+//                                 position: relative;
+//                                 &.active:after {
+//                                     transform: rotate(-135deg);
+//                                 }
+//                                 &:after {
+//                                     content: "";
+//                                     position: absolute;
+//                                     top: 50%;
+//                                     right: 0.5rem;
+//                                     width: 0.75rem;
+//                                     height: 0.75rem;
+//                                     border-right: 2px solid #fff;
+//                                     border-bottom: 2px solid #fff;
+//                                     transform: translateY(-50%) rotate(45deg);
+//                                     transition: transform 0.3s ease;
+//                                 }
+//                             }
+//                         }
+//                     }
+//                     .megamenu-box {
+//                         display: flex;
+//                         flex-direction: column;
+//                         align-items: center;
+//                         padding: 0 1rem;
+//                         .megamenu-list {
+//                             display: none;
+//                             width: 100%;
+//                             text-align: center;
+//                             padding: 1rem 0;
+//                             &.active {
+//                                 display: block;
+//                                 animation: fadeIn 0.3s ease;
+//                             }
+//                             ul li {
+//                                 margin: 1rem 0;
+//                                 a {
+//                                     color: #fff;
+//                                     font-size: 1.125rem;
+//                                 }
+//                             }
+//                         }
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
+// // 메가메뉴 활성화 애니메이션
+// @keyframes fadeIn {
+//     from {
+//         opacity: 0;
+//         transform: translateY(-10px);
+//     }
+//     to {
+//         opacity: 1;
+//         transform: translateY(0);
+//     }
+// }
+// === Header end ===
 
-.kv {
+header {
+    width: 100%;
+    padding: 1.125rem;
+    margin: auto;
+    position: fixed;
+    text-align: center;
+    align-items: center;
+    // display: none;
+    z-index: 999;
+    top: 0;
+    transition: top 0.4s ease-in-out;
+    .container {
+        width: 100%;
+        margin: 0 auto;
+        .gnb {
+            align-items: center;
+            flex-direction: row;
+            .navbar {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                .nav-list {
+                    width: 600px;
+                    .nav {
+                        width: 100%;
+                        display: flex;
+                        justify-content: space-between;
+                        li {
+                            a {
+                                list-style: none;
+                                text-decoration: none;
+                                text-align: center;
+                                color: var.$color-primary;
+                                cursor: pointer;
+                                &:hover {
+                                    color: darken(var.$color-primary, 10%);
+                                }
+                                &:after {
+                                    background-color: var.$color-primary;
+                                }
+                            }
+                            &.font {
+                                a {
+                                    color: var.$color-primary;
+                                    text-align: center;
+                                    cursor: pointer;
+                                    &:hover {
+                                        color: darken(var.$color-primary, 10%);
+                                    }
+                                    &:after {
+                                        background-color: var.$color-primary;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .hamburger {
+                    background-color: transparent;
+                    border: 0;
+                    color: #ff3a1e;
+                    cursor: pointer;
+                    display: inline-block;
+                    // float: left;
+                    font: inherit;
+                    margin: 0.8125em 0 0;
+                    overflow: visible;
+                    outline: none;
+                    padding: 0;
+                    text-transform: none;
+                    transition: opacity 0.15s;
+                    // -webkit-appearance: none;
+
+                    .hamburger-box {
+                        width: 30px;
+                        height: 24px;
+                        display: inline-block;
+                        position: relative;
+
+                        .hamburger-inner {
+                            display: block;
+                            top: 10%;
+                            /* margin-top: -2px;  */
+                        }
+
+                        .hamburger-inner,
+                        .hamburger-inner::before,
+                        .hamburger-inner::after {
+                            width: 30px;
+                            height: 2px;
+                            background-color: #ff3a1e;
+                            border-radius: 4px;
+                            position: absolute;
+                            transition-property: -webkit-transform;
+                            transition-property: transform;
+                            transition-property:
+                                transform,
+                                -webkit-transform;
+                            transition-duration: 0.15s;
+                            transition-timing-function: ease;
+                        }
+
+                        #masthead.is-active .hamburger-inner,
+                        #masthead.is-active .hamburger-inner::before,
+                        #masthead.is-active .hamburger-inner::after {
+                            background-color: #ff3a1e;
+                        }
+
+                        .hamburger-inner::before,
+                        .hamburger-inner::after {
+                            content: "";
+                            display: block;
+                        }
+
+                        .hamburger-inner::before {
+                            top: -6px;
+                        }
+
+                        .hamburger-inner::after {
+                            bottom: -6px;
+                        }
+                        .hamburger--boring .hamburger-inner,
+                        .hamburger--boring .hamburger-inner::before,
+                        .hamburger--boring .hamburger-inner::after {
+                            transition-property: none;
+                        }
+
+                        .hamburger--boring.is-active .hamburger-inner {
+                            -webkit-transform: rotate(45deg);
+                            transform: rotate(45deg);
+                        }
+
+                        .hamburger--boring.is-active .hamburger-inner::before {
+                            top: 0;
+                            opacity: 0;
+                        }
+
+                        .hamburger--boring.is-active .hamburger-inner::after {
+                            bottom: 0;
+                            -webkit-transform: rotate(-90deg);
+                            transform: rotate(-90deg);
+                        }
+
+                        .hamburger-label {
+                            color: #fff;
+                            display: inline-block;
+                            font-weight: 700;
+                            letter-spacing: 0.08em;
+                            line-height: 1;
+                            margin-left: 0.3125em;
+                            text-transform: uppercase;
+                        }
+
+                        #masthead.is-active .hamburger-label {
+                            color: #ff3a1e;
+                        }
+
+                        .hamburger-box,
+                        .hamburger-label {
+                            display: inline-block;
+                            vertical-align: middle;
+                        }
+                    }
+                }
+                .hamburger:hover {
+                    opacity: 0.7;
+                }
+            }
+            .hamburger {
+                display: none;
+                // 768px 이하 (md)
+                @include resp.respond-to(md) {
+                    display: block;
+                }
+            }
+        }
+    }
+    .megamenu {
+        width: 100%;
+        z-index: 998;
+        height: 100vh;
+        background: var.$color-white;
+        .megamenu-box {
+            width: 100%;
+            text-align: left;
+            .megamenu-list {
+                padding: 0 80px;
+                ul {
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+                    li {
+                        margin: 1.2rem 0;
+                        a {
+                            font-size: var.$font-size-h1;
+                            font-weight: var.$font-weight-extrabold;
+                            color: transparent;
+                            -webkit-text-stroke: 1.5px var.$color-primary;
+                            text-decoration: none;
+                            transition: all 0.2s ease;
+                            text-align: center;
+                            position: relative;
+                            cursor: pointer;
+                            &:hover {
+                                color: var.$color-primary;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// 애니메이션 효과 추가
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+//  반응형 스타일
+// 모바일용 메가메뉴 스타일
+@media (max-width: 1000px) {
+    header {
+        .container {
+            .navbar {
+                .nav-list {
+                    display: none !important; // 모바일에서는 nav 숨김
+                }
+            }
+            .megamenu {
+                .megamenu-box {
+                    .megamenu-list {
+                        ul {
+                            li {
+                                a {
+                                    font-size: var.$font-size-h2;
+                                    font-weight: var.$font-weight-extrabold;
+                                    color: transparent;
+                                    -webkit-text-stroke: 1.5px var.$color-primary;
+                                    text-decoration: none;
+                                    transition: all 0.2s ease;
+                                    text-align: center;
+                                    position: relative;
+                                    cursor: pointer;
+                                    &:hover {
+                                        color: var.$color-primary;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// 메가메뉴 활성화 애니메이션
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+// === Sec01 ===
+.sec01 {
     width: 100%;
     background-color: #fffeef;
     align-items: center;
     justify-self: center;
-    .container{
+    .container {
         height: 100vh;
         display: flex;
         align-items: center;
         justify-content: center;
     }
-    .kv-title__content{
-        margin-top: 100px;
-    }
-}
-
-
-.section02__content{
-    padding: 100px 0;   
-}
-
-.title{
-    padding: 100px;
-    .title__content{
-        h2{
-            margin-bottom: 50px;
+    .sec01-title {
+        h1 {
+            font-family: var.$font-point;
+            font-size: var.$font-size-point;
+            font-weight: var.$font-weight-bold;
+            color: var.$color-primary;
+            // letter-spacing: 0.4rem;
+        }
+        .sec01-title__content {
+            margin-top: 100px;
+            h2 {
+                font-family: var.$font-point;
+                font-size: map-get(map-get(var.$font-sizes, default), h2);
+                letter-spacing: 0.4rem;
+                color: var.$color-primary;
+                font-weight: var.$font-weight-bold;
+                margin-bottom: map-get(var.$spacers, 7);
+            }
+            h5 {
+                font-family: var.$font-point;
+                font-size: map-get(map-get(var.$font-sizes, default), h5);
+                color: var.$color-primary;
+                font-weight: var.$font-weight-regular;
+                line-height: 150%;
+            }
         }
     }
 }
 
+.sec02 {
+    padding: map-get(var.$spacers, 14) map-get(var.$spacers, 0);
+    .sec02-title {
+        h1 {
+            font-size: map-get(map-get(var.$font-sizes, default), h1);
+            color: var.$color-primary;
+            font-weight: var.$font-weight-bold;
+            margin-bottom: map-get(var.$spacers, 9);
+        }
+    }
+    .nav-tabs {
+        justify-content: left;
+        border-bottom: none;
+        margin-bottom: map-get(var.$spacers, 7);
+        gap: 0 10px;
+        // padding-left: 24px;
+        .nav-link {
+            border: 1px solid;
+            border-radius: 300px;
+            border-color: var.$color-primary;
+            font-size: map-get(map-get(var.$font-sizes, default), h6);
+            color: var.$color-primary;
+            font-weight: var.$font-weight-regular;
+        }
+    }
+    .nav-tabs .nav-item.show .nav-link,
+    .nav-tabs .nav-link.active {
+        // border-color: var.$color-primary;
+        border: none;
+        background: var.$color-primary;
+        color: var.$color-white;
+        font-weight: var.$font-weight-regular;
+    }
 
+    .tab-content {
+        .menuContentBox {
+            align-items: center;
 
+            .menuContent {
+                // height: 420px;
+                border: 1px solid var.$color-primary;
+                border-radius: 10px;
+                padding: map-get(var.$spacers, 7);
+
+                img {
+                    // width: 90%;
+                }
+
+                .menuCotent__name {
+                    h6 {
+                        font-size: map-get(map-get(var.$font-sizes, default), h6);
+                        color: var.$color-primary;
+                        margin-top: map-get(var.$spacers, 4);
+                    }
+                }
+            }
+        }
+    }
+
+    .sec02-moreBtn {
+        margin-top: map-get(var.$spacers, 9);
+
+        .sec02-moreBtn__text {
+            font-size: map-get(map-get(var.$font-sizes, default), p);
+            color: var.$color-primary;
+            background: transparent;
+            border: 1px solid var.$color-primary;
+            border-radius: 300px;
+        }
+    }
+}
+
+.sec03 {
+    padding: map-get(var.$spacers, 14) map-get(var.$spacers, 0);
+
+    .sec03-frame {
+        margin: map-get(var.$spacers, 10), 0;
+
+        .sec03-title {
+            margin: map-get(var.$spacers, 7), 0;
+
+            h2 {
+                font-size: var.$font-size-h2;
+                font-weight: var.$font-weight-bold;
+                color: var.$color-primary;
+                margin-bottom: map-get(var.$spacers, 9);
+
+                @include resp.respond-to(xl) {
+                    font-size: map-get(map-get(var.$font-sizes, xl), h2);
+                }
+                @include resp.respond-to(md) {
+                    font-size: map-get(map-get(var.$font-sizes, md), h2);
+                }
+                @include resp.respond-to(sm) {
+                    font-size: map-get(map-get(var.$font-sizes, sm), h2);
+                }
+            }
+
+            h4 {
+                font-size: var.$font-size-h4;
+                font-weight: var.$font-weight-light;
+                color: var.$color-black;
+                line-height: 160%;
+
+                @include resp.respond-to(xl) {
+                    font-size: map-get(map-get(var.$font-sizes, xl), h4);
+                }
+                @include resp.respond-to(md) {
+                    font-size: map-get(map-get(var.$font-sizes, md), h4);
+                }
+                @include resp.respond-to(sm) {
+                    font-size: map-get(map-get(var.$font-sizes, sm), h4);
+                }
+            }
+        }
+    }
+}
+
+.instagram {
+    // 상하 패딩
+    padding: map-get(var.$spacers, 14) map-get(var.$spacers, 0);
+
+    .sec05_title {
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+        margin-bottom: map-get(var.$spacers, 10);
+
+        .sec05__instagram-icon {
+            width: 57px;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        h2 {
+            font-size: var.$font-size-h2;
+            font-weight: var.$font-weight-bold;
+            color: var.$color-primary;
+
+            @include resp.respond-to(xl) {
+                font-size: map-get(map-get(var.$font-sizes, xl), h2);
+            }
+            @include resp.respond-to(md) {
+                font-size: map-get(map-get(var.$font-sizes, md), h2);
+            }
+            @include resp.respond-to(sm) {
+                font-size: map-get(map-get(var.$font-sizes, sm), h2);
+            }
+        }
+    }
+
+    .sec05__insta-content {
+        @include resp.respond-to(sm) {
+            gap: 24px 0;
+        }
+
+        .sec05_content {
+            // 꼭 .img-fluid 로 타겟!
+            img.img-fluid {
+                max-width: 100%;
+                height: auto;
+                display: block;
+            }
+
+            // ≤767px(md) 에 50% 너비 → 2열
+            @include resp.respond-to(md) {
+                flex: 0 0 50% !important;
+                max-width: 50% !important;
+            }
+        }
+    }
+}
+
+.sec05-order {
+    padding: map-get(var.$spacers, 11) map-get(var.$spacers, 0); //70px
+
+    .sec05__text {
+        margin-bottom: map-get(var.$spacers, 7); //30px;
+
+        h4 {
+            font-size: var.$font-size-h4;
+            font-weight: var.$font-weight-light;
+            color: var.$color-black;
+
+            @include resp.respond-to(xl) {
+                font-size: map-get(map-get(var.$font-sizes, xl), h4);
+            }
+            @include resp.respond-to(md) {
+                font-size: map-get(map-get(var.$font-sizes, md), h4);
+            }
+            @include resp.respond-to(sm) {
+                font-size: map-get(map-get(var.$font-sizes, sm), h4);
+            }
+        }
+    }
+
+    .sec05__iconbox {
+        // width: 23px;
+        margin-bottom: map-get(var.$spacers, 7); //30px;
+        margin: 0 auto map-get(var.$spacers, 7);
+
+        // img {
+        //    width: 100%;
+        // }
+    }
+
+    .sec05__title {
+        margin-bottom: map-get(var.$spacers, 9); //50px
+
+        span {
+            font-family: var.$font-title;
+            font-size: var.$font-size-h4;
+            font-weight: var.$font-weight-regular;
+            color: var.$color-black;
+
+            @include resp.respond-to(xl) {
+                font-size: map-get(map-get(var.$font-sizes, xl), h4);
+            }
+            @include resp.respond-to(md) {
+                font-size: map-get(map-get(var.$font-sizes, md), h4);
+            }
+            @include resp.respond-to(sm) {
+                font-size: map-get(map-get(var.$font-sizes, sm), h4);
+            }
+        }
+
+        h4 {
+            font-size: var.$font-size-h4;
+            font-weight: var.$font-weight-semibold;
+            color: var.$color-black;
+
+            @include resp.respond-to(xl) {
+                font-size: map-get(map-get(var.$font-sizes, xl), h4);
+            }
+            @include resp.respond-to(md) {
+                font-size: map-get(map-get(var.$font-sizes, md), h4);
+            }
+            @include resp.respond-to(sm) {
+                font-size: map-get(map-get(var.$font-sizes, sm), h4);
+            }
+        }
+    }
+
+    .sec05__button {
+        font-size: var.$font-size-p;
+        font-weight: var.$font-weight-light;
+        letter-spacing: 0.1rem;
+        color: var.$color-white;
+    }
+}
+
+.footer {
+    padding: map-get(var.$spacers, 11) map-get(var.$spacers, 0) map-get(var.$spacers, 9);
+    background: var.$color-primary;
+
+    .footer__logo {
+        margin-bottom: map-get(var.$spacers, 4); //20px
+    }
+    // .footer__hr{
+    //    color: var.$color-white;
+    //    height: 1px;
+    // }
+
+    .footer__line {
+        width: 100%;
+        height: 1px;
+        background: var.$color-white;
+        margin-bottom: map-get(var.$spacers, 4); //20px
+    }
+
+    .footer__info-bar {
+        display: flex;
+        list-style: none;
+        text-decoration: none;
+        margin-bottom: map-get(var.$spacers, 6); //20px
+
+        .footer__info-list {
+            font-size: var.$font-size-p;
+            font-weight: var.$font-weight-light;
+            color: var.$color-white;
+
+            @include resp.respond-to(xl) {
+                font-size: map-get(map-get(var.$font-sizes, xl), p);
+            }
+            @include resp.respond-to(md) {
+                font-size: map-get(map-get(var.$font-sizes, md), p);
+            }
+            @include resp.respond-to(sm) {
+                font-size: map-get(map-get(var.$font-sizes, sm), p);
+            }
+
+            & + .footer__info-list::before {
+                content: "|";
+                margin: map-get(var.$spacers, 1);
+                color: inherit;
+            }
+        }
+    }
+
+    .copyright {
+        p {
+            font-size: var.$font-size-p;
+            font-weight: var.$font-weight-extralight;
+            color: var.$color-white;
+
+            @include resp.respond-to(xl) {
+                font-size: map-get(map-get(var.$font-sizes, xl), p);
+            }
+            @include resp.respond-to(md) {
+                font-size: map-get(map-get(var.$font-sizes, xl), p);
+            }
+            @include resp.respond-to(sm) {
+                font-size: map-get(map-get(var.$font-sizes, xl), p);
+            }
+        }
+    }
+
+    .footer__right-info {
+        text-align: right;
+        font-size: var.$font-size-p;
+        font-weight: var.$font-weight-extralight;
+        color: var.$color-white;
+        // border-bottom: 1px solid var.$color-white;
+
+        @include resp.respond-to(xl) {
+            font-size: map-get(map-get(var.$font-sizes, xl), p);
+        }
+        @include resp.respond-to(md) {
+            font-size: map-get(map-get(var.$font-sizes, md), p);
+        }
+        @include resp.respond-to(sm) {
+            font-size: map-get(map-get(var.$font-sizes, sm), p);
+        }
+
+        ul {
+            margin-bottom: map-get(var.$spacers, 1); //10px;
+        }
+    }
+}

@@ -6,7 +6,6 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Re:Ri Flower Cafe</title>
 
-   /
    <link href="https://cdn.jsdelivr.net/xeicon/2/xeicon.min.css" rel="stylesheet">
    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
    <link rel="stylesheet" href="assets/css/style.css">
@@ -14,17 +13,85 @@
 
 <body>
 
-   <section class="kv">
+   <header>
+      <div class="container" id="masthead">
+         <div class="row gnb">
+            <div class="col-md-12 navbar">
+               <div class="nav-logo">
+                  <a href="index.html"><img src="assets/images/icon/header_logo.svg" alt="로고이미지"></a>
+               </div>
+               <div class="nav-list">
+                  <ul class="nav font">
+                     <li>
+                        <a href="BrandStory.html">Re:Ri</a>
+                     </li>
+                     <li>
+                        <a href="#">리리 메뉴</a>
+                     </li>
+                     <li>
+                        <a href="#">이벤트</a>
+                     </li>
+                     <li>
+                        <a href="#">매장 안내</a>
+                     </li>
+                  </ul>
+               </div>
+               <!-- <div class="hamburger">
+                  <img src="assets/images/icon/hamburger.svg" alt="메뉴버튼">
+               </div> -->
+               <button class="hamburger hamburger--boring" type="button">
+                  <span class="hamburger-box">
+                     <span class="hamburger-inner"></span>
+                  </span>
+               </button>
+            </div>
+         </div>
+         <nav id="site-nav" role="navigation" class="megamenu ">
+            <div class="col-lg-12 megamenu-box">
+               <div class="megamenu-list">
+                  <!-- <h4>Re:Ri</h4> -->
+                  <ul>
+                     <li><a href="BrandStory.html">Brand Story</a></li>
+                  </ul>
+               </div>
+               <div class="megamenu-list">
+                  <!-- <h4>시그니처 메뉴</h4> -->
+                  <ul>
+                     <li><a href="#">Cafe</a></li>
+                     <li><a href="#">Flowers</a></li>
+                  </ul>
+               </div>
+               <div class="megamenu-list">
+                  <!-- <h4>리리 메뉴</h4> -->
+                  <ul>
+                     <li><a href="#">Event List</a></li>
+                  </ul>
+               </div>
+               <div class="megamenu-list">
+                  <!-- <h4>오시는 길</h4> -->
+                  <ul>
+                     <li><a href="#">매장 찾기</a></li>
+                  </ul>
+               </div>
+            </div>
+         </nav>
+      </div>
+      <!-- <div class="overlay"></div> -->
+   </header>
+   <!-- header end -->
+
+   <!-- section 01 -->
+   <section class="sec01">
       <div class="container">
          <div class="row">
             <div class="col-md-12 text-center">
-               <div class="kv-title">
-                  <h1>Re:Ri</h1>
-                  <div class="kv-title__content">
-                     <h2>Flower Cafe</h2>
-                     <p>Flowers in place of words. Coffee in place of comfort. <br class="mo-none">
+               <div class="sec01-title">
+                  <h1 class="font">Re:Ri</h1>
+                  <div class="sec01-title__content">
+                     <h2 class="font">Flower Cafe</h2>
+                     <h5 class="font">Flowers in place of words. Coffee in place of comfort. <br class="mo-none">
                         Lili knows the most beautiful way to share a feeling.<br class="mo-none">
-                        With flowers and coffee, we create moments that truly connect.</p>
+                        With flowers and coffee, we create moments that truly connect.</h5>
                   </div>
                </div>
             </div>
@@ -32,64 +99,114 @@
       </div>
    </section>
 
-   <section class="section02__content">
+   <section class="sec02">
       <div class="container">
          <div class="row">
             <div class="col-md-12">
-               <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
+               <div class="sec02-title">
+                  <h1>Re:Ri MENU</h1>
+               </div>
+            </div>
+            <div class="col-md-12">
+               <ul class="nav nav-tabs" id="myTab" role="tablist">
                   <li class="nav-item" role="presentation">
                      <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home"
-                        type="button" role="tab" aria-controls="home" aria-selected="true">SIGNATURE COFFEE</button>
+                        type="button" role="tab" aria-controls="home" aria-selected="true">Cafe's SIGNATURE</button>
                   </li>
                   <li class="nav-item" role="presentation">
                      <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile"
-                        type="button" role="tab" aria-controls="profile" aria-selected="false">SIGNATURE DRINK</button>
-                  </li>
-                  <li class="nav-item" role="presentation">
-                     <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact"
-                        type="button" role="tab" aria-controls="contact" aria-selected="false">SIGNATURE
-                        DESSERT</button>
+                        type="button" role="tab" aria-controls="profile" aria-selected="false">Flower's
+                        SIGNATURE</button>
                   </li>
                </ul>
                <div class="tab-content" id="myTabContent">
                   <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                      <div class="container">
                         <div class="row">
-                           <div class="col-md-4 text-center">
-                              <div class="menuContnet">
-                                 <img src="assets/images/sec04-flower01.png" alt="">
-                                 <div class="menuCotentet">
-                                    <p>아포카토</p>
+                           <div class="col-md-3 menuContentBox text-center">
+                              <div class="menuContent">
+                                 <img src="assets/images/signature-coffee-menu01.png" alt="">
+                                 <div class="menuCotent__name">
+                                    <h6>아포카토</h6>
                                  </div>
                               </div>
                            </div>
-                           <div class="col-md-4 text-center">
-                              <div class="menuContnet">
-                                 <img src="assets/images/sec04-flower01.png" alt="">
-                                 <div class="menuCotentet">
-                                    <p>아포카토</p>
+                           <div class="col-md-3 menuContentBox text-center">
+                              <div class="menuContent">
+                                 <img src="assets/images/signature-coffee-menu02.png" alt="">
+                                 <div class="menuCotent__name">
+                                    <h6>아포카토</h6>
                                  </div>
                               </div>
                            </div>
-                           <div class="col-md-4 text-center">
-                              <div class="menuContnet">
-                                 <img src="assets/images/sec04-flower01.png" alt="">
-                                 <div class="menuCotentet">
-                                    <p>아포카토</p>
+                           <div class="col-md-3 menuContentBox text-center">
+                              <div class="menuContent">
+                                 <img src="assets/images/signature-coffee-menu03.png" alt="">
+                                 <div class="menuCotent__name">
+                                    <h6>아포카토</h6>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-3 menuContentBox text-center">
+                              <div class="menuContent">
+                                 <img src="assets/images/signature-coffee-menu02.png" alt="">
+                                 <div class="menuCotent__name">
+                                    <h6>아포카토</h6>
                                  </div>
                               </div>
                            </div>
                         </div>
                         <div class="row">
-                           <div class="col-md-12 text-center">
-                              <a href="#">더보기 <i class="xi-angle-right"></i></a>
+                           <div class="col-md-12 sec02-moreBtn text-center">
+                              <a href="CafeMenu.html" class="sec02-moreBtn__text btn-order">더보기 <i class="xi-angle-right"></i></a>
                            </div>
                         </div>
                      </div>
-
                   </div>
-                  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
-                  <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+
+                  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                     <div class="container">
+                        <div class="row">
+                           <div class="col-md-3 menuContentBox text-center">
+                              <div class="menuContent">
+                                 <img src="assets/images/sec04-flower01.png" alt="">
+                                 <div class="menuCotent__name">
+                                    <h6>코랄 스펙타클 XL</h6>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-3 menuContentBox text-center">
+                              <div class="menuContent">
+                                 <img src="assets/images/sec04-flower02.png" alt="">
+                                 <div class="menuCotent__name">
+                                    <h6>선샤인 모먼트</h6>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-3 menuContentBox text-center">
+                              <div class="menuContent">
+                                 <img src="assets/images/sec04-flower03.png" alt="">
+                                 <div class="menuCotent__name">
+                                    <h6>피치 뮤즈</h6>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-3 menuContentBox text-center">
+                              <div class="menuContent">
+                                 <img src="assets/images/sec04-flower04.png" alt="">
+                                 <div class="menuCotent__name">
+                                    <h6>미니 블룸</h6>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-12 sec02-moreBtn text-center">
+                              <a href="#" class="sec02-moreBtn__text btn-order">더보기 <i class="xi-angle-right"></i></a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
                </div>
             </div>
          </div>
@@ -97,40 +214,88 @@
    </section>
 
 
-   <section class="title">
-      <div class="container">
+   <section class="sec03">
+      <div class="container sec03-frame">
          <div class="row">
             <div class="col-md-12">
-               <div class="title__content text-center">
+               <div class="sec03-title text-center">
                   <h2>카페 이상의 공간, 리리</h2>
-                  <p>리리플라워카페에서는 마음에 드는 꽃다발을 고르고, 그 옆에 앉아 커피를 한 모금 마시는 시간이<br class="mo-none">
-                     당신의 오늘을 조금 더 특별하게 만들어줍니다.</p>
+                  <h4>리리플라워카페에서는 마음에 드는 꽃다발을 고르고, 그 옆에 앉아 커피를 한 모금 마시는 시간이<br class="mo-none">
+                     당신의 오늘을 조금 더 특별하게 만들어줍니다.</h4>
                </div>
             </div>
          </div>
       </div>
    </section>
+   <!-- sec03 end -->
 
-   <section class="instargrm">
+   <!-- sec04 instagram end -->
+   <section class="instagram">
       <div class="container">
          <div class="row text-center">
-            <div class="col-md-12">
+            <div class="col-md-12 sec05_title">
                <h2><i class="xi-instagram"></i>@re_ri_fowercafe</h2>
             </div>
          </div>
-         <div class="row">
-            <div class="col-md-3">
-               <div class="instargrm__img">
-                  
-               </div>
+         <div class="row sec05__insta-content">
+            <!-- xs~lg: 50% 너비, lg↑: 25% 너비 -->
+            <div class="col-6 col-lg-3 sec05_content">
+               <a href="https://www.instagram.com/re_ri_flowercafe" target="_blank">
+                  <img src="assets/images/sec05-poster03.png" alt="" class="img-fluid" />
+               </a>
             </div>
-            <div class="col-md-3"></div>
-            <div class="col-md-3"></div>
-            <div class="col-md-3"></div>
+            <div class="col-6 col-lg-3 sec05_content">
+               <a href="https://www.instagram.com/re_ri_flowercafe" target="_blank">
+                  <img src="assets/images/sec05-poster02.png" alt="" class="img-fluid" />
+               </a>
+            </div>
+            <div class="col-6 col-lg-3 sec05_content">
+               <a href="https://www.instagram.com/re_ri_flowercafe" target="_blank">
+                  <img src="assets/images/sec05-poster04.png" alt="" class="img-fluid" />
+               </a>
+            </div>
+            <div class="col-6 col-lg-3 sec05_content">
+               <a href="https://www.instagram.com/re_ri_flowercafe" target="_blank">
+                  <img src="assets/images/sec05-poster05.png" alt="" class="img-fluid" />
+               </a>
+            </div>
          </div>
       </div>
    </section>
+   <!-- sec04 instagram end -->
 
+   <!-- sec05 order -->
+    <section class="sec05-order font text-center">
+      <div class="container">
+         <div class="row">
+            <div class="col-md-12 sec05__text">
+               <h4>
+                  혼자 만들기 어려울 땐, 함께 만들어봐요.
+               </h4>
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-md-12">
+               <div class="sec05__iconbox text-center">
+                  <img src="assets/images/icon/sec06-icon.svg" alt="아래방향 화살표 아이콘">
+               </div>
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-md-12 sec05__title">
+               <h3><span>Re:Ri</span> 리리플라워카페</h3>
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-md-12">
+               <a href="https://open.kakao.com/o/sZyIxUgb" class="sec05__button btn-order" target="_blank"
+                  rel="noopener noreferrer">
+                  주문하기
+               </a>
+            </div>
+         </div>
+      </div>
+   </section>
 
    <!-- footer -->
    <footer class="footer font">
