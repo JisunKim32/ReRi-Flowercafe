@@ -23,6 +23,62 @@ a{
    text-decoration: none;
 }
 
+// === font common ===
+h1, h2, h3, h4, h5, h6, p {
+   line-height: 140%;
+   letter-spacing: 0.1rem;
+   margin: 0;
+   padding: 0;
+}
+
+// === font-face ===
+@font-face {
+    font-family: 'Ogg TRIAL';
+    src: url('../fonts/OggTRIAL-Bold.woff2') format('woff2'),
+        url('../fonts/OggTRIAL-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Ogg TRIAL';
+    src: url('../fonts/OggTRIAL-Medium.woff2') format('woff2'),
+        url('../fonts/OggTRIAL-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Ogg TRIAL';
+    src: url('../fonts/OggTRIAL-Regular.woff2') format('woff2'),
+        url('../fonts/OggTRIAL-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Ogg TRIAL';
+    src: url('../fonts/OggTRIAL-Light.woff2') format('woff2'),
+        url('../fonts/OggTRIAL-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Ogg TRIAL';
+    src: url('../fonts/OggTRIAL-Thin.woff2') format('woff2'),
+        url('../fonts/OggTRIAL-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
 // .col-md-12{
 //    // margin-top: 0;
 //    // margin-bottom: 0;

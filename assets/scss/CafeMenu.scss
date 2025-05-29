@@ -5,15 +5,28 @@
 
 header {
    width: 100%;
-   padding: 1.125rem;
+   padding: 0.625rem;
    margin: auto;
    position: fixed;
    text-align: center;
    align-items: center;
-   // display: none;
    z-index: 999;
    top: 0;
    transition: top 0.4s ease-in-out;
+
+   &.header-bg {
+      // background: rgba(var.$color-primary, 0.5);
+      background: var.$color-white;
+      // backdrop-filter: blur(4px);
+      border-bottom: 1px solid rgba(var.$color-primary, 0.1);
+   }
+
+   &.hidden {
+      top: -15%;
+      transition: 0.3s;
+      z-index: 1000;
+   }
+
    .container {
       width: 100%;
       margin: 0 auto;
@@ -57,116 +70,32 @@ header {
                            }
                         }
                      }
+                     // &.header-font{
+                     //     a{
+                     //         color: var.$color-white;
+                     //     }
+                     // }
                   }
                }
             }
             .hamburger {
-               background-color: transparent;
-               border: 0;
-               color: #ff3a1e;
-               cursor: pointer;
-               display: inline-block;
-               // float: left;
-               font: inherit;
-               margin: 0.8125em 0 0;
-               overflow: visible;
-               outline: none;
-               padding: 0;
-               text-transform: none;
-               transition: opacity 0.15s;
-               // -webkit-appearance: none;
-
+               width: 24px;
+               background: transparent;
+               border: none;
                .hamburger-box {
-                  width: 30px;
-                  height: 24px;
-                  display: inline-block;
-                  position: relative;
+                  width: 100%;
+                  display: flex;
+                  flex-direction: column;
+                  gap: 5px 0;
 
                   .hamburger-inner {
-                     display: block;
-                     top: 10%;
-                     /* margin-top: -2px;  */
-                  }
-
-                  .hamburger-inner,
-                  .hamburger-inner::before,
-                  .hamburger-inner::after {
-                     width: 30px;
-                     height: 2px;
-                     background-color: #ff3a1e;
-                     border-radius: 4px;
-                     position: absolute;
-                     transition-property: -webkit-transform;
-                     transition-property: transform;
-                     transition-property:
-                        transform,
-                        -webkit-transform;
-                     transition-duration: 0.15s;
-                     transition-timing-function: ease;
-                  }
-
-                  #masthead.is-active .hamburger-inner,
-                  #masthead.is-active .hamburger-inner::before,
-                  #masthead.is-active .hamburger-inner::after {
-                     background-color: #ff3a1e;
-                  }
-
-                  .hamburger-inner::before,
-                  .hamburger-inner::after {
-                     content: "";
-                     display: block;
-                  }
-
-                  .hamburger-inner::before {
-                     top: -6px;
-                  }
-
-                  .hamburger-inner::after {
-                     bottom: -6px;
-                  }
-                  .hamburger--boring .hamburger-inner,
-                  .hamburger--boring .hamburger-inner::before,
-                  .hamburger--boring .hamburger-inner::after {
-                     transition-property: none;
-                  }
-
-                  .hamburger--boring.is-active .hamburger-inner {
-                     -webkit-transform: rotate(45deg);
-                     transform: rotate(45deg);
-                  }
-
-                  .hamburger--boring.is-active .hamburger-inner::before {
-                     top: 0;
-                     opacity: 0;
-                  }
-
-                  .hamburger--boring.is-active .hamburger-inner::after {
-                     bottom: 0;
-                     -webkit-transform: rotate(-90deg);
-                     transform: rotate(-90deg);
-                  }
-
-                  .hamburger-label {
-                     color: #fff;
-                     display: inline-block;
-                     font-weight: 700;
-                     letter-spacing: 0.08em;
-                     line-height: 1;
-                     margin-left: 0.3125em;
-                     text-transform: uppercase;
-                  }
-
-                  #masthead.is-active .hamburger-label {
-                     color: #ff3a1e;
-                  }
-
-                  .hamburger-box,
-                  .hamburger-label {
-                     display: inline-block;
-                     vertical-align: middle;
+                     width: 100%;
+                     height: 1px;
+                     background: var.$color-primary;
                   }
                }
             }
+
             .hamburger:hover {
                opacity: 0.7;
             }
@@ -185,6 +114,7 @@ header {
       z-index: 998;
       height: 100vh;
       background: var.$color-white;
+      // transform: translateX(100%);
       .megamenu-box {
          width: 100%;
          text-align: left;
@@ -249,26 +179,18 @@ header {
             }
          }
          .megamenu {
-            .megamenu-box {
-               .megamenu-list {
-                  ul {
-                     li {
-                        a {
-                           font-size: var.$font-size-h2;
-                           font-weight: var.$font-weight-extrabold;
-                           color: transparent;
-                           -webkit-text-stroke: 1.5px var.$color-primary;
-                           text-decoration: none;
-                           transition: all 0.2s ease;
-                           text-align: center;
-                           position: relative;
-                           cursor: pointer;
-                           &:hover {
-                              color: var.$color-primary;
-                           }
-                        }
-                     }
-                  }
+            a {
+               font-size: var.$font-size-h2;
+               font-weight: var.$font-weight-extrabold;
+               color: transparent;
+               -webkit-text-stroke: 1.5px var.$color-primary;
+               text-decoration: none;
+               transition: all 0.2s ease;
+               text-align: center;
+               position: relative;
+               cursor: pointer;
+               &:hover {
+                  color: var.$color-primary;
                }
             }
          }
@@ -288,10 +210,12 @@ header {
    }
 }
 
-
 // === sec01 ===
-.sec01{
+.sec01 {
    padding: map-get(var.$spacers, 14) map-get(var.$spacers, 0);
+   img {
+      width: 100%;
+   }
 }
 
 // === sec02 ===
@@ -346,7 +270,7 @@ header {
                   width: 90%;
                }
             }
-            .menuContent__hover{
+            .menuContent__hover {
                width: 100%;
                height: 100%;
                border-radius: 10px;
@@ -357,14 +281,14 @@ header {
                bottom: 0;
                opacity: 0;
                visibility: hidden;
-               .menuContent__hover-info{
+               .menuContent__hover-info {
                   position: absolute;
                   bottom: 0;
                   padding: 30px;
                   display: flex;
                   flex-direction: column;
                   gap: 10px 0;
-                  h6{
+                  h6 {
                      font-size: map-get(map-get(var.$font-sizes, default), h6);
                      color: var.$color-white;
                      font-weight: var.$font-weight-regular;
@@ -372,8 +296,8 @@ header {
                   }
                }
             }
-            .menuContent:hover{
-               .menuContent__hover{
+            .menuContent:hover {
+               .menuContent__hover {
                   opacity: 1;
                   visibility: visible;
                }
@@ -405,45 +329,60 @@ header {
 
 // === sec03 ===
 .sec03 {
-   max-width: 1920px;
-  padding: map-get(var.$spacers, 14) map-get(var.$spacers, 0);
-  overflow: hidden; /* 스크롤 바 생성 방지 */
+   // max-width: 1920px;
+   padding: map-get(var.$spacers, 14) map-get(var.$spacers, 0);
+   overflow: hidden;
+
+   .marqueeBox {
+      width: 100vw;
+      overflow: hidden;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+   }
+   
+   .marquee {
+      display: flex;
+      white-space: nowrap;
+      animation: marquee 15s linear infinite;
+      align-items: center;
+   
+      &:hover {
+         animation-play-state: paused;
+      }
+   
+      p {
+         font-size: map-get(map-get(var.$font-sizes, default), h1);
+         margin: 0;
+         white-space: nowrap;
+         display: inline-block;
+         font-weight: bold;
+      }
+
+   }
+
+   .marquee--main p {
+      color: var.$color-white;
+      -webkit-text-stroke: 1.5px var.$color-primary;
+   }
+
+   .marquee--sub {
+      animation-duration: 30s;
+      //   animation-direction: reverse;
+
+      p {
+         color: #ff3a1e;
+      }
+   }
+   
+   @keyframes marquee {
+      0% {
+         transform: translateX(0%);
+      }
+      100% {
+         transform: translateX(-50%);
+      }
+   }
 }
 
-.marqueeBox {
-  display: flex;
-}
-.marqueeBox:hover {
-  .marquee {
-    animation-play-state: paused;
-  }
-}
-
-/* marquee 내부에 구성하고 있는 모든 span 요소들을 가로로 정렬합니다. */
-.marquee {
-  padding: 15px 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: white;
-//   width: 100%;
-  transform: translateX(0%);
-  animation: marquee 10s linear infinite; /* 10초 동안 진행되는 애니메이션을 일정한 간격으로 무한반복 */
-  
-  /* 마키 내부에 나열된 콘텐츠 내용입니다.*/
-  p {
-   font-size: 128px;
-    text-align: center;
-   //  display: inline-block; /* 인라인 태그를 block 속성 적용이 가능한 인라인 태그로 변경*/
-  }
-}
-
-/* 애니메이션을 적용합니다.*/
-@keyframes marquee {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-200%);
-  }
-}

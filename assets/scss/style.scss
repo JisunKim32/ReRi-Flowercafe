@@ -4,394 +4,30 @@
 @use "components"; // 컴포넌트
 // @import 'normalize.scss'
 
-// header {
-//     width: 100%;
-//     padding: 1.125rem;
-//     margin: auto;
-//     position: fixed;
-//     text-align: center;
-//     align-items: center;
-//     // display: none;
-//     z-index: 999;
-//     top: 0;
-//     transition: top 0.4s ease-in-out;
-//     .container {
-//         width: 100%;
-//         margin: 0 auto;
-//         .gnb {
-//             align-items: center;
-//             flex-direction: row;
-//             .navbar {
-//                 display: flex;
-//                 align-items: center;
-//                 justify-content: space-between;
-//                 .nav-list {
-//                     width: 600px;
-//                     .nav {
-//                         width: 100%;
-//                         display: flex;
-//                         justify-content: space-between;
-//                         li {
-//                             a {
-//                                 list-style: none;
-//                                 text-decoration: none;
-//                                 text-align: center;
-//                                 color: var.$color-primary;
-//                                 cursor: pointer;
-//                                 &:hover {
-//                                     color: darken(var.$color-primary, 10%);
-//                                 }
-//                                 &:after {
-//                                     background-color: var.$color-primary;
-//                                 }
-//                             }
-//                             &.font {
-//                                 a {
-//                                     color: var.$color-primary;
-//                                     text-align: center;
-//                                     cursor: pointer;
-//                                     &:hover {
-//                                         color: darken(var.$color-primary, 10%);
-//                                     }
-//                                     &:after {
-//                                         background-color: var.$color-primary;
-//                                     }
-//                                 }
-//                             }
-//                         }
-//                     }
-//                 }
-//                 .hamburger {
-//                     background-color: transparent;
-//                     border: 0;
-//                     color: #ff3a1e;
-//                     cursor: pointer;
-//                     display: inline-block;
-//                     // float: left;
-//                     font: inherit;
-//                     margin: 0.8125em 0 0;
-//                     overflow: visible;
-//                     outline: none;
-//                     padding: 0;
-//                     text-transform: none;
-//                     transition: opacity 0.15s;
-//                     // -webkit-appearance: none;
-
-//                     .hamburger-box {
-//                         width: 30px;
-//                         height: 24px;
-//                         display: inline-block;
-//                         position: relative;
-
-//                         .hamburger-inner {
-//                             display: block;
-//                             top: 10%;
-//                             /* margin-top: -2px;  */
-//                         }
-
-//                         .hamburger-inner,
-//                         .hamburger-inner::before,
-//                         .hamburger-inner::after {
-//                             width: 30px;
-//                             height: 2px;
-//                             background-color: #ff3a1e;
-//                             border-radius: 4px;
-//                             position: absolute;
-//                             transition-property: -webkit-transform;
-//                             transition-property: transform;
-//                             transition-property:
-//                                 transform,
-//                                 -webkit-transform;
-//                             transition-duration: 0.15s;
-//                             transition-timing-function: ease;
-//                         }
-
-//                         #masthead.is-active .hamburger-inner,
-//                         #masthead.is-active .hamburger-inner::before,
-//                         #masthead.is-active .hamburger-inner::after {
-//                             background-color: #ff3a1e;
-//                         }
-
-//                         .hamburger-inner::before,
-//                         .hamburger-inner::after {
-//                             content: "";
-//                             display: block;
-//                         }
-
-//                         .hamburger-inner::before {
-//                             top: -6px;
-//                         }
-
-//                         .hamburger-inner::after {
-//                             bottom: -6px;
-//                         }
-//                         .hamburger--boring .hamburger-inner,
-//                         .hamburger--boring .hamburger-inner::before,
-//                         .hamburger--boring .hamburger-inner::after {
-//                             transition-property: none;
-//                         }
-
-//                         .hamburger--boring.is-active .hamburger-inner {
-//                             -webkit-transform: rotate(45deg);
-//                             transform: rotate(45deg);
-//                         }
-
-//                         .hamburger--boring.is-active .hamburger-inner::before {
-//                             top: 0;
-//                             opacity: 0;
-//                         }
-
-//                         .hamburger--boring.is-active .hamburger-inner::after {
-//                             bottom: 0;
-//                             -webkit-transform: rotate(-90deg);
-//                             transform: rotate(-90deg);
-//                         }
-
-//                         .hamburger-label {
-//                             color: #fff;
-//                             display: inline-block;
-//                             font-weight: 700;
-//                             letter-spacing: 0.08em;
-//                             line-height: 1;
-//                             margin-left: 0.3125em;
-//                             text-transform: uppercase;
-//                         }
-
-//                         #masthead.is-active .hamburger-label {
-//                             color: #ff3a1e;
-//                         }
-
-//                         .hamburger-box,
-//                         .hamburger-label {
-//                             display: inline-block;
-//                             vertical-align: middle;
-//                         }
-//                     }
-//                 }
-//                 .hamburger:hover {
-//                     opacity: 0.7;
-//                 }
-//             }
-//             .hamburger {
-//                 display: none;
-//                 // 768px 이하 (md)
-//                 @include resp.respond-to(md) {
-//                     display: block;
-//                 }
-//             }
-//         }
-//     }
-//     .megamenu {
-//         // width: 750px;
-//         // margin: 0 auto;
-//         z-index: 998;
-//         .megamenu-box {
-//             width: 100%;
-//             display: flex;
-//             justify-content: center;
-//             // gap: 0 20px;
-//             text-align: left;
-//             padding: 1.5rem 0 0 4.5rem;
-//             .megamenu-list {
-//                 padding: 0 80px;
-//                 &:not(:first-child) {
-//                     border-left: 1px solid rgba(141, 108, 108, 0.5); /* 투명도 조정 */
-//                 }
-//                 ul {
-//                     list-style: none;
-//                     padding: 0;
-//                     margin: 0;
-//                     li {
-//                         margin: 1.2rem 0;
-//                         a {
-//                             font-size: var.$font-size-p;
-//                             font-weight: var.$font-weight-regular;
-//                             color: var.$color-secondary;
-//                             text-decoration: none;
-//                             transition: all 0.2s ease;
-//                             text-align: center;
-//                             position: relative;
-//                             cursor: pointer;
-//                             &:hover {
-//                                 color: var.$color-hover01;
-//                             }
-//                         }
-//                     }
-//                 }
-//             }
-//         }
-//     }
-//     .overlay {
-//         position: fixed;
-//         top: 0;
-//         left: 0;
-//         width: 100%;
-//         height: 40%;
-//         background: rgba(255, 217, 208, 0.6); /* 반투명 배경으로 변경 */
-//         backdrop-filter: blur(5px);
-//         -webkit-backdrop-filter: blur(5px);
-//         transform: translateY(-100%);
-//         opacity: 0;
-//         visibility: hidden;
-//         transition:
-//             transform 0.5s ease 0.25s,
-//             // 0.15s 지연 후 시작
-//             opacity 0.5s ease 0.1s,
-//             visibility 0s ease 0.4s; // 가시성은 슬라이드+전환 완료 뒤
-//         z-index: -1;
-//         &.is-active {
-//             transform: translateY(0);
-//             opacity: 1;
-//             visibility: visible;
-//             transition-delay: 0s, 0s, 0s;
-//         }
-//     }
-// }
-// header.active {
-//     background: #ffffff;
-//     // box-shadow: 0 0.125rem 0.5rem rgba(173, 173, 173, 0.1);
-//     color: var.$color-primary;
-//     transition: all 0.5s ease;
-//     border-bottom: 0.0625rem solid #e8e8e8;
-//     .col-md-4 {
-//         .h-nav {
-//             li {
-//                 a {
-//                     color: var.$color-primary;
-//                 }
-//             }
-//         }
-//     }
-// }
-// // 애니메이션 효과 추가
-// @keyframes fadeIn {
-//     from {
-//         opacity: 0;
-//         transform: translateY(-10px);
-//     }
-//     to {
-//         opacity: 1;
-//         transform: translateY(0);
-//     }
-// }
-// @keyframes slideDown {
-//     from {
-//         opacity: 0;
-//         transform: translateY(-20px);
-//     }
-//     to {
-//         opacity: 1;
-//         transform: translateY(0);
-//     }
-// }
-// //  반응형 스타일
-// // 모바일용 메가메뉴 스타일
-// @media (max-width: 1000px) {
-//     header {
-//         .container {
-//             .overlay.is-active {
-//                 display: none !important;
-//             }
-//             .navbar {
-//                 .nav-list {
-//                     display: none !important; // 모바일에서는 nav 숨김
-//                 }
-//             }
-//             #site-nav {
-//                 &.mobile-view {
-//                     position: fixed;
-//                     width: 100%;
-//                     height: 100vh;
-//                     top: 0;
-//                     left: 0;
-//                     background-color: rgba(0, 0, 0, 0.8);
-//                     backdrop-filter: blur(10px);
-//                     padding-top: 5rem;
-//                     overflow-y: auto;
-//                     display: flex;
-//                     flex-direction: column;
-//                     .mobile-nav-menu {
-//                         display: flex;
-//                         flex-direction: column;
-//                         padding: 0 1rem;
-//                         .mobile-nav-item {
-//                             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-//                             padding: 1rem 0;
-//                             a {
-//                                 color: #fff;
-//                                 font-size: 1.25rem;
-//                                 text-decoration: none;
-//                                 position: relative;
-//                                 &.active:after {
-//                                     transform: rotate(-135deg);
-//                                 }
-//                                 &:after {
-//                                     content: "";
-//                                     position: absolute;
-//                                     top: 50%;
-//                                     right: 0.5rem;
-//                                     width: 0.75rem;
-//                                     height: 0.75rem;
-//                                     border-right: 2px solid #fff;
-//                                     border-bottom: 2px solid #fff;
-//                                     transform: translateY(-50%) rotate(45deg);
-//                                     transition: transform 0.3s ease;
-//                                 }
-//                             }
-//                         }
-//                     }
-//                     .megamenu-box {
-//                         display: flex;
-//                         flex-direction: column;
-//                         align-items: center;
-//                         padding: 0 1rem;
-//                         .megamenu-list {
-//                             display: none;
-//                             width: 100%;
-//                             text-align: center;
-//                             padding: 1rem 0;
-//                             &.active {
-//                                 display: block;
-//                                 animation: fadeIn 0.3s ease;
-//                             }
-//                             ul li {
-//                                 margin: 1rem 0;
-//                                 a {
-//                                     color: #fff;
-//                                     font-size: 1.125rem;
-//                                 }
-//                             }
-//                         }
-//                     }
-//                 }
-//             }
-//         }
-//     }
-// }
-// // 메가메뉴 활성화 애니메이션
-// @keyframes fadeIn {
-//     from {
-//         opacity: 0;
-//         transform: translateY(-10px);
-//     }
-//     to {
-//         opacity: 1;
-//         transform: translateY(0);
-//     }
-// }
-// === Header end ===
-
 header {
     width: 100%;
-    padding: 1.125rem;
+    padding: 0.625rem;
     margin: auto;
     position: fixed;
     text-align: center;
     align-items: center;
-    // display: none;
     z-index: 999;
     top: 0;
     transition: top 0.4s ease-in-out;
+
+    &.header-bg{
+        // background: rgba(var.$color-primary, 0.5);
+        background: var.$color-white;
+        // backdrop-filter: blur(4px);
+        border-bottom: 1px solid rgba(var.$color-primary, .1);
+    }
+
+    &.hidden {
+      top: -15%;
+      transition: .3s;
+      z-index: 1000;
+   }
+   
     .container {
         width: 100%;
         margin: 0 auto;
@@ -414,6 +50,8 @@ header {
                                 text-decoration: none;
                                 text-align: center;
                                 color: var.$color-primary;
+                                font-size: map-get(map-get(var.$font-sizes, default), h7);
+                                font-weight: var.$font-weight-medium;
                                 cursor: pointer;
                                 &:hover {
                                     color: darken(var.$color-primary, 10%);
@@ -435,116 +73,32 @@ header {
                                     }
                                 }
                             }
+                            // &.header-font{
+                            //     a{
+                            //         color: var.$color-white;
+                            //     }
+                            // }
                         }
                     }
                 }
-                .hamburger {
-                    background-color: transparent;
-                    border: 0;
-                    color: #ff3a1e;
-                    cursor: pointer;
-                    display: inline-block;
-                    // float: left;
-                    font: inherit;
-                    margin: 0.8125em 0 0;
-                    overflow: visible;
-                    outline: none;
-                    padding: 0;
-                    text-transform: none;
-                    transition: opacity 0.15s;
-                    // -webkit-appearance: none;
+                .hamburger{
+                    width: 24px;
+                    background: transparent;
+                    border: none;
+                    .hamburger-box{
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 5px 0;
 
-                    .hamburger-box {
-                        width: 30px;
-                        height: 24px;
-                        display: inline-block;
-                        position: relative;
-
-                        .hamburger-inner {
-                            display: block;
-                            top: 10%;
-                            /* margin-top: -2px;  */
-                        }
-
-                        .hamburger-inner,
-                        .hamburger-inner::before,
-                        .hamburger-inner::after {
-                            width: 30px;
-                            height: 2px;
-                            background-color: #ff3a1e;
-                            border-radius: 4px;
-                            position: absolute;
-                            transition-property: -webkit-transform;
-                            transition-property: transform;
-                            transition-property:
-                                transform,
-                                -webkit-transform;
-                            transition-duration: 0.15s;
-                            transition-timing-function: ease;
-                        }
-
-                        #masthead.is-active .hamburger-inner,
-                        #masthead.is-active .hamburger-inner::before,
-                        #masthead.is-active .hamburger-inner::after {
-                            background-color: #ff3a1e;
-                        }
-
-                        .hamburger-inner::before,
-                        .hamburger-inner::after {
-                            content: "";
-                            display: block;
-                        }
-
-                        .hamburger-inner::before {
-                            top: -6px;
-                        }
-
-                        .hamburger-inner::after {
-                            bottom: -6px;
-                        }
-                        .hamburger--boring .hamburger-inner,
-                        .hamburger--boring .hamburger-inner::before,
-                        .hamburger--boring .hamburger-inner::after {
-                            transition-property: none;
-                        }
-
-                        .hamburger--boring.is-active .hamburger-inner {
-                            -webkit-transform: rotate(45deg);
-                            transform: rotate(45deg);
-                        }
-
-                        .hamburger--boring.is-active .hamburger-inner::before {
-                            top: 0;
-                            opacity: 0;
-                        }
-
-                        .hamburger--boring.is-active .hamburger-inner::after {
-                            bottom: 0;
-                            -webkit-transform: rotate(-90deg);
-                            transform: rotate(-90deg);
-                        }
-
-                        .hamburger-label {
-                            color: #fff;
-                            display: inline-block;
-                            font-weight: 700;
-                            letter-spacing: 0.08em;
-                            line-height: 1;
-                            margin-left: 0.3125em;
-                            text-transform: uppercase;
-                        }
-
-                        #masthead.is-active .hamburger-label {
-                            color: #ff3a1e;
-                        }
-
-                        .hamburger-box,
-                        .hamburger-label {
-                            display: inline-block;
-                            vertical-align: middle;
+                        .hamburger-inner{
+                            width: 100%;
+                            height: 1px;
+                            background: var.$color-primary;
                         }
                     }
                 }
+
                 .hamburger:hover {
                     opacity: 0.7;
                 }
@@ -563,6 +117,7 @@ header {
         z-index: 998;
         height: 100vh;
         background: var.$color-white;
+        // transform: translateX(100%);
         .megamenu-box {
             width: 100%;
             text-align: left;
@@ -682,7 +237,7 @@ header {
         h1 {
             font-family: var.$font-point;
             font-size: var.$font-size-point;
-            font-weight: var.$font-weight-bold;
+            font-weight: bold;
             color: var.$color-primary;
             // letter-spacing: 0.4rem;
         }
@@ -693,14 +248,14 @@ header {
                 font-size: map-get(map-get(var.$font-sizes, default), h2);
                 letter-spacing: 0.4rem;
                 color: var.$color-primary;
-                font-weight: var.$font-weight-bold;
+                font-weight: bold;
                 margin-bottom: map-get(var.$spacers, 7);
             }
             h5 {
                 font-family: var.$font-point;
                 font-size: map-get(map-get(var.$font-sizes, default), h5);
                 color: var.$color-primary;
-                font-weight: var.$font-weight-regular;
+                font-weight: normal;
                 line-height: 150%;
             }
         }
@@ -708,7 +263,7 @@ header {
 }
 
 .sec02 {
-    padding: map-get(var.$spacers, 14) map-get(var.$spacers, 0);
+    padding: 100px 0;
     .sec02-title {
         h1 {
             font-size: map-get(map-get(var.$font-sizes, default), h1);
@@ -721,7 +276,7 @@ header {
         justify-content: left;
         border-bottom: none;
         margin-bottom: map-get(var.$spacers, 7);
-        gap: 0 10px;
+        gap: 10px 10px;
         // padding-left: 24px;
         .nav-link {
             border: 1px solid;
@@ -742,7 +297,9 @@ header {
     }
 
     .tab-content {
-        .menuContentBox {
+        .tab-content__pack{
+            gap: 24px 0;
+            .menuContentBox {
             align-items: center;
 
             .menuContent {
@@ -752,7 +309,7 @@ header {
                 padding: map-get(var.$spacers, 7);
 
                 img {
-                    // width: 90%;
+                    width: 90%;
                 }
 
                 .menuCotent__name {
@@ -763,6 +320,7 @@ header {
                     }
                 }
             }
+        }
         }
     }
 
@@ -829,18 +387,17 @@ header {
     // 상하 패딩
     padding: map-get(var.$spacers, 14) map-get(var.$spacers, 0);
 
-    .sec05_title {
+    .sec04_title {
         display: flex;
         justify-content: center;
-        gap: 50px;
+        align-items: center;
+        gap: 0 50px;
         margin-bottom: map-get(var.$spacers, 10);
 
-        .sec05__instagram-icon {
-            width: 57px;
-
-            img {
-                width: 100%;
-            }
+        i{
+            font-size: var.$font-size-h1;
+            font-weight: var.$font-weight-regular;
+            color: var.$color-primary;
         }
 
         h2 {
@@ -860,12 +417,9 @@ header {
         }
     }
 
-    .sec05__insta-content {
-        @include resp.respond-to(sm) {
-            gap: 24px 0;
-        }
-
-        .sec05_content {
+    .sec04__insta-content {
+        gap: 24px 0;
+        .sec04_content {
             // 꼭 .img-fluid 로 타겟!
             img.img-fluid {
                 max-width: 100%;
