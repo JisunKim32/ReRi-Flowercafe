@@ -1,0 +1,69 @@
+// === Header ===
+let lastScroll = 0;
+$(window).on('scroll', function () {
+   let scrollTop = $(this).scrollTop();
+
+   if (scrollTop === 0) {
+      $('header').removeClass('hidden header-bg');
+      lastScroll = 0;
+      return;
+   }
+
+   // if (scrollTop >= 0 && scrollTop <= 937) {
+   //     $('header').removeClass('hidden header-bg');
+   //     lastScroll = scrollTop;
+   //     return;
+   // }
+
+   if (Math.abs(scrollTop - lastScroll) < 10) return;
+
+   if (scrollTop > lastScroll && scrollTop > 50) {
+      $('header').addClass('hidden');
+      // $('header').removeClass('header-bg ,header-border');
+      // $('.nav li a').removeClass('header-font');
+   } else {
+      $('header').removeClass('hidden');
+      $('header').addClass('header-bg');
+      // $('.nav-logo a, .nav li a').css('color', '#222')
+      // $('.hamburger-inner').css('background', '#222')
+      // $('.nav li a').addClass('header-font');
+   }
+
+   lastScroll = scrollTop;
+});
+
+$(function () {
+   $('body').addClass('js');
+
+   var $hamburger = $('.hamburger'),
+      $nav = $('.megamenu');
+
+   // 초기 상태
+   $nav.hide();
+
+   $hamburger.on('click', function () {
+      $(this).toggleClass('is-active');  // 햄버거 X 형태 토글
+      $nav.slideToggle();             // 0.3초 동안 부드럽게 열고 닫음
+      return false;
+   });
+});
+// === Header End ===
+
+
+// === Sec02 ===
+gsap.registerPlugin(ScrollTrigger);
+
+// 원하는 스크롤 양(100px)에 맞춰서 interpolate 시킴
+gsap.to(".image-wrapper", {
+  width: "1296px",
+  height: "440px",
+  maxWidth: "1296px",
+  maxHeight: "440px",
+  scrollTrigger: {
+    trigger: ".sec02",
+    start: "top top",           // 화면 상단에 닿으면 시작
+    end: "+=50",               // 100px 아래까지 스크롤
+    scrub: true,                // 부드러운 애니메이션
+    // markers: true             // 디버깅시 사용
+  }
+});

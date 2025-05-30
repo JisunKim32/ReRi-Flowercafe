@@ -233,7 +233,6 @@ header {
   max-width: 1920px;
   display: flex;
   justify-content: center;
-//   overflow: hidden;
 
   .image-wrapper {
     width: 100vw;
@@ -258,9 +257,17 @@ header {
 // === Sec02 end ===
 
 
-// === sec03 ===
+// === Sec03 ===
 .sec03 {
    padding: map-get(var.$spacers, 14) 0;
+   .sec03-title {
+      h1 {
+         font-size: map-get(map-get(var.$font-sizes, default), h1);
+         color: var.$color-primary;
+         font-weight: var.$font-weight-bold;
+         margin-bottom: map-get(var.$spacers, 9);
+      }
+   }
    .nav-tabs {
       justify-content: left;
       border-bottom: none;
@@ -346,6 +353,7 @@ header {
       }
    }
 }
+// === Sec03 end ===
 
 
 // === Sec04 ===
@@ -368,7 +376,6 @@ header {
       white-space: nowrap;
       animation: marquee 15s linear infinite;
       align-items: center;
-   
       &:hover {
          animation-play-state: paused;
       }
@@ -380,7 +387,6 @@ header {
          display: inline-block;
          font-weight: bold;
       }
-
    }
 
    .marquee--main p {
@@ -391,7 +397,6 @@ header {
    .marquee--sub {
       animation-duration: 30s;
       //   animation-direction: reverse;
-
       p {
          color: #ff3a1e;
       }
@@ -477,4 +482,3 @@ header {
   }
 }
 // === Sec05 end ===
-

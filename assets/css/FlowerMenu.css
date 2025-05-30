@@ -311,6 +311,12 @@ header .megamenu .megamenu-box .megamenu-list ul li a:hover {
 .sec03 {
   padding: 6.25rem 0;
 }
+.sec03 .sec03-title h1 {
+  font-size: 4rem;
+  color: #ff3a1e;
+  font-weight: 700;
+  margin-bottom: 3.125rem;
+}
 .sec03 .nav-tabs {
   justify-content: left;
   border-bottom: none;
@@ -486,4 +492,4 @@ header .megamenu .megamenu-box .megamenu-list ul li a:hover {
   display: block;
   pointer-events: none;
   transition: opacity 0.2s;
-}/*# sourceMappingURL=CafeMenu.css.map */
+}/*# sourceMappingURL=FlowerMenu.css.map */
