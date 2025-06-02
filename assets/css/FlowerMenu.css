@@ -22,7 +22,7 @@ a {
   text-decoration: none;
 }
 
-h1, h2, h3, h4, h5, h6, p {
+h1, h2, h3, h4, h5, h6, p, a {
   line-height: 140%;
   letter-spacing: 0.1rem;
   margin: 0;
@@ -130,70 +130,139 @@ header .container .gnb .navbar {
   align-items: center;
   justify-content: space-between;
 }
-header .container .gnb .navbar .nav-list {
-  width: 600px;
+header .nav-logo a {
+  list-style: none;
+  text-decoration: none;
+  font-family: "Cabinest", serif;
+  font-size: 1.5rem;
+  letter-spacing: 0.1rem;
+  text-align: center;
+  color: #ff3a1e;
+  font-weight: 500;
+  display: flex;
+  gap: 0 10px;
 }
-header .container .gnb .navbar .nav-list .nav {
+header .nav-list {
+  width: 640px;
+}
+header .nav-list .nav {
   width: 100%;
   display: flex;
   justify-content: space-between;
 }
-header .container .gnb .navbar .nav-list .nav li a {
+header .nav-list .nav li {
+  width: 160px;
+  position: relative;
+}
+header .nav-list .nav li a {
   list-style: none;
   text-decoration: none;
   text-align: center;
   color: #ff3a1e;
-  cursor: pointer;
+  font-size: 1.125rem;
+  font-weight: 500;
 }
-header .container .gnb .navbar .nav-list .nav li a:hover {
+header .nav-list .nav li a:hover {
   color: #ea1d00;
 }
-header .container .gnb .navbar .nav-list .nav li a:after {
+header .nav-list .nav li a:after {
   background-color: #ff3a1e;
 }
-header .container .gnb .navbar .nav-list .nav li.font a {
-  color: #ff3a1e;
+header .nav-list .nav li:first-child a {
+  font-family: "Cabinest", serif;
+  font-size: 1.25rem;
+  letter-spacing: 0.11rem;
+}
+header .nav-list .nav .sub-menu {
+  display: none;
+  position: absolute;
+  justify-content: center;
+  padding-top: 10px;
+}
+header .nav-list .nav .sub-menu li {
+  padding: 10px 0;
+  width: 160px;
+}
+header .nav-list .nav .sub-menu li a {
+  width: 160px;
+  list-style: none;
+  text-decoration: none;
+  font-family: "Pretendard", sans-serif;
   text-align: center;
-  cursor: pointer;
+  color: #ff3a1e;
+  font-size: 1.125rem;
+  font-weight: 500;
 }
-header .container .gnb .navbar .nav-list .nav li.font a:hover {
+header .nav-list .nav .sub-menu li a:hover {
   color: #ea1d00;
 }
-header .container .gnb .navbar .nav-list .nav li.font a:after {
+header .nav-list .nav .sub-menu li a:after {
   background-color: #ff3a1e;
 }
-header .container .gnb .navbar .hamburger {
+header .nav-list .nav > li:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 20px;
+  width: 120px;
+  height: 2px;
+  background-color: rgba(255, 58, 30, 0.3);
+  border-radius: 300px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease-in-out;
+}
+header .nav-list .nav > li:hover:after {
+  transform: scaleX(1);
+}
+@media (max-width: 1024px) {
+  header .nav-list {
+    display: none;
+  }
+}
+header .hamburger {
   width: 24px;
   background: transparent;
   border: none;
+  display: none;
 }
-header .container .gnb .navbar .hamburger .hamburger-box {
+@media (max-width: 1024px) {
+  header .hamburger {
+    display: block;
+  }
+}
+header .hamburger .hamburger-box {
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 5px 0;
 }
-header .container .gnb .navbar .hamburger .hamburger-box .hamburger-inner {
+header .hamburger .hamburger-box .hamburger-inner {
   width: 100%;
   height: 1px;
+  border: 1px solid #ff3a1e;
+  border-radius: 300px;
   background: #ff3a1e;
 }
-header .container .gnb .navbar .hamburger:hover {
+header .hamburger:hover {
   opacity: 0.7;
 }
-header .container .gnb .hamburger {
-  display: none;
-}
-@media (max-width: 768px) {
-  header .container .gnb .hamburger {
-    display: block;
-  }
-}
 header .megamenu {
-  width: 100%;
-  z-index: 998;
+  position: fixed;
+  top: 80px;
+  left: 0;
+  width: 100vw;
   height: 100vh;
-  background: #ffffff;
+  background: #fff;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(100%);
+  transition: all 0.4s cubic-bezier(0.76, 0, 0.24, 1);
+}
+header .megamenu.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
 }
 header .megamenu .megamenu-box {
   width: 100%;
@@ -243,25 +312,6 @@ header .megamenu .megamenu-box .megamenu-list ul li a:hover {
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-@media (max-width: 1000px) {
-  header .container .navbar .nav-list {
-    display: none !important;
-  }
-  header .container .megamenu a {
-    font-size: 3rem;
-    font-weight: 800;
-    color: transparent;
-    -webkit-text-stroke: 1.5px #ff3a1e;
-    text-decoration: none;
-    transition: all 0.2s ease;
-    text-align: center;
-    position: relative;
-    cursor: pointer;
-  }
-  header .container .megamenu a:hover {
-    color: #ff3a1e;
   }
 }
 @keyframes fadeIn {
