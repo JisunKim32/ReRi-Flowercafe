@@ -4,6 +4,7 @@
 @use "components"; // 컴포넌트
 // @import 'normalize.scss'
 
+// === Header ===
 header {
     width: 100%;
     padding: 0.625rem;
@@ -263,7 +264,8 @@ header {
        transform: translateY(0);
     }
  }
- 
+// === Header end ===
+
 
 // === Sec01 ===
 .sec01 {
@@ -305,7 +307,10 @@ header {
         }
     }
 }
+// === Sec01 end ===
 
+
+// === Sec02 ===
 .sec02 {
     padding: 100px 0;
     .sec02-title {
@@ -380,7 +385,10 @@ header {
         }
     }
 }
+// === Sec02 end ===
 
+
+// === Sec03 ===
 .sec03 {
     padding: map-get(var.$spacers, 14) map-get(var.$spacers, 0);
 
@@ -426,7 +434,10 @@ header {
         }
     }
 }
+// === Sec03 end ===
 
+
+// === Sec04 ===
 .instagram {
     // 상하 패딩
     padding: map-get(var.$spacers, 14) map-get(var.$spacers, 0);
@@ -479,7 +490,10 @@ header {
         }
     }
 }
+// === Sec04 end ===
 
+
+// === Sec05 ===
 .sec05-order {
     padding: map-get(var.$spacers, 11) map-get(var.$spacers, 0); //70px
 
@@ -557,7 +571,10 @@ header {
         color: var.$color-white;
     }
 }
+// === Sec05 end ===
 
+
+// === Footer ===
 .footer {
     padding: map-get(var.$spacers, 11) map-get(var.$spacers, 0) map-get(var.$spacers, 9);
     background: var.$color-primary;
@@ -646,3 +663,4 @@ header {
         }
     }
 }
+// === Footer end ===
