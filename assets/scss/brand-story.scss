@@ -102,7 +102,7 @@ header {
                   font-family: var.$font-body;
                   text-align: center;
                   color: var.$color-primary;
-                  font-size: map-get(map-get(var.$font-sizes, default), h7);
+                  font-size: map-get(map-get(var.$font-sizes, default), p);
                   font-weight: var.$font-weight-medium;
                   &:hover {
                      color: darken(var.$color-primary, 10%);

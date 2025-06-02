@@ -1,53 +1,60 @@
 // === Header ===
 let lastScroll = 0;
 $(window).on('scroll', function () {
-   let scrollTop = $(this).scrollTop();
+    let scrollTop = $(this).scrollTop();
 
-   if (scrollTop === 0) {
-      $('header').removeClass('hidden header-bg');
-      lastScroll = 0;
-      return;
-   }
+    if (scrollTop === 0) {
+        $('header').removeClass('hidden header-bg');
+        lastScroll = 0;
+        return;
+    }
 
-   // if (scrollTop >= 0 && scrollTop <= 937) {
-   //     $('header').removeClass('hidden header-bg');
-   //     lastScroll = scrollTop;
-   //     return;
-   // }
+    // if (scrollTop >= 0 && scrollTop <= 937) {
+    //     $('header').removeClass('hidden header-bg');
+    //     lastScroll = scrollTop;
+    //     return;
+    // }
 
-   if (Math.abs(scrollTop - lastScroll) < 10) return;
+    if (Math.abs(scrollTop - lastScroll) < 10) return;
 
-   if (scrollTop > lastScroll && scrollTop > 50) {
-      $('header').addClass('hidden');
-      // $('header').removeClass('header-bg ,header-border');
-      // $('.nav li a').removeClass('header-font');
-   } else {
-      $('header').removeClass('hidden');
-      $('header').addClass('header-bg');
-      // $('.nav-logo a, .nav li a').css('color', '#222')
-      // $('.hamburger-inner').css('background', '#222')
-      // $('.nav li a').addClass('header-font');
-   }
+    if (scrollTop > lastScroll && scrollTop > 50) {
+        $('header').addClass('hidden');
+        // $('header').removeClass('header-bg ,header-border');
+        // $('.nav li a').removeClass('header-font');
+    } else {
+        $('header').removeClass('hidden');
+        $('header').addClass('header-bg');
+        // $('.nav-logo a, .nav li a').css('color', '#222')
+        // $('.hamburger-inner').css('background', '#222')
+        // $('.nav li a').addClass('header-font');
+    }
 
-   lastScroll = scrollTop;
+    lastScroll = scrollTop;
 });
 
 $(function () {
-   $('body').addClass('js');
+    let $hamburger = $('.hamburger'),
+        $nav = $('.megamenu');
 
-   var $hamburger = $('.hamburger'),
-      $nav = $('.megamenu');
-
-   // 초기 상태
-   $nav.hide();
-
-   $hamburger.on('click', function () {
-      $(this).toggleClass('is-active');  // 햄버거 X 형태 토글
-      $nav.slideToggle();             // 0.3초 동안 부드럽게 열고 닫음
-      return false;
-   });
+    $nav.removeClass('active');
+    
+    $hamburger.on('click', function(){
+        $(this).toggleClass('is-active');
+        $nav.toggleClass('active');
+        
+        return false;
+    });
 });
-// === Header End ===
+
+$(function(){
+   $('.nav>li').mouseover(function(){
+      $(this).children('.sub-menu').stop().slideDown();
+   }).mouseout(function(){
+      $(this).children('.sub-menu').stop().slideUp();
+   })
+})
+// === Hamburger BTN on/off & Megamenu end ===
+// === Header end ===
 
 
 // === Sec02 ===
