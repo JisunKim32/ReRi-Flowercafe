@@ -22,7 +22,7 @@ a {
   text-decoration: none;
 }
 
-h1, h2, h3, h4, h5, h6, p, a {
+h1, h2, h3, h4, h5, h6, p, a, span {
   line-height: 140%;
   letter-spacing: 0.1rem;
   margin: 0;
@@ -324,8 +324,72 @@ header .megamenu .megamenu-box .megamenu-list ul li a:hover {
     transform: translateY(0);
   }
 }
-section {
-  height: 100vh;
+.sec01 {
+  padding-top: 6.25rem;
+}
+.sec01 .sec01__title h1 {
+  font-family: "Ogg TRIAL";
+  font-size: 4rem;
+  font-weight: bold;
+  color: #ff3a1e;
+}
+
+.sec02 {
+  padding: 3.125rem 0;
+}
+.sec02 .sec02__title {
+  margin-bottom: 1.875rem;
+}
+.sec02 .sec02__title h4 {
+  font-family: "Ogg TRIAL";
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ff3a1e;
+}
+.sec02 .sec02__map img {
+  border-radius: 15px;
+}
+
+.sec03 {
+  padding-top: 3.125rem;
+  padding-bottom: 6.25rem;
+}
+.sec03 .sec03__title {
+  margin-bottom: 1.875rem;
+}
+.sec03 .sec03__title h4 {
+  font-family: "Ogg TRIAL";
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ff3a1e;
+}
+.sec03 .sec03__table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.sec03 .sec03__table .sec03__table__thead tr {
+  width: 100%;
+  height: 90px;
+  border-top: 1px solid #ff3a1e;
+  border-bottom: 1px solid #ff3a1e;
+}
+.sec03 .sec03__table .sec03__table__thead td {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #ff3a1e;
+  text-align: center;
+}
+.sec03 .sec03__table .sec03__table__tbody tr {
+  width: 100%;
+  height: 90px;
+  border-top: 1px solid rgba(255, 58, 30, 0.3);
+  border-bottom: 1px solid rgba(255, 58, 30, 0.3);
+}
+.sec03 .sec03__table .sec03__table__tbody td {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #ff3a1e;
+  text-align: center;
 }
 
 .footer {

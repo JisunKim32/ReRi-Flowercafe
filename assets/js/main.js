@@ -107,3 +107,40 @@ tabItem.forEach((item, index) => {
     });
 });
 // === Sec02 Tab-bar end ===
+
+
+
+
+
+/* === 풀와이드 드롭다운 제어 === */
+$(function(){
+  const $navLi = $('.nav > li');
+  const $globalSub = $('.global-submenu');
+
+  // 각 li의 .sub-menu 내용을 global-submenu에 복붙해서 띄움
+  $navLi.mouseenter(function(){
+    // 1. 해당 li의 sub-menu 추출
+    const $submenu = $(this).children('.sub-menu').clone();
+    if ($submenu.length > 0) {
+      // 2. global-submenu에 내용 바꿔넣고 슬라이드다운
+      $globalSub.html($submenu).addClass('show');
+    } else {
+      $globalSub.removeClass('show').empty();
+    }
+  });
+
+  // li or global-submenu에서 마우스가 나가면 닫힘
+  $('.nav, .global-submenu').mouseleave(function(e){
+    // 네비/서브메뉴 위에서 벗어났을 때
+    setTimeout(()=>{
+      if (!$(e.relatedTarget).closest('.nav').length && !$(e.relatedTarget).closest('.global-submenu').length) {
+        $globalSub.removeClass('show').empty();
+      }
+    }, 100);
+  });
+
+  // global-submenu 위에서 마우스가 떠났을 때 닫힘
+  $globalSub.mouseleave(function(){
+    $globalSub.removeClass('show').empty();
+  });
+});

@@ -1,16 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Document</title>
+   <title>Re:Ri - 풀와이드 드롭다운</title>
    <link href="https://cdn.jsdelivr.net/xeicon/2/xeicon.min.css" rel="stylesheet">
    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-   <link rel="stylesheet" href="assets/css/menu.css">
-   <!-- 메뉴 스타일 -->
+   <link rel="stylesheet" href="assets/css/menu02.css">
 </head>
-
 <body>
    <!-- === Header === -->
    <header>
@@ -23,23 +20,23 @@
                <div class="nav-list">
                   <ul class="nav">
                      <li>
-                        <a href="BrandStory.html">Re:Ri</a>
+                        <a href="brand-story.html">Re:Ri</a>
                         <ul class="sub-menu">
-                           <li><a href="#">Brand Story</a></li>
+                           <li><a href="brand-story.html">Brand Story</a></li>
                         </ul>
                      </li>
                      <li>
-                        <a href="CafeMenu.html">리리 메뉴</a>
+                        <a href="cafe-menu.html">리리 메뉴</a>
                         <ul class="sub-menu">
-                           <li><a href="#">Re:Ri's Cafe</a></li>
-                           <li><a href="#">Re:Ri's Flower</a></li>
+                           <li><a href="cafe-menu.html">Re:Ri's Cafe</a></li>
+                           <li><a href="flower-menu.html">Re:Ri's Flower</a></li>
                         </ul>
                      </li>
                      <li>
-                        <a href="Event.html">이벤트</a>
+                        <a href="event.html">이벤트</a>
                      </li>
                      <li>
-                        <a href="Location.html">매장 안내</a>
+                        <a href="location.html">매장 안내</a>
                      </li>
                   </ul>
                </div>
@@ -52,52 +49,40 @@
                </button>
             </div>
          </div>
+         <!-- 아래 megamenu는 원래 쓰던 대로 두고, 별도로 global-submenu만 풀와이드 드롭다운 용 -->
          <nav id="site-nav" role="navigation" class="megamenu ">
             <div class="col-lg-12 megamenu-box">
                <div class="megamenu-list">
-                  <!-- <h4>Re:Ri</h4> -->
                   <ul>
-                     <li><a href="BrandStory.html">Brand Story</a></li>
+                     <li><a href="brand-story.html">Brand Story</a></li>
                   </ul>
                </div>
                <div class="megamenu-list">
-                  <!-- <h4>시그니처 메뉴</h4> -->
                   <ul>
-                     <li><a href="CafeMenu.html">Cafe</a></li>
-                     <li><a href="FlowerMenu.html">Flowers</a></li>
+                     <li><a href="cafe-menu.html">Cafe</a></li>
+                     <li><a href="flower-menu.html">Flowers</a></li>
                   </ul>
                </div>
                <div class="megamenu-list">
-                  <!-- <h4>리리 메뉴</h4> -->
                   <ul>
-                     <li><a href="Event.html">이벤트</a></li>
+                     <li><a href="event.html">이벤트</a></li>
                   </ul>
                </div>
                <div class="megamenu-list">
-                  <!-- <h4>오시는 길</h4> -->
                   <ul>
-                     <li><a href="Location.html">매장 안내</a></li>
+                     <li><a href="location.html">매장 안내</a></li>
                   </ul>
                </div>
             </div>
          </nav>
       </div>
-      <!-- <div class="overlay"></div> -->
+      <!-- 풀와이드 드롭다운 -->
+      <div class="global-submenu"></div>
    </header>
    <!-- === Header end === -->
 
-
-   <!-- === Bootstrap === -->
    <script src="assets/js/bootstrap.bundle.min.js"></script>
-   <!-- GSAP -->
    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-   <!-- === Jquery === -->
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-   <!-- === main js === -->
    <script src="assets/js/menu.js"></script>
 </body>
-</body>
-
 </html>

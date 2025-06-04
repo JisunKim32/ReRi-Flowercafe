@@ -4,6 +4,9 @@
 @use "components"; // 컴포넌트
 // @import 'normalize.scss'
 
+.fp-watermark {
+   display: none !important;
+}
 
 // === Header ===
 header {
@@ -136,19 +139,19 @@ header {
          content: "";
          position: absolute;
          bottom: 0;
-         left: 20px; 
+         left: 20px;
          width: 120px;
          height: 2px;
          background-color: rgba(var.$color-primary, 0.3);
          border-radius: 300px;
-         transform: scaleX(0); 
+         transform: scaleX(0);
          transform-origin: left;
          transition: transform 0.3s ease-in-out;
-     }
- 
-     .nav > li:hover:after {
+      }
+
+      .nav > li:hover:after {
          transform: scaleX(1);
-     }
+      }
       @include resp.respond-to(lg) {
          display: none;
       }
@@ -267,19 +270,122 @@ header {
 }
 // === Header end ===
 
+// === Fullpage ===
+#fullpage {
+   .swiper {
+      width: 100vw;
+      height: 100vh;
+      .swiper-slide {
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         font-size: 2rem;
+      }
+   }
 
-// === Sec01 ===
-section{
-   height: 100vh;
+   // === Sec01 ===
+   .sec01 {
+      .sec01__title {
+         span {
+            font-family: var.$font-point;
+            font-size: var.$font-size-point;
+            color: var.$color-primary;
+            font-weight: var.$font-weight-bold;
+         }
+      }
+   }
+
+   .sec02 {
+      background: var.$color-primary;
+      .sec02__text {
+         margin-bottom: 60px;
+         h3 {
+            font-size: map-get(map-get(var.$font-sizes, default), h3);
+            color: var.$color-white;
+            font-weight: var.$font-weight-light;
+            margin-bottom: 30px;
+            span {
+               font-family: var.$font-point;
+               font-weight: var.$font-weight-bold;
+            }
+         }
+         h1 {
+            font-size: map-get(map-get(var.$font-sizes, default), h1);
+            color: var.$color-white;
+            font-weight: var.$font-weight-bold;
+         }
+      }
+      .sec02__logo {
+         h1 {
+            font-family: var.$font-point;
+            font-size: map-get(map-get(var.$font-sizes, default), h1);
+            color: var.$color-white;
+            font-weight: var.$font-weight-bold;
+         }
+      }
+   }
+   // === Sec01 end ===
 }
 
-// === Footer ===
+// === Sec02 ===
+.section-normal {
+   min-height: auto;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.sec03__faq {
+   background: var.$color-bg01;
+   .sec03__faq-left {
+      display: flex;
+      justify-content: left;
+      .faq-title {
+         // margin-bottom: 30px;
+         margin-bottom: map-get(var.$spacers, 6);
+         h4 {
+            font-family: var.$font-point;
+            font-size: map-get(map-get(var.$font-sizes, default), h4);
+            font-weight: var.$font-weight-bold;
+            color: var.$color-primary;
+         }
+         h1 {
+            font-family: var.$font-point;
+            font-size: map-get(map-get(var.$font-sizes, default), h1);
+            font-weight: var.$font-weight-bold;
+            color: var.$color-primary;
+         }
+      }
+   }
+   .sec03__faq-right {
+      .accordion-header {
+         button {
+            font-size: map-get(map-get(var.$font-sizes, default), h6);
+            color: var.$color-primary;
+            font-weight: var.$font-weight-regular;
+            background: var.$color-bg01;
+         }
+      }
+      .accordion-body {
+         font-size: map-get(map-get(var.$font-sizes, default), h7);
+         font-weight: var.$font-weight-light;
+         color: var.$color-gray-900;
+         background: var.$color-bg01;
+      }
+      .accordion-button::after {
+         background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill="none" stroke="%23ff3a1e" stroke-width="2" d="M1.5 6.5l6 6 6-6"/></svg>');
+      }
+   }
+}
+// === Sec02 end ===
+
+// === Sec03 Footer ===
 .footer {
    padding: map-get(var.$spacers, 11) map-get(var.$spacers, 0) map-get(var.$spacers, 9);
    background: var.$color-primary;
 
    .footer__logo {
-       margin-bottom: map-get(var.$spacers, 4); //20px
+      margin-bottom: map-get(var.$spacers, 4); //20px
    }
    // .footer__hr{
    //    color: var.$color-white;
@@ -287,79 +393,79 @@ section{
    // }
 
    .footer__line {
-       width: 100%;
-       height: 1px;
-       background: var.$color-white;
-       margin-bottom: map-get(var.$spacers, 4); //20px
+      width: 100%;
+      height: 1px;
+      background: var.$color-white;
+      margin-bottom: map-get(var.$spacers, 4); //20px
    }
 
    .footer__info-bar {
-       display: flex;
-       list-style: none;
-       text-decoration: none;
-       margin-bottom: map-get(var.$spacers, 6); //20px
+      display: flex;
+      list-style: none;
+      text-decoration: none;
+      margin-bottom: map-get(var.$spacers, 6); //20px
 
-       .footer__info-list {
-           font-size: var.$font-size-p;
-           font-weight: var.$font-weight-light;
-           color: var.$color-white;
+      .footer__info-list {
+         font-size: var.$font-size-p;
+         font-weight: var.$font-weight-light;
+         color: var.$color-white;
 
-           @include resp.respond-to(xl) {
-               font-size: map-get(map-get(var.$font-sizes, xl), p);
-           }
-           @include resp.respond-to(md) {
-               font-size: map-get(map-get(var.$font-sizes, md), p);
-           }
-           @include resp.respond-to(sm) {
-               font-size: map-get(map-get(var.$font-sizes, sm), p);
-           }
+         @include resp.respond-to(xl) {
+            font-size: map-get(map-get(var.$font-sizes, xl), p);
+         }
+         @include resp.respond-to(md) {
+            font-size: map-get(map-get(var.$font-sizes, md), p);
+         }
+         @include resp.respond-to(sm) {
+            font-size: map-get(map-get(var.$font-sizes, sm), p);
+         }
 
-           & + .footer__info-list::before {
-               content: "|";
-               margin: map-get(var.$spacers, 1);
-               color: inherit;
-           }
-       }
+         & + .footer__info-list::before {
+            content: "|";
+            margin: map-get(var.$spacers, 1);
+            color: inherit;
+         }
+      }
    }
 
    .copyright {
-       p {
-           font-size: var.$font-size-p;
-           font-weight: var.$font-weight-extralight;
-           color: var.$color-white;
+      p {
+         font-size: var.$font-size-p;
+         font-weight: var.$font-weight-extralight;
+         color: var.$color-white;
 
-           @include resp.respond-to(xl) {
-               font-size: map-get(map-get(var.$font-sizes, xl), p);
-           }
-           @include resp.respond-to(md) {
-               font-size: map-get(map-get(var.$font-sizes, xl), p);
-           }
-           @include resp.respond-to(sm) {
-               font-size: map-get(map-get(var.$font-sizes, xl), p);
-           }
-       }
+         @include resp.respond-to(xl) {
+            font-size: map-get(map-get(var.$font-sizes, xl), p);
+         }
+         @include resp.respond-to(md) {
+            font-size: map-get(map-get(var.$font-sizes, xl), p);
+         }
+         @include resp.respond-to(sm) {
+            font-size: map-get(map-get(var.$font-sizes, xl), p);
+         }
+      }
    }
 
    .footer__right-info {
-       text-align: right;
-       font-size: var.$font-size-p;
-       font-weight: var.$font-weight-extralight;
-       color: var.$color-white;
-       // border-bottom: 1px solid var.$color-white;
+      text-align: right;
+      font-size: var.$font-size-p;
+      font-weight: var.$font-weight-extralight;
+      color: var.$color-white;
+      // border-bottom: 1px solid var.$color-white;
 
-       @include resp.respond-to(xl) {
-           font-size: map-get(map-get(var.$font-sizes, xl), p);
-       }
-       @include resp.respond-to(md) {
-           font-size: map-get(map-get(var.$font-sizes, md), p);
-       }
-       @include resp.respond-to(sm) {
-           font-size: map-get(map-get(var.$font-sizes, sm), p);
-       }
+      @include resp.respond-to(xl) {
+         font-size: map-get(map-get(var.$font-sizes, xl), p);
+      }
+      @include resp.respond-to(md) {
+         font-size: map-get(map-get(var.$font-sizes, md), p);
+      }
+      @include resp.respond-to(sm) {
+         font-size: map-get(map-get(var.$font-sizes, sm), p);
+      }
 
-       ul {
-           margin-bottom: map-get(var.$spacers, 1); //10px;
-       }
+      ul {
+         margin-bottom: map-get(var.$spacers, 1); //10px;
+      }
    }
 }
-// === Footer end ===
+// === Sec03 Footer end ===
