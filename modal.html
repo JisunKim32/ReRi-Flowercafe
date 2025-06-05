@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <link rel="stylesheet" href="assets/css/modal.css">
+</head>
+
+<body>
+   <!-- 모달 트리거 예시 -->
+   <a href="#" id="openModal">매장 정보 보기</a>
+
+   <!-- 모달 본체 -->
+   <div class="modal" id="branchModal" style="display: none;">
+      <div class="modal__dim"></div>
+      <div class="modal__content">
+         <button class="modal__close" id="closeModal">&times;</button>
+         <ul class="modal__tabs">
+            <li class="active" data-tab="map">지도</li>
+            <li data-tab="info">매장설명</li>
+            <li data-tab="route">오시는 길</li>
+         </ul>
+         <div class="modal__panel active" data-panel="map">
+            <!-- 지도 자리 (예시로 div, 실제 지도 embed로 대체 가능) -->
+            <div class="modal__map">여기에 지도</div>
+         </div>
+         <div class="modal__panel" data-panel="info">
+            <h4>매장 설명</h4>
+            <p>예쁜 꽃과 커피가 있는 송도점입니다.</p>
+         </div>
+         <div class="modal__panel" data-panel="route">
+            <h4>오시는 길</h4>
+            <p>인천 1호선 송도캠퍼스타운역 5번 출구에서 도보 5분.</p>
+         </div>
+      </div>
+   </div>
+
+   <script src="assets/js/modal.js"></script>
+</body>
+
+</html>

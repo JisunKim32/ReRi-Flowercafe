@@ -86,27 +86,27 @@ toTop.addEventListener('click', ()=>{
 // === Floating Menu end ===
 
 
-// === Sec02 Tab-bar ===
-const tabItem = document.querySelectorAll(".sec02__tab-list a");
-const tabContent = document.querySelectorAll(".sec02__tab-menu");
+// // === Sec02 Tab-bar ===
+// const tabItem = document.querySelectorAll(".sec02__tab-list a");
+// const tabContent = document.querySelectorAll(".sec02__tab-menu");
 
-tabItem.forEach((item, index) => {
-    item.addEventListener("click", (e) => {
-        e.preventDefault(); // a 
+// tabItem.forEach((item, index) => {
+//     item.addEventListener("click", (e) => {
+//         e.preventDefault(); // a 
 
-        tabContent.forEach((content) => {
-            content.classList.remove("active");
-        });
+//         tabContent.forEach((content) => {
+//             content.classList.remove("active");
+//         });
 
-        tabItem.forEach((content) => {
-            content.classList.remove("active");
-        });
+//         tabItem.forEach((content) => {
+//             content.classList.remove("active");
+//         });
 
-        tabItem[index].classList.add("active");
-        tabContent[index].classList.add("active");
-    });
-});
-// === Sec02 Tab-bar end ===
+//         tabItem[index].classList.add("active");
+//         tabContent[index].classList.add("active");
+//     });
+// });
+// // === Sec02 Tab-bar end ===
 
 
 

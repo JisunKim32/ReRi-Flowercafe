@@ -55,3 +55,25 @@ $(function(){
 })
 // === Hamburger BTN on/off & Megamenu end ===
 // === Header end ===
+
+
+// === Modal ===
+window.onload = function () {
+    const openModalBtn = document.querySelectorAll('.open-modal');
+    const modal = document.querySelector('#locationModal');
+    const closeBtn = document.querySelector('.modal__close');
+    const backdrop = document.querySelector('.modal-backdrop');
+
+    openModalBtn.forEach((btn) => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            modal.classList.add('show')
+            backdrop.classList.add('show')
+        })
+    })
+    closeBtn.addEventListener('click', () => {
+        modal.classList.remove('show')
+        backdrop.classList.remove('show')
+    })
+}
+// === Modal end ===

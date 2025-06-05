@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +12,7 @@
    <!-- style -->
    <link rel="stylesheet" href="assets/css/location.css">
 </head>
+
 <body>
    <!-- === Header === -->
    <header>
@@ -141,13 +143,18 @@
                      <tr>
                         <td>송도점</td>
                         <td>월-일 09:00 - 21:00</td>
-                        <td>인천 연수구 송도과학로16번길 13-18 건원테크노큐브</td>
+                        <td>
+                           <a href="#" class="open-modal" data-address="송도점">인천 연수구 송도과학로16번길 13-18 건원테크노큐브</a>
+                        </td>
                         <td>032.310.9550</td>
                      </tr>
                      <tr>
                         <td>테크노큐브점</td>
                         <td>월-일 10:30 - 22:00</td>
-                        <td>인천 연수구 송도과학로16번길 33-3 송도트리플스트리트 C동 지하2층</td>
+                        <td>
+                           <a href="#" class="open-modal" data-address="테크노큐브점">인천 연수구 송도과학로16번길 33-3 송도트리플스트리트 C동
+                              지하2층</a>
+                        </td>
                         <td>032.871.8852</td>
                      </tr>
                   </tbody>
@@ -205,9 +212,142 @@
    <!-- === Footer end === -->
 
 
-      <!-- script -->
+
+   <!-- === Modal === -->
+   <div class="popup-modal" id="locationModal" tabindex="-1" aria-labelledby="locationModalLabel"
+      aria-hidden="true">
+      <div class="modal__box">
+         <div class="tab__list">
+            <ul class="modal__tabs" id="myTab" role="tablist">
+               <li class="modal__item" role="presentation">
+                  <button class="modal__link active" id="info-tab" data-bs-toggle="tab" data-bs-target="#info" type="button"
+                     role="tab" aria-controls="info" aria-selected="true">매장 정보</button>
+               </li>
+               <li class="modal__item" role="presentation">
+                  <button class="modal__link" id="map-tab" data-bs-toggle="tab" data-bs-target="#map" type="button"
+                     role="tab" aria-controls="map" aria-selected="false">매장 위치</button>
+               </li>
+            </ul>
+            <button type="button" class="modal__close" id="closeModal"><img src="assets/images/icon/close-btn.svg"
+                  alt=""></button>
+         </div>
+         <div class="tab-content" id="myTabContent">
+            <!-- 매장 정보 -->
+            <div class="tab-pane fade show active" id="info" role="tabpanel" aria-labelledby="info-tab">
+               <div class="modal__content">
+                  <div class="modal__map">
+                     <div class="modal__map-img">
+                        <img src="assets/images/location__map.png" alt="">
+                     </div>
+                  </div>
+                  <div class="modal__content__title">
+                     <h4>
+                        매장 정보
+                     </h4>
+                  </div>
+                  <div class="modal__content__info">
+                     <div class="content__text">
+                        <div class="address">
+                           <div class="content__text-title">
+                              <span>주소</span>
+                           </div>
+                           <span class="value">
+                              인천 연수구 송도과학로16번길 13-18 <br>건원테크노큐브
+                           </span>
+                        </div>
+                        <div class="phonenumber">
+                           <div class="content__text-title">
+                              <span>전화번호</span>
+                           </div>
+                           <span class="value">
+                              032.310.9550
+                           </span>
+                        </div>
+                     </div>
+                     <div class="content__text">
+                        <div class="operating-time">
+                           <div class="content__text-title">
+                              <span>운영시간</span>
+                           </div>
+                           <span class="value">
+                              월-일 09:00 - 21:00
+                           </span>
+                        </div>
+                        <div class="modal__socail-btn">
+                           <button type="button" class="social-btn">
+                              <a href="https://open.kakao.com/o/sZyIxUgb" target="_blank"
+                              rel="noopener noreferrer">
+                                 <img src="assets/images/icon/modal-kkt-icon.svg"
+                                 alt="">
+                              </a>
+                           </button>
+                           <button type="button" class="social-btn">
+                              <a href="https://www.instagram.com/re_ri_flowercafe/" target="_blank"
+                              rel="noopener noreferrer">
+                                 <img src="assets/images/icon/modal-instagram-icon.svg" alt="">
+                              </a>
+                           </button>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- 매장 위치 -->
+            <div class="tab-pane fade" id="map" role="tabpanel" aria-labelledby="map-tab">
+               <div class="modal__content">
+                  <div class="modal__map">
+                     <img src="assets/images/location__map.png" alt="">
+                  </div>
+                  <div class="modal__content__title">
+                     <h4>
+                        오시는 방법
+                     </h4>
+                  </div>
+                  <div class="modal__content__info">
+                     <div class="content__text">
+                        <div class="content__text-title">
+                           <span>지하철</span>
+                        </div>
+                        <div class="sub-info">
+                           <span>호선</span>
+                           <span>-</span>
+                           <span>어느역에서 내려서 어느출구에서 어디로 오세요</span>
+                        </div>
+                     </div>
+                     <div class="content__text">
+                        <div class="content__text-title">
+                           <span>버스</span>
+                        </div>
+                        <div class="bus-info">
+                           <span>버스번호</span>
+                           <span>-</span>
+                           <span>어느역에서 내려서 어디로 오세요</span>
+                        </div>
+                        <div class="bus-info">
+                           <span>버스번호</span>
+                           <span>-</span>
+                           <span>어느역에서 내려서 어디로 오세요</span>
+                        </div>
+                        <div class="bus-info">
+                           <span>버스번호</span>
+                           <span>-</span>
+                           <span>어느역에서 내려서 어디로 오세요</span>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="modal-backdrop"></div>
+   <!-- === Modal end === -->
+
+
+   <!-- script -->
    <!-- bootstrap -->
    <script src="assets/js/bootstrap.bundle.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
    <!-- GSAP -->
    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -217,4 +357,5 @@
    <!-- js -->
    <script src="assets/js/location.js"></script>
 </body>
+
 </html>
