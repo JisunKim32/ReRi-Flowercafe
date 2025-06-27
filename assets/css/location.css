@@ -1,6 +1,7 @@
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
 body {
   font-family: pretendard;
+  font-size: 16px;
 }
 
 ul {
@@ -215,7 +216,7 @@ header .nav-list .nav > li:after {
 header .nav-list .nav > li:hover:after {
   transform: scaleX(1);
 }
-@media (max-width: 1024px) {
+@media (min-width: 1024px) {
   header .nav-list {
     display: none;
   }
@@ -226,7 +227,7 @@ header .hamburger {
   border: none;
   display: none;
 }
-@media (max-width: 1024px) {
+@media (min-width: 1024px) {
   header .hamburger {
     display: block;
   }
@@ -346,8 +347,12 @@ header .megamenu .megamenu-box .megamenu-list ul li a:hover {
   font-weight: bold;
   color: #ff3a1e;
 }
-.sec02 .sec02__map img {
-  border-radius: 15px;
+.sec02 .sec02__map {
+  height: 400px;
+}
+.sec02 .sec02__map #map {
+  height: 100%;
+  border-radius: 10px;
 }
 
 .sec03 {
@@ -377,19 +382,24 @@ header .megamenu .megamenu-box .megamenu-list ul li a:hover {
   font-size: 1.125rem;
   font-weight: 500;
   color: #ff3a1e;
-  text-align: center;
+  vertical-align: middle;
 }
 .sec03 .sec03__table .sec03__table__tbody tr {
   width: 100%;
   height: 90px;
   border-top: 1px solid rgba(255, 58, 30, 0.3);
   border-bottom: 1px solid rgba(255, 58, 30, 0.3);
+  cursor: pointer;
+}
+.sec03 .sec03__table .sec03__table__tbody tr:hover {
+  background-color: rgba(0, 0, 0, 0.02);
 }
 .sec03 .sec03__table .sec03__table__tbody td {
   font-size: 1rem;
   font-weight: 400;
   color: #ff3a1e;
   text-align: center;
+  vertical-align: middle;
 }
 .sec03 .sec03__table .sec03__table__tbody td a {
   color: #ff3a1e;
@@ -419,17 +429,17 @@ header .megamenu .megamenu-box .megamenu-list ul li a:hover {
   font-weight: 300;
   color: #ffffff;
 }
-@media (max-width: 1200px) {
+@media (min-width: 1280px) {
   .footer .footer__info-bar .footer__info-list {
     font-size: 14px;
   }
 }
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   .footer .footer__info-bar .footer__info-list {
     font-size: 14px;
   }
 }
-@media (max-width: 576px) {
+@media (min-width: 576px) {
   .footer .footer__info-bar .footer__info-list {
     font-size: 14px;
   }
@@ -444,17 +454,17 @@ header .megamenu .megamenu-box .megamenu-list ul li a:hover {
   font-weight: 200;
   color: #ffffff;
 }
-@media (max-width: 1200px) {
+@media (min-width: 1280px) {
   .footer .copyright p {
     font-size: 14px;
   }
 }
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   .footer .copyright p {
     font-size: 14px;
   }
 }
-@media (max-width: 576px) {
+@media (min-width: 576px) {
   .footer .copyright p {
     font-size: 14px;
   }
@@ -465,17 +475,17 @@ header .megamenu .megamenu-box .megamenu-list ul li a:hover {
   font-weight: 200;
   color: #ffffff;
 }
-@media (max-width: 1200px) {
+@media (min-width: 1280px) {
   .footer .footer__right-info {
     font-size: 14px;
   }
 }
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   .footer .footer__right-info {
     font-size: 14px;
   }
 }
-@media (max-width: 576px) {
+@media (min-width: 576px) {
   .footer .footer__right-info {
     font-size: 14px;
   }
@@ -489,7 +499,7 @@ header .megamenu .megamenu-box .megamenu-list ul li a:hover {
   visibility: hidden;
   display: block;
   transition: all 0.3s ease;
-  max-width: 700px;
+  width: 700px;
   height: 640px;
   border: 1px solid #ff3a1e;
   border-radius: 10px;
@@ -551,8 +561,9 @@ header .megamenu .megamenu-box .megamenu-list ul li a:hover {
   width: 100%;
   margin-bottom: 1.875rem;
 }
-.popup-modal .tab-content .modal__content .modal__map img {
+.popup-modal .tab-content .modal__content .modal__map .modal__map-content {
   width: 100%;
+  height: 200px !important;
   border-radius: 10px;
 }
 .popup-modal .tab-content .modal__content__title {

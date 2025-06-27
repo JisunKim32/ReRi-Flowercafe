@@ -46,13 +46,41 @@ $(function () {
     });
 });
 
+// $(function(){
+//    $('.nav>li').mouseenter(function(){
+//       $(this).children('.sub-menu').stop().slideDown();
+//       $('.overlay').addClass('active');
+//    }).mouseleave(function(){
+//       $(this).children('.sub-menu').stop().slideUp();
+//       $('.overlay').removeClass('active');
+//    })
+// })
+
 $(function(){
-   $('.nav>li').mouseover(function(){
-      $(this).children('.sub-menu').stop().slideDown();
-   }).mouseout(function(){
-      $(this).children('.sub-menu').stop().slideUp();
-   })
-})
+
+  // 각 메뉴 아이템에 마우스를 올렸을 때
+  $('.nav > li').on('mouseenter', function(){
+      // 1. 내가 마우스를 올린 메뉴의 서브메뉴를 보여준다.
+      $(this).children('.sub-menu').stop().slideDown(200);
+      
+      // 2. ※중요※ 나를 제외한 다른 형제 메뉴들의 서브메뉴는 숨긴다.
+      $(this).siblings().children('.sub-menu').stop().slideUp(200);
+
+      // 3. 오버레이를 활성화한다.
+      $('.overlay').stop().slideDown(200);
+  });
+
+  // 내비게이션 영역 전체에서 마우스가 벗어났을 때
+  // 개별 li가 아닌 .nav 전체 영역을 기준으로 합니다.
+  $('.nav').on('mouseleave', function(){
+      // 1. 모든 서브메뉴를 닫는다.
+      $(this).find('.sub-menu').stop().slideUp(200);
+      
+      // 2. 오버레이를 비활성화한다.
+      $('.overlay').stop().slideUp(200);
+  });
+
+});
 // === Hamburger BTN on/off & Megamenu end ===
 // === Header end ===
 

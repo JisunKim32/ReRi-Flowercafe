@@ -1,6 +1,7 @@
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
 body {
   font-family: pretendard;
+  font-size: 16px;
 }
 
 ul {
@@ -219,7 +220,7 @@ header .nav-list .nav > li:after {
 header .nav-list .nav > li:hover:after {
   transform: scaleX(1);
 }
-@media (max-width: 1024px) {
+@media (min-width: 1024px) {
   header .nav-list {
     display: none;
   }
@@ -230,7 +231,7 @@ header .hamburger {
   border: none;
   display: none;
 }
-@media (max-width: 1024px) {
+@media (min-width: 1024px) {
   header .hamburger {
     display: block;
   }
@@ -441,17 +442,17 @@ header .megamenu .megamenu-box .megamenu-list ul li a:hover {
   font-weight: 300;
   color: #ffffff;
 }
-@media (max-width: 1200px) {
+@media (min-width: 1280px) {
   .footer .footer__info-bar .footer__info-list {
     font-size: 14px;
   }
 }
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   .footer .footer__info-bar .footer__info-list {
     font-size: 14px;
   }
 }
-@media (max-width: 576px) {
+@media (min-width: 576px) {
   .footer .footer__info-bar .footer__info-list {
     font-size: 14px;
   }
@@ -466,17 +467,17 @@ header .megamenu .megamenu-box .megamenu-list ul li a:hover {
   font-weight: 200;
   color: #ffffff;
 }
-@media (max-width: 1200px) {
+@media (min-width: 1280px) {
   .footer .copyright p {
     font-size: 14px;
   }
 }
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   .footer .copyright p {
     font-size: 14px;
   }
 }
-@media (max-width: 576px) {
+@media (min-width: 576px) {
   .footer .copyright p {
     font-size: 14px;
   }
@@ -487,17 +488,17 @@ header .megamenu .megamenu-box .megamenu-list ul li a:hover {
   font-weight: 200;
   color: #ffffff;
 }
-@media (max-width: 1200px) {
+@media (min-width: 1280px) {
   .footer .footer__right-info {
     font-size: 14px;
   }
 }
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   .footer .footer__right-info {
     font-size: 14px;
   }
 }
-@media (max-width: 576px) {
+@media (min-width: 576px) {
   .footer .footer__right-info {
     font-size: 14px;
   }

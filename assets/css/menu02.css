@@ -1,6 +1,7 @@
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
 body {
   font-family: pretendard;
+  font-size: 16px;
 }
 
 ul {
@@ -237,7 +238,7 @@ header .nav-list .nav > li:hover > .sub-menu, header .nav-list .nav > li:focus-w
   pointer-events: auto;
   transform: translateX(-50%) translateY(0);
 }
-@media (max-width: 1024px) {
+@media (min-width: 1024px) {
   header .nav-list {
     display: none;
   }
@@ -248,7 +249,7 @@ header .hamburger {
   border: none;
   display: none;
 }
-@media (max-width: 1024px) {
+@media (min-width: 1024px) {
   header .hamburger {
     display: block;
   }

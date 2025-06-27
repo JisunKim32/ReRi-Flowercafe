@@ -12,7 +12,7 @@ header {
     position: fixed;
     text-align: center;
     align-items: center;
-    z-index: 999;
+    z-index: 9999;
     top: 0;
     transition: top 0.4s ease-in-out;
 
@@ -43,15 +43,16 @@ header {
     }
 
     .nav-logo {
+        z-index: 9999;
         a {
-            list-style: none;
-            text-decoration: none;
             font-family: var.$font-title;
-            font-size: map-get(map-get(var.$font-sizes, default), h4);
+            @include resp.responsive-font-size(h4);
+            font-weight: var.$font-weight-medium;
             letter-spacing: 0.1rem;
             text-align: center;
             color: var.$color-primary;
-            font-weight: var.$font-weight-medium;
+            list-style: none;
+            text-decoration: none;
             display: flex;
             gap: 0 10px;
         }
@@ -59,6 +60,11 @@ header {
 
     .nav-list {
         width: 640px;
+        z-index: 9999;
+        display: none;
+        @include resp.respond-to(lg) {
+            display: block;
+        }
         .nav {
             width: 100%;
             display: flex;
@@ -66,15 +72,14 @@ header {
             li {
                 width: 160px;
                 position: relative;
-                position: relative;
-                // padding: 10px 20px;
+                padding-bottom: 10px;
                 a {
                     // width: 160px;
                     list-style: none;
                     text-decoration: none;
                     text-align: center;
                     color: var.$color-primary;
-                    font-size: map-get(map-get(var.$font-sizes, default), h7);
+                    @include resp.responsive-font-size(h7);
                     font-weight: var.$font-weight-medium;
                     &:hover {
                         color: darken(var.$color-primary, 10%);
@@ -86,7 +91,7 @@ header {
             }
             li:first-child a {
                 font-family: var.$font-title;
-                font-size: map-get(map-get(var.$font-sizes, default), h6);
+                @include resp.responsive-font-size(h6);
                 letter-spacing: 0.11rem;
             }
             .sub-menu {
@@ -94,9 +99,10 @@ header {
                 position: absolute;
                 justify-content: center;
                 padding-top: 10px;
-                background: rgba(var.$color-white, 1);
                 padding-bottom: 20px;
-                border-radius: 0 0 10px 10px;
+                z-index: 9999;
+                //  background: rgba(var.$color-white, 1);
+                //  border-radius: 0 0 10px 10px;
                 li {
                     padding: 10px 0;
                     width: 160px;
@@ -107,7 +113,7 @@ header {
                         font-family: var.$font-body;
                         text-align: center;
                         color: var.$color-primary;
-                        font-size: map-get(map-get(var.$font-sizes, default), p);
+                        @include resp.responsive-font-size(p);
                         font-weight: var.$font-weight-medium;
                         &:hover {
                             color: darken(var.$color-primary, 10%);
@@ -152,18 +158,15 @@ header {
         .nav > li:hover:after {
             transform: scaleX(1);
         }
-        @include resp.respond-to(lg) {
-            display: none;
-        }
     }
 
     .hamburger {
         width: 24px;
         background: transparent;
         border: none;
-        display: none;
+        display: block;
         @include resp.respond-to(lg) {
-            display: block;
+            display: none;
         }
 
         .hamburger-box {
@@ -216,7 +219,7 @@ header {
                     li {
                         margin: 1.2rem 0;
                         a {
-                            font-size: var.$font-size-h1;
+                            @include resp.responsive-font-size(h1);
                             font-weight: var.$font-weight-extrabold;
                             color: transparent;
                             -webkit-text-stroke: 1.5px var.$color-primary;
@@ -234,26 +237,24 @@ header {
             }
         }
     }
-}
-.global-submenu {
-    position: fixed;
-    left: 0;
-    top: 80px; // header 높이(px)와 맞춰 조정!
-    width: 100vw;
-    min-height: 110px;
-    background: #fff;
-    z-index: 1001;
-    box-shadow: 0 6px 32px rgba(0,0,0,0.08);
-    border-radius: 0 0 32px 32px;
-    padding: 40px 0 32px 0;
-    display: none;
-    opacity: 0;
-    animation: none;
-    // 드롭다운 열릴 때 클래스(show)로 애니메이션 부여
-    &.show {
-       display: block;
-       animation: slideDown 0.36s cubic-bezier(0.4,0,0.2,1);
-       opacity: 1;
+
+    .overlay {
+        position: fixed;
+        display: none;
+        // opacity: 0;
+        // visibility: hidden;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 400px;
+        background-color: rgba(var.$color-white, 0.7);
+        backdrop-filter: blur(4px);
+        z-index: 9990;
+        //    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    }
+    .overlay.active {
+        opacity: 1;
+        visibility: visible;
     }
 }
 
@@ -306,7 +307,7 @@ header {
     .sec01-title {
         h1 {
             font-family: var.$font-point;
-            font-size: var.$font-size-point;
+            @include resp.responsive-font-size(point);
             font-weight: bold;
             color: var.$color-primary;
             // letter-spacing: 0.4rem;
@@ -315,7 +316,7 @@ header {
             margin-top: 100px;
             h2 {
                 font-family: var.$font-point;
-                font-size: map-get(map-get(var.$font-sizes, default), h2);
+                @include resp.responsive-font-size(h2);
                 letter-spacing: 0.4rem;
                 color: var.$color-primary;
                 font-weight: bold;
@@ -323,7 +324,7 @@ header {
             }
             h5 {
                 font-family: var.$font-point;
-                font-size: map-get(map-get(var.$font-sizes, default), h5);
+                @include resp.responsive-font-size(h5);
                 color: var.$color-primary;
                 font-weight: normal;
                 line-height: 150%;
@@ -338,7 +339,7 @@ header {
     padding: 100px 0;
     .sec02-title {
         h1 {
-            font-size: map-get(map-get(var.$font-sizes, default), h1);
+            @include resp.responsive-font-size(h1);
             color: var.$color-primary;
             font-weight: var.$font-weight-bold;
             margin-bottom: map-get(var.$spacers, 9);
@@ -354,7 +355,7 @@ header {
             border: 1px solid;
             border-radius: 300px;
             border-color: var.$color-primary;
-            font-size: map-get(map-get(var.$font-sizes, default), h6);
+            @include resp.responsive-font-size(h6);
             color: var.$color-primary;
             font-weight: var.$font-weight-regular;
         }
@@ -386,7 +387,7 @@ header {
 
                     .menuCotent__name {
                         h6 {
-                            font-size: map-get(map-get(var.$font-sizes, default), h6);
+                            @include resp.responsive-font-size(h6);
                             color: var.$color-primary;
                             margin-top: map-get(var.$spacers, 4);
                         }
@@ -400,7 +401,7 @@ header {
         margin-top: map-get(var.$spacers, 9);
 
         .sec02-moreBtn__text {
-            font-size: map-get(map-get(var.$font-sizes, default), p);
+            @include resp.responsive-font-size(p);
             color: var.$color-primary;
             background: transparent;
             border: 1px solid var.$color-primary;
@@ -421,37 +422,37 @@ header {
             margin: map-get(var.$spacers, 7), 0;
 
             h2 {
-                font-size: var.$font-size-h2;
+                @include resp.responsive-font-size(h2);
                 font-weight: var.$font-weight-bold;
                 color: var.$color-primary;
                 margin-bottom: map-get(var.$spacers, 9);
 
-                @include resp.respond-to(xl) {
-                    font-size: map-get(map-get(var.$font-sizes, xl), h2);
-                }
-                @include resp.respond-to(md) {
-                    font-size: map-get(map-get(var.$font-sizes, md), h2);
-                }
-                @include resp.respond-to(sm) {
-                    font-size: map-get(map-get(var.$font-sizes, sm), h2);
-                }
+                // @include resp.respond-to(xl) {
+                //     font-size: map-get(map-get(var.$font-sizes, xl), h2);
+                // }
+                // @include resp.respond-to(md) {
+                //     font-size: map-get(map-get(var.$font-sizes, md), h2);
+                // }
+                // @include resp.respond-to(sm) {
+                //     font-size: map-get(map-get(var.$font-sizes, sm), h2);
+                // }
             }
 
             h4 {
-                font-size: var.$font-size-h4;
+                @include resp.responsive-font-size(h4);
                 font-weight: var.$font-weight-light;
                 color: var.$color-black;
                 line-height: 160%;
 
-                @include resp.respond-to(xl) {
-                    font-size: map-get(map-get(var.$font-sizes, xl), h4);
-                }
-                @include resp.respond-to(md) {
-                    font-size: map-get(map-get(var.$font-sizes, md), h4);
-                }
-                @include resp.respond-to(sm) {
-                    font-size: map-get(map-get(var.$font-sizes, sm), h4);
-                }
+                // @include resp.respond-to(xl) {
+                //     font-size: map-get(map-get(var.$font-sizes, xl), h4);
+                // }
+                // @include resp.respond-to(md) {
+                //     font-size: map-get(map-get(var.$font-sizes, md), h4);
+                // }
+                // @include resp.respond-to(sm) {
+                //     font-size: map-get(map-get(var.$font-sizes, sm), h4);
+                // }
             }
         }
     }
@@ -471,25 +472,25 @@ header {
         margin-bottom: map-get(var.$spacers, 10);
 
         i {
-            font-size: var.$font-size-h1;
+            @include resp.responsive-font-size(h1);
             font-weight: var.$font-weight-regular;
             color: var.$color-primary;
         }
 
         h2 {
-            font-size: var.$font-size-h2;
+            @include resp.responsive-font-size(h2);
             font-weight: var.$font-weight-bold;
             color: var.$color-primary;
 
-            @include resp.respond-to(xl) {
-                font-size: map-get(map-get(var.$font-sizes, xl), h2);
-            }
-            @include resp.respond-to(md) {
-                font-size: map-get(map-get(var.$font-sizes, md), h2);
-            }
-            @include resp.respond-to(sm) {
-                font-size: map-get(map-get(var.$font-sizes, sm), h2);
-            }
+            // @include resp.respond-to(xl) {
+            //     font-size: map-get(map-get(var.$font-sizes, xl), h2);
+            // }
+            // @include resp.respond-to(md) {
+            //     font-size: map-get(map-get(var.$font-sizes, md), h2);
+            // }
+            // @include resp.respond-to(sm) {
+            //     font-size: map-get(map-get(var.$font-sizes, sm), h2);
+            // }
         }
     }
 
@@ -521,19 +522,19 @@ header {
         margin-bottom: map-get(var.$spacers, 7); //30px;
 
         h4 {
-            font-size: var.$font-size-h4;
+            @include resp.responsive-font-size(h4);
             font-weight: var.$font-weight-light;
             color: var.$color-black;
 
-            @include resp.respond-to(xl) {
-                font-size: map-get(map-get(var.$font-sizes, xl), h4);
-            }
-            @include resp.respond-to(md) {
-                font-size: map-get(map-get(var.$font-sizes, md), h4);
-            }
-            @include resp.respond-to(sm) {
-                font-size: map-get(map-get(var.$font-sizes, sm), h4);
-            }
+            // @include resp.respond-to(xl) {
+            //     font-size: map-get(map-get(var.$font-sizes, xl), h4);
+            // }
+            // @include resp.respond-to(md) {
+            //     font-size: map-get(map-get(var.$font-sizes, md), h4);
+            // }
+            // @include resp.respond-to(sm) {
+            //     font-size: map-get(map-get(var.$font-sizes, sm), h4);
+            // }
         }
     }
 
@@ -552,40 +553,40 @@ header {
 
         span {
             font-family: var.$font-title;
-            font-size: var.$font-size-h4;
+            @include resp.responsive-font-size(h4);
             font-weight: var.$font-weight-regular;
             color: var.$color-black;
 
-            @include resp.respond-to(xl) {
-                font-size: map-get(map-get(var.$font-sizes, xl), h4);
-            }
-            @include resp.respond-to(md) {
-                font-size: map-get(map-get(var.$font-sizes, md), h4);
-            }
-            @include resp.respond-to(sm) {
-                font-size: map-get(map-get(var.$font-sizes, sm), h4);
-            }
+            // @include resp.respond-to(xl) {
+            //     font-size: map-get(map-get(var.$font-sizes, xl), h4);
+            // }
+            // @include resp.respond-to(md) {
+            //     font-size: map-get(map-get(var.$font-sizes, md), h4);
+            // }
+            // @include resp.respond-to(sm) {
+            //     font-size: map-get(map-get(var.$font-sizes, sm), h4);
+            // }
         }
 
         h4 {
-            font-size: var.$font-size-h4;
+            @include resp.responsive-font-size(h4);
             font-weight: var.$font-weight-semibold;
             color: var.$color-black;
 
-            @include resp.respond-to(xl) {
-                font-size: map-get(map-get(var.$font-sizes, xl), h4);
-            }
-            @include resp.respond-to(md) {
-                font-size: map-get(map-get(var.$font-sizes, md), h4);
-            }
-            @include resp.respond-to(sm) {
-                font-size: map-get(map-get(var.$font-sizes, sm), h4);
-            }
+            // @include resp.respond-to(xl) {
+            //     font-size: map-get(map-get(var.$font-sizes, xl), h4);
+            // }
+            // @include resp.respond-to(md) {
+            //     font-size: map-get(map-get(var.$font-sizes, md), h4);
+            // }
+            // @include resp.respond-to(sm) {
+            //     font-size: map-get(map-get(var.$font-sizes, sm), h4);
+            // }
         }
     }
 
     .sec05__button {
-        font-size: var.$font-size-p;
+        @include resp.responsive-font-size(p);
         font-weight: var.$font-weight-light;
         letter-spacing: 0.1rem;
         color: var.$color-white;
@@ -620,19 +621,19 @@ header {
         margin-bottom: map-get(var.$spacers, 6); //20px
 
         .footer__info-list {
-            font-size: var.$font-size-p;
+            @include resp.responsive-font-size(p);
             font-weight: var.$font-weight-light;
             color: var.$color-white;
 
-            @include resp.respond-to(xl) {
-                font-size: map-get(map-get(var.$font-sizes, xl), p);
-            }
-            @include resp.respond-to(md) {
-                font-size: map-get(map-get(var.$font-sizes, md), p);
-            }
-            @include resp.respond-to(sm) {
-                font-size: map-get(map-get(var.$font-sizes, sm), p);
-            }
+            // @include resp.respond-to(xl) {
+            //     font-size: map-get(map-get(var.$font-sizes, xl), p);
+            // }
+            // @include resp.respond-to(md) {
+            //     font-size: map-get(map-get(var.$font-sizes, md), p);
+            // }
+            // @include resp.respond-to(sm) {
+            //     font-size: map-get(map-get(var.$font-sizes, sm), p);
+            // }
 
             & + .footer__info-list::before {
                 content: "|";
@@ -644,38 +645,38 @@ header {
 
     .copyright {
         p {
-            font-size: var.$font-size-p;
+            @include resp.responsive-font-size(p);
             font-weight: var.$font-weight-extralight;
             color: var.$color-white;
 
-            @include resp.respond-to(xl) {
-                font-size: map-get(map-get(var.$font-sizes, xl), p);
-            }
-            @include resp.respond-to(md) {
-                font-size: map-get(map-get(var.$font-sizes, xl), p);
-            }
-            @include resp.respond-to(sm) {
-                font-size: map-get(map-get(var.$font-sizes, xl), p);
-            }
+            // @include resp.respond-to(xl) {
+            //     font-size: map-get(map-get(var.$font-sizes, xl), p);
+            // }
+            // @include resp.respond-to(md) {
+            //     font-size: map-get(map-get(var.$font-sizes, xl), p);
+            // }
+            // @include resp.respond-to(sm) {
+            //     font-size: map-get(map-get(var.$font-sizes, xl), p);
+            // }
         }
     }
 
     .footer__right-info {
         text-align: right;
-        font-size: var.$font-size-p;
+        @include resp.responsive-font-size(p);
         font-weight: var.$font-weight-extralight;
         color: var.$color-white;
         // border-bottom: 1px solid var.$color-white;
 
-        @include resp.respond-to(xl) {
-            font-size: map-get(map-get(var.$font-sizes, xl), p);
-        }
-        @include resp.respond-to(md) {
-            font-size: map-get(map-get(var.$font-sizes, md), p);
-        }
-        @include resp.respond-to(sm) {
-            font-size: map-get(map-get(var.$font-sizes, sm), p);
-        }
+        // @include resp.respond-to(xl) {
+        //     font-size: map-get(map-get(var.$font-sizes, xl), p);
+        // }
+        // @include resp.respond-to(md) {
+        //     font-size: map-get(map-get(var.$font-sizes, md), p);
+        // }
+        // @include resp.respond-to(sm) {
+        //     font-size: map-get(map-get(var.$font-sizes, sm), p);
+        // }
 
         ul {
             margin-bottom: map-get(var.$spacers, 1); //10px;

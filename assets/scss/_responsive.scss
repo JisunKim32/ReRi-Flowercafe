@@ -1,31 +1,80 @@
-// // responsive.scss
-// @use 'variables' as vars;
+@use "variables" as var;
 
-// @mixin respond-to($key) {
-//   @if map-has-key(vars.$breakpoints, $key) {
-//     $size: map-get(vars.$breakpoints, $key);
-//     @media (max-width: $size) {
-//       @content;
-//     }
-//   } @else {
-//     @warn "Unknown breakpoint “#{$key}”. Available: #{map-keys(vars.$breakpoints)}.";
-//   }
-// }
-
-$breakpoints: (
-  sm: 576px,
-  md: 768px,
-  lg: 1024px,
-  xl: 1200px,
-);
+// // $breakpoints: (
+// //   sm: 576px,
+// //   md: 768px,
+// //   lg: 1024px,
+// //   xl: 1200px,
+// // );
 
 // 올바른 믹스인 이름: respond-to
 @mixin respond-to($breakpoint) {
-  @if map-has-key($breakpoints, $breakpoint) {
-    @media (max-width: map-get($breakpoints, $breakpoint)) {
+  @if map-has-key(var.$breakpoints, $breakpoint) {
+    @media (min-width: map-get(var.$breakpoints, $breakpoint)) {
       @content;
     }
   } @else {
     @warn "Unknown breakpoint `#{$breakpoint}`.";
+  }
+}
+
+// @function get-font-size($name, $breakpoint: default) {
+//   @if map-has-key($font-sizes, $breakpoint) {
+//     $bp-map: map-get($font-sizes, $breakpoint);
+//     @if map-has-key($bp-map, $name) {
+//       @return map-get($bp-map, $name);
+//     } @else {
+//       @warn "[font-size] #{$name} not found in breakpoint `#{$breakpoint}`";
+//       @return null;
+//     }
+//   } @else {
+//     @warn "[font-size] breakpoint `#{$breakpoint}` not found!";
+//     @return null;
+//   }
+// }
+
+// // 폰트사이즈 믹스인
+// @mixin responsive-font-size($name) {
+//   font-size: get-font-size($name, default);
+
+//   // xl, md, sm 등 각 브레이크포인트 순회
+//   @each $break, $size in $breakpoints {
+//     @if map-has-key($font-sizes, $break) {
+//       @media (min-width: #{$size}) {
+//         font-size: get-font-size($name, $break);
+//       }
+//     }
+//   }
+// }
+
+
+
+// 반응형 폰트사이즈 믹스인
+@mixin responsive-font-size($name) {
+  font-size: get-font-size($name, xs);
+
+  // $breakpoints를 순회하면서, breakpoint가 map에 있으면 미디어쿼리 생성
+  @each $break, $size in var.$breakpoints {
+    @if map-has-key(var.$font-sizes, $break) {
+      @media (min-width: #{$size}) {
+        font-size: get-font-size($name, $break);
+      }
+    }
+  }
+}
+
+// 폰트사이즈 맵에서 값을 가져오는 함수
+@function get-font-size($name, $breakpoint: xs) {
+  @if map-has-key(var.$font-sizes, $breakpoint) {
+    $bp-map: map-get(var.$font-sizes, $breakpoint);
+    @if map-has-key($bp-map, $name) {
+      @return map-get($bp-map, $name);
+    } @else {
+      @warn "[font-size] '#{$name}' not found in breakpoint '#{$breakpoint}'.";
+      @return null;
+    }
+  } @else {
+    @warn "[font-size] breakpoint '#{$breakpoint}' not found!";
+    @return null;
   }
 }

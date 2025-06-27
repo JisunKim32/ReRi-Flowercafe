@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Re:Ri Brand Story Section</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+    /* 전체적인 스타일 초기화 및 폰트 설정 */
+    body {
+        font-family: 'Noto Sans KR', sans-serif;
+        margin: 0;
+        padding: 50px 20px;
+        background-color: #fdfdfd; /* 깨끗한 느낌의 배경색 */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* 섹션 전체를 감싸는 컨테이너 */
+    .brand-story-section {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 1100px;
+        margin: auto;
+        gap: 50px; /* 이미지와 텍스트 사이의 간격 */
+    }
+
+    /* 왼쪽 이미지 영역 */
+    .story-image {
+        flex: 1.1; /* 이미지를 텍스트보다 약간 크게 설정 */
+        max-width: 55%;
+    }
+
+    .story-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 8px; /* 이미지에 부드러운 곡선 테두리 */
+        box-shadow: 0 8px 25px rgba(0,0,0,0.08); /* 부드러운 그림자 효과 */
+    }
+    
+    /* 오른쪽 텍스트 영역 */
+    .story-text {
+        flex: 1;
+        text-align: left;
+    }
+    
+    /* 콘텐츠 1의 헤드라인 */
+    .story-text h2 {
+        font-size: 26px; /* 메인 헤드라인 폰트 크기 */
+        font-weight: 500; /* 살짝 두께감 있는 폰트 */
+        line-height: 1.5;
+        margin-top: 0;
+        margin-bottom: 15px;
+        color: #2c2c2c;
+    }
+    
+    /* 콘텐츠 1의 본문 */
+    .story-text .philosophy {
+        font-size: 16px;
+        line-height: 1.8;
+        color: #555;
+        font-weight: 300; /* 얇은 폰트로 가독성 확보 */
+    }
+    
+    /* 콘텐츠 1과 2를 나누는 구분선 스타일 */
+    .divider {
+        border: none;
+        height: 1px;
+        background-color: #e0e0e0;
+        margin: 35px 0; /* 위아래로 충분한 여백 */
+    }
+
+    /* 콘텐츠 2의 본문 */
+    .story-text .harmony {
+        font-size: 16px;
+        line-height: 1.8;
+        color: #444; /* 앞선 텍스트보다 살짝 진하게 하여 강조 */
+        font-weight: 400;
+    }
+
+    /* 모바일 화면 대응 (가로 768px 이하) */
+    @media (max-width: 768px) {
+        body {
+            padding: 30px 15px;
+        }
+        .brand-story-section {
+            flex-direction: column; /* 요소들을 세로로 배치 */
+            gap: 30px;
+        }
+        .story-image {
+            max-width: 100%;
+        }
+        .story-text {
+            text-align: center; /* 모바일에서는 중앙 정렬로 변경 */
+        }
+        .story-text h2 {
+            font-size: 22px;
+        }
+        .story-text p {
+            font-size: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+
+<div class="brand-story-section">
+    <div class="story-image">
+        <img src="http://googleusercontent.com/image_generation_content/0" alt="리리플라워카페의 꽃과 커피">
+    </div>
+
+    <div class="story-text">
+        <h2>
+            바쁜 일상 속, 쉼이 필요한 당신을 위한<br>
+            새로운 감각의 재해석
+        </h2>
+        <p class="philosophy">
+            Re:Ri는 '다시(Re:)' 시작할 힘을 얻는 곳을 의미합니다.<br>
+            우리는 지친 당신의 하루를 부드럽게 '리셋(Reset)'하고,<br>
+            새로운 영감으로 감각을 '리프레시(Refresh)'하는 경험을 디자인합니다.
+        </p>
+        
+        <hr class="divider">
+        
+        <p class="harmony">
+            <strong>꽃이 계절의 이야기를 소곤거리면, 커피는 그 이야기에 깊이를 더합니다.</strong><br>
+            향기로운 대화가 오고 가는 이곳은, 꽃과 커피로 써 내려가는<br>
+            한 편의 시와 같은 공간입니다.
+        </p>
+    </div>
+</div>
+
+</body>
+</html>
