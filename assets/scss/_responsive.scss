@@ -1,13 +1,5 @@
 @use "variables" as var;
 
-// // $breakpoints: (
-// //   sm: 576px,
-// //   md: 768px,
-// //   lg: 1024px,
-// //   xl: 1200px,
-// // );
-
-// 올바른 믹스인 이름: respond-to
 @mixin respond-to($breakpoint) {
   @if map-has-key(var.$breakpoints, $breakpoint) {
     @media (min-width: map-get(var.$breakpoints, $breakpoint)) {
@@ -17,36 +9,6 @@
     @warn "Unknown breakpoint `#{$breakpoint}`.";
   }
 }
-
-// @function get-font-size($name, $breakpoint: default) {
-//   @if map-has-key($font-sizes, $breakpoint) {
-//     $bp-map: map-get($font-sizes, $breakpoint);
-//     @if map-has-key($bp-map, $name) {
-//       @return map-get($bp-map, $name);
-//     } @else {
-//       @warn "[font-size] #{$name} not found in breakpoint `#{$breakpoint}`";
-//       @return null;
-//     }
-//   } @else {
-//     @warn "[font-size] breakpoint `#{$breakpoint}` not found!";
-//     @return null;
-//   }
-// }
-
-// // 폰트사이즈 믹스인
-// @mixin responsive-font-size($name) {
-//   font-size: get-font-size($name, default);
-
-//   // xl, md, sm 등 각 브레이크포인트 순회
-//   @each $break, $size in $breakpoints {
-//     @if map-has-key($font-sizes, $break) {
-//       @media (min-width: #{$size}) {
-//         font-size: get-font-size($name, $break);
-//       }
-//     }
-//   }
-// }
-
 
 
 // 반응형 폰트사이즈 믹스인

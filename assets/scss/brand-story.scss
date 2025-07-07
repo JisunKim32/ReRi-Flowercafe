@@ -1,274 +1,11 @@
-@use "common";
-@use "variables" as var; // 스타일 에셋 (컬러/폰트)
+@use "components";
+@use "variables" as var;
 @use "responsive" as resp;
-@use "components"; // 컴포넌트
-// @import 'normalize.scss'
+@use "common";
 
 .fp-watermark {
    display: none !important;
 }
-
-// === Header ===
-header {
-   width: 100%;
-   padding: 0.625rem;
-   margin: auto;
-   position: fixed;
-   text-align: center;
-   align-items: center;
-   z-index: 999;
-   top: 0;
-   transition: top 0.4s ease-in-out;
-
-   &.header-bg {
-      // background: rgba(var.$color-primary, 0.5);
-      background: var.$color-white;
-      // backdrop-filter: blur(4px);
-      border-bottom: 1px solid rgba(var.$color-primary, 0.1);
-   }
-   &.hidden {
-      top: -15%;
-      transition: 0.3s;
-      z-index: 1000;
-   }
-
-   .container {
-      width: 100%;
-      margin: 0 auto;
-      .gnb {
-         align-items: center;
-         flex-direction: row;
-         .navbar {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-         }
-      }
-   }
-
-   .nav-logo {
-      a {
-         list-style: none;
-         text-decoration: none;
-         font-family: var.$font-title;
-         font-size: map-get(map-get(var.$font-sizes, default), h4);
-         letter-spacing: 0.1rem;
-         text-align: center;
-         color: var.$color-primary;
-         font-weight: var.$font-weight-medium;
-         display: flex;
-         gap: 0 10px;
-      }
-   }
-
-   .nav-list {
-      width: 640px;
-      .nav {
-         width: 100%;
-         display: flex;
-         justify-content: space-between;
-         li {
-            width: 160px;
-            position: relative;
-            // padding: 10px 20px;
-            a {
-               // width: 160px;
-               list-style: none;
-               text-decoration: none;
-               text-align: center;
-               color: var.$color-primary;
-               font-size: map-get(map-get(var.$font-sizes, default), h7);
-               font-weight: var.$font-weight-medium;
-               &:hover {
-                  color: darken(var.$color-primary, 10%);
-               }
-               &:after {
-                  background-color: var.$color-primary;
-               }
-            }
-         }
-         li:first-child a {
-            font-family: var.$font-title;
-            font-size: map-get(map-get(var.$font-sizes, default), h6);
-            letter-spacing: 0.11rem;
-         }
-         .sub-menu {
-            display: none;
-            position: absolute;
-            justify-content: center;
-            padding-top: 10px;
-            li {
-               padding: 10px 0;
-               width: 160px;
-               a {
-                  width: 160px;
-                  list-style: none;
-                  text-decoration: none;
-                  font-family: var.$font-body;
-                  text-align: center;
-                  color: var.$color-primary;
-                  font-size: map-get(map-get(var.$font-sizes, default), p);
-                  font-weight: var.$font-weight-medium;
-                  &:hover {
-                     color: darken(var.$color-primary, 10%);
-                  }
-                  &:after {
-                     background-color: var.$color-primary;
-                  }
-               }
-            }
-         }
-      }
-      // .nav > li > a:after {
-      //    display: block;
-      //    width: 120px;
-      //    margin-top: 10px;
-      //    // margin-left: 20px;
-      //    content: "";
-      //    text-align: center;
-      //    border-bottom: solid 2px rgba(var.$color-primary, 0.3);
-      //    border-radius: 300px;
-      //    transform: scaleX(0);
-      //    transform-origin: left;
-      //    transition: transform 0.3s ease-in-out;
-      // }
-      // .nav > li > a:hover:after {
-      //    transform: scaleX(1);
-      // }
-      .nav > li:after {
-         content: "";
-         position: absolute;
-         bottom: 0;
-         left: 20px;
-         width: 120px;
-         height: 2px;
-         background-color: rgba(var.$color-primary, 0.3);
-         border-radius: 300px;
-         transform: scaleX(0);
-         transform-origin: left;
-         transition: transform 0.3s ease-in-out;
-      }
-
-      .nav > li:hover:after {
-         transform: scaleX(1);
-      }
-      @include resp.respond-to(lg) {
-         display: none;
-      }
-   }
-
-   .hamburger {
-      width: 24px;
-      background: transparent;
-      border: none;
-      display: none;
-      @include resp.respond-to(lg) {
-         display: block;
-      }
-
-      .hamburger-box {
-         width: 100%;
-         display: flex;
-         flex-direction: column;
-         gap: 5px 0;
-
-         .hamburger-inner {
-            width: 100%;
-            height: 1px;
-            border: 1px solid var.$color-primary;
-            border-radius: 300px;
-            background: var.$color-primary;
-         }
-      }
-   }
-
-   .hamburger:hover {
-      opacity: 0.7;
-   }
-
-   .megamenu {
-      position: fixed; // 화면 기준 고정
-      top: 80px;
-      left: 0;
-      width: 100vw; // 화면 전체
-      height: 100vh;
-      background: #fff; // 예시
-      opacity: 0;
-      visibility: hidden;
-      transform: translateX(100%); // 화면 밖으로 완전히 이동
-      transition: all 0.4s cubic-bezier(0.76, 0, 0.24, 1);
-
-      &.active {
-         opacity: 1;
-         visibility: visible;
-         transform: translateX(0); // 화면 안으로 들어옴
-      }
-      // transform: translateX(100%);
-      .megamenu-box {
-         width: 100%;
-         text-align: left;
-         .megamenu-list {
-            padding: 0 80px;
-            ul {
-               list-style: none;
-               padding: 0;
-               margin: 0;
-               li {
-                  margin: 1.2rem 0;
-                  a {
-                     font-size: var.$font-size-h1;
-                     font-weight: var.$font-weight-extrabold;
-                     color: transparent;
-                     -webkit-text-stroke: 1.5px var.$color-primary;
-                     text-decoration: none;
-                     transition: all 0.2s ease;
-                     text-align: center;
-                     position: relative;
-                     cursor: pointer;
-                     &:hover {
-                        color: var.$color-primary;
-                     }
-                  }
-               }
-            }
-         }
-      }
-   }
-}
-
-// 애니메이션 효과 추가
-@keyframes fadeIn {
-   from {
-      opacity: 0;
-      transform: translateY(-10px);
-   }
-   to {
-      opacity: 1;
-      transform: translateY(0);
-   }
-}
-@keyframes slideDown {
-   from {
-      opacity: 0;
-      transform: translateY(-20px);
-   }
-   to {
-      opacity: 1;
-      transform: translateY(0);
-   }
-}
-// 메가메뉴 활성화 애니메이션
-@keyframes fadeIn {
-   from {
-      opacity: 0;
-      transform: translateY(-10px);
-   }
-   to {
-      opacity: 1;
-      transform: translateY(0);
-   }
-}
-// === Header end ===
 
 // === Fullpage ===
 #fullpage {
@@ -288,7 +25,7 @@ header {
       .sec01__title {
          span {
             font-family: var.$font-point;
-            font-size: var.$font-size-point;
+            @include resp.responsive-font-size(point);
             color: var.$color-primary;
             font-weight: var.$font-weight-bold;
          }
@@ -300,7 +37,7 @@ header {
       .sec02__text {
          margin-bottom: 60px;
          h3 {
-            font-size: map-get(map-get(var.$font-sizes, default), h3);
+            @include resp.responsive-font-size(h3);
             color: var.$color-white;
             font-weight: var.$font-weight-light;
             margin-bottom: 30px;
@@ -310,7 +47,7 @@ header {
             }
          }
          h1 {
-            font-size: map-get(map-get(var.$font-sizes, default), h1);
+            @include resp.responsive-font-size(h1);
             color: var.$color-white;
             font-weight: var.$font-weight-bold;
          }
@@ -318,7 +55,7 @@ header {
       .sec02__logo {
          h1 {
             font-family: var.$font-point;
-            font-size: map-get(map-get(var.$font-sizes, default), h1);
+            @include resp.responsive-font-size(h1);
             color: var.$color-white;
             font-weight: var.$font-weight-bold;
          }
@@ -334,52 +71,43 @@ header {
    align-items: center;
    justify-content: center;
 }
+// === Sec02 end ===
 
-.sec03__faq {
-   background: var.$color-bg01;
-   .sec03__faq-left {
-      display: flex;
-      justify-content: left;
-      .faq-title {
-         // margin-bottom: 30px;
-         margin-bottom: map-get(var.$spacers, 6);
-         h4 {
-            font-family: var.$font-point;
-            font-size: map-get(map-get(var.$font-sizes, default), h4);
-            font-weight: var.$font-weight-bold;
-            color: var.$color-primary;
-         }
-         h1 {
-            font-family: var.$font-point;
-            font-size: map-get(map-get(var.$font-sizes, default), h1);
-            font-weight: var.$font-weight-bold;
-            color: var.$color-primary;
-         }
+// === Sec03 ===
+.sec03 {
+   width: 100%;
+   .sec03__title {
+      width: 100%;
+      h1 {
+         @include resp.responsive-font-size(h1);
+         color: var.$color-black;
+         font-weight: var.$font-weight-bold;
+      }
+      h1 span {
+         font-family: var.$font-point;
+         color: var.$color-primary;
+         font-weight: var.$font-weight-bold;
       }
    }
-   .sec03__faq-right {
-      .accordion-header {
-         button {
-            font-size: map-get(map-get(var.$font-sizes, default), h6);
-            color: var.$color-primary;
-            font-weight: var.$font-weight-regular;
-            background: var.$color-bg01;
-         }
+   .sec03__content {
+      width: 100%;
+      h5 {
+         @include resp.responsive-font-size(h5);
+         color: var.$color-gray-800;
+         font-weight: var.$font-weight-regular;
+         text-align: right;
+         margin-top: map-get(var.$spacers, 15);
       }
-      .accordion-body {
-         font-size: map-get(map-get(var.$font-sizes, default), h7);
-         font-weight: var.$font-weight-light;
-         color: var.$color-gray-900;
-         background: var.$color-bg01;
-      }
-      .accordion-button::after {
-         background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill="none" stroke="%23ff3a1e" stroke-width="2" d="M1.5 6.5l6 6 6-6"/></svg>');
+      h5 span {
+         font-family: var.$font-point;
+         color: var.$color-primary;
+         font-weight: var.$font-weight-bold;
       }
    }
 }
-// === Sec02 end ===
+// === Sec03 end ===
 
-// === Sec03 Footer ===
+// === Footer ===
 .footer {
    padding: map-get(var.$spacers, 11) map-get(var.$spacers, 0) map-get(var.$spacers, 9);
    background: var.$color-primary;
@@ -406,19 +134,9 @@ header {
       margin-bottom: map-get(var.$spacers, 6); //20px
 
       .footer__info-list {
-         font-size: var.$font-size-p;
+         @include resp.responsive-font-size(p);
          font-weight: var.$font-weight-light;
          color: var.$color-white;
-
-         @include resp.respond-to(xl) {
-            font-size: map-get(map-get(var.$font-sizes, xl), p);
-         }
-         @include resp.respond-to(md) {
-            font-size: map-get(map-get(var.$font-sizes, md), p);
-         }
-         @include resp.respond-to(sm) {
-            font-size: map-get(map-get(var.$font-sizes, sm), p);
-         }
 
          & + .footer__info-list::before {
             content: "|";
@@ -430,38 +148,18 @@ header {
 
    .copyright {
       p {
-         font-size: var.$font-size-p;
+         @include resp.responsive-font-size(p);
          font-weight: var.$font-weight-extralight;
          color: var.$color-white;
-
-         @include resp.respond-to(xl) {
-            font-size: map-get(map-get(var.$font-sizes, xl), p);
-         }
-         @include resp.respond-to(md) {
-            font-size: map-get(map-get(var.$font-sizes, xl), p);
-         }
-         @include resp.respond-to(sm) {
-            font-size: map-get(map-get(var.$font-sizes, xl), p);
-         }
       }
    }
 
    .footer__right-info {
       text-align: right;
-      font-size: var.$font-size-p;
+      @include resp.responsive-font-size(p);
       font-weight: var.$font-weight-extralight;
       color: var.$color-white;
       // border-bottom: 1px solid var.$color-white;
-
-      @include resp.respond-to(xl) {
-         font-size: map-get(map-get(var.$font-sizes, xl), p);
-      }
-      @include resp.respond-to(md) {
-         font-size: map-get(map-get(var.$font-sizes, md), p);
-      }
-      @include resp.respond-to(sm) {
-         font-size: map-get(map-get(var.$font-sizes, sm), p);
-      }
 
       ul {
          margin-bottom: map-get(var.$spacers, 1); //10px;

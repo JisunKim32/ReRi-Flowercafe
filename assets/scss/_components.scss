@@ -1,5 +1,6 @@
 @use "variables" as var;
 @use "responsive" as resp; // respond-to 믹스인 바로 사용
+@use "common";
 
 // === Button ===
 .btn-bn {
@@ -27,3 +28,279 @@
 //    padding: 0.6rem 1rem;
 //    line-height: map-get(var.$spacers, 1) map-get(var.$spacers, 1);
 // }
+
+
+
+// === Header ===
+header {
+   width: 100%;
+   padding: 0.625rem 0;
+   margin: auto;
+   position: fixed;
+   text-align: center;
+   align-items: center;
+   z-index: 9999;
+   top: 0;
+   transition: top 0.4s ease-in-out;
+
+   &.header-bg {
+      background: var.$color-white;
+      border-bottom: 1px solid rgba(var.$color-primary, 0.1);
+   }
+   &.hidden {
+      top: -15%;
+      transition: 0.3s;
+      z-index: 1000;
+   }
+
+   .container {
+      width: 100%;
+      margin: 0 auto;
+      .gnb {
+         align-items: center;
+         flex-direction: row;
+         .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+         }
+      }
+   }
+
+   .nav-logo {
+      z-index: 9999;
+      align-items: center;
+      a {
+         font-family: var.$font-title;
+         @include resp.responsive-font-size(h4);
+         font-weight: var.$font-weight-medium;
+         letter-spacing: 0.1rem;
+         line-height: 2.688rem;
+         text-align: center;
+         color: var.$color-primary;
+         list-style: none;
+         text-decoration: none;
+         display: flex;
+         gap: 0 10px;
+      }
+   }
+
+   .nav-list {
+      // width: 640px;
+      width: 420px;
+      z-index: 9999;
+      display: none;
+      align-items: center;
+      @include resp.respond-to(lg) {
+         display: flex;
+         justify-content: space-between;
+      }
+      // .nav-list {
+      //    width: 100%;
+      //    display: flex;
+
+      //    align-items: center;
+         li {
+            // width: 160px;
+            width: 140px;
+            position: relative;
+            padding: 10px 0;
+            a {
+               list-style: none;
+               text-decoration: none;
+               text-align: center;
+               color: var.$color-primary;
+               @include resp.responsive-font-size(h7);
+               font-weight: var.$font-weight-medium;
+               &:hover {
+                  color: darken(var.$color-primary, 10%);
+                  //   margin-top: 10px;
+               }
+               &:after {
+                  background-color: var.$color-primary;
+                  //   margin-top: 10px;
+               }
+            }
+         // }
+         li:first-child a {
+            font-family: var.$font-title;
+            @include resp.responsive-font-size(h6);
+            letter-spacing: 0.11rem;
+         }
+         .sub-menu {
+            display: none;
+            position: absolute;
+            justify-content: center;
+            padding-top: 10px;
+            padding-bottom: 20px;
+            z-index: 9999;
+            li {
+               padding: 10px 0;
+               // width: 160px;
+               width: 140px;
+               a {
+                  // width: 160px;
+                  width: 140px;
+                  list-style: none;
+                  text-decoration: none;
+                  font-family: var.$font-body;
+                  text-align: center;
+                  color: var.$color-primary;
+                  @include resp.responsive-font-size(p);
+                  font-weight: var.$font-weight-medium;
+                  &:hover {
+                     color: darken(var.$color-primary, 10%);
+                  }
+                  &:after {
+                     background-color: var.$color-primary;
+                  }
+               }
+            }
+         }
+      }
+      .nav > li:after {
+         content: "";
+         position: absolute;
+         bottom: 0;
+         // left: 20px;
+         left: 15px;
+         width: 110px;
+         height: 2px;
+         background-color: rgba(var.$color-primary, 0.3);
+         border-radius: 300px;
+         transform: scaleX(0);
+         transform-origin: left;
+         transition: transform 0.3s ease-in-out;
+      }
+
+      .nav > li:hover:after {
+         transform: scaleX(1);
+      }
+   }
+
+   .hamburger {
+      width: 24px;
+      background: transparent;
+      border: none;
+      display: block;
+      @include resp.respond-to(lg) {
+         display: none;
+      }
+
+      .hamburger-box {
+         width: 100%;
+         display: flex;
+         flex-direction: column;
+         gap: 5px 0;
+
+         .hamburger-inner {
+            width: 100%;
+            height: 1px;
+            border: 1px solid var.$color-primary;
+            border-radius: 300px;
+            background: var.$color-primary;
+         }
+      }
+   }
+
+   .hamburger:hover {
+      opacity: 0.7;
+   }
+
+   .megamenu {
+      position: fixed;
+      top: 80px;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: #fff;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateX(100%);
+      transition: all 0.4s cubic-bezier(0.76, 0, 0.24, 1);
+
+      &.active {
+         opacity: 1;
+         visibility: visible;
+         transform: translateX(0);
+      }
+      .megamenu-box {
+         width: 100%;
+         text-align: left;
+         .megamenu-list {
+            // padding: 0 80px;
+            ul {
+               list-style: none;
+               padding: 0;
+               margin: 0;
+               li {
+                  margin: 1.2rem 0;
+                  a {
+                     @include resp.responsive-font-size(h1);
+                     font-weight: var.$font-weight-extrabold;
+                     color: transparent;
+                     -webkit-text-stroke: 1.5px var.$color-primary;
+                     text-decoration: none;
+                     transition: all 0.2s ease;
+                     text-align: center;
+                     position: relative;
+                     cursor: pointer;
+                     &:hover {
+                        color: var.$color-primary;
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
+
+   .overlay {
+      position: fixed;
+      display: none;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 400px;
+      background-color: rgba(var.$color-white, 0.7);
+      backdrop-filter: blur(4px);
+      z-index: 9990;
+   }
+   .overlay.active {
+      opacity: 1;
+      visibility: visible;
+   }
+}
+
+@keyframes fadeIn {
+   from {
+      opacity: 0;
+      transform: translateY(-10px);
+   }
+   to {
+      opacity: 1;
+      transform: translateY(0);
+   }
+}
+@keyframes slideDown {
+   from {
+      opacity: 0;
+      transform: translateY(-20px);
+   }
+   to {
+      opacity: 1;
+      transform: translateY(0);
+   }
+}
+// 메가메뉴 활성화 애니메이션
+@keyframes fadeIn {
+   from {
+      opacity: 0;
+      transform: translateY(-10px);
+   }
+   to {
+      opacity: 1;
+      transform: translateY(0);
+   }
+}
+// === Header end ===
