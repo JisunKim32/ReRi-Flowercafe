@@ -32,19 +32,39 @@ $(window).on('scroll', function () {
     lastScroll = scrollTop;
 });
 
-$(function () {
-    let $hamburger = $('.hamburger'),
-        $nav = $('.megamenu');
+// $(function () {
+//   let $hamburger = $('.hamburger'),
+//       $nav = $('.megamenu'),
+//       $overlay = $('.overlay');
 
-    $nav.removeClass('active');
-    
-    $hamburger.on('click', function(){
-        $(this).toggleClass('is-active');
-        $nav.toggleClass('active');
-        
-        return false;
-    });
+//   $nav.removeClass('active');
+
+//   $hamburger.on('click', function () {
+//       $(this).toggleClass('is-active');
+//       $nav.toggleClass('active');
+//       $overlay.toggleClass('active');
+
+//       return false;
+//   });
+// });
+
+$(function () {
+  let $hamburger = $('.hamburger'),
+      $nav = $('.megamenu'),
+      $overlay = $('.overlay');
+
+  $nav.removeClass('active');
+
+  $hamburger.on('click', function () {
+      $(this).toggleClass('is-active');
+      $nav.toggleClass('active');
+      $overlay.toggleClass('active');
+      return false;
+  });
 });
+
+
+
 
 // $(function(){
 //    $('.nav>li').mouseenter(function(){
@@ -56,63 +76,63 @@ $(function () {
 //    })
 // })
 
-$(function(){
-  // 각 메뉴 아이템에 마우스를 올렸을 때
-  $('.nav-list > li').on('mouseenter', function(){
-      // 1. 내가 마우스를 올린 메뉴의 서브메뉴를 보여준다.
-      $(this).children('.sub-menu').stop().slideDown(200);
+// $(function(){
+//   // 각 메뉴 아이템에 마우스를 올렸을 때
+//   $('.nav-list > li').on('mouseenter', function(){
+//       // 1. 내가 마우스를 올린 메뉴의 서브메뉴를 보여준다.
+//       $(this).children('.sub-menu').stop().slideDown(200);
       
-      // 2. ※중요※ 나를 제외한 다른 형제 메뉴들의 서브메뉴는 숨긴다.
-      $(this).siblings().children('.sub-menu').stop().slideUp(200);
+//       // 2. ※중요※ 나를 제외한 다른 형제 메뉴들의 서브메뉴는 숨긴다.
+//       $(this).siblings().children('.sub-menu').stop().slideUp(200);
 
-      // 3. 오버레이를 활성화한다.
-      $('.overlay').stop().slideDown(200);
-  });
+//       // 3. 오버레이를 활성화한다.
+//       $('.overlay').stop().slideDown(200);
+//   });
 
-  // 내비게이션 영역 전체에서 마우스가 벗어났을 때
-  // 개별 li가 아닌 .nav 전체 영역을 기준으로 합니다.
-  $('.nav-list').on('mouseleave', function(){
-      // 1. 모든 서브메뉴를 닫는다.
-      $(this).find('.sub-menu').stop().slideUp(200);
+//   // 내비게이션 영역 전체에서 마우스가 벗어났을 때
+//   // 개별 li가 아닌 .nav 전체 영역을 기준으로 합니다.
+//   $('.nav-list').on('mouseleave', function(){
+//       // 1. 모든 서브메뉴를 닫는다.
+//       $(this).find('.sub-menu').stop().slideUp(200);
       
-      // 2. 오버레이를 비활성화한다.
-      $('.overlay').stop().slideUp(200);
-  });
+//       // 2. 오버레이를 비활성화한다.
+//       $('.overlay').stop().slideUp(200);
+//   });
 
-});
+// });
 // === Hamburger BTN on/off & Megamenu end ===
 
 /* === 풀와이드 드롭다운 제어 === */
-$(function(){
-   const $navLi = $('.nav-list > li');
-   const $globalSub = $('.global-submenu');
+// $(function(){
+//    const $navLi = $('.nav-list > li');
+//    const $globalSub = $('.global-submenu');
  
-   // 각 li의 .sub-menu 내용을 global-submenu에 복붙해서 띄움
-   $navLi.mouseenter(function(){
-     // 1. 해당 li의 sub-menu 추출
-     const $submenu = $(this).children('.sub-menu').clone();
-     if ($submenu.length > 0) {
-       // 2. global-submenu에 내용 바꿔넣고 슬라이드다운
-       $globalSub.html($submenu).addClass('show');
-     } else {
-       $globalSub.removeClass('show').empty();
-     }
-   });
+//    // 각 li의 .sub-menu 내용을 global-submenu에 복붙해서 띄움
+//    $navLi.mouseenter(function(){
+//      // 1. 해당 li의 sub-menu 추출
+//      const $submenu = $(this).children('.sub-menu').clone();
+//      if ($submenu.length > 0) {
+//        // 2. global-submenu에 내용 바꿔넣고 슬라이드다운
+//        $globalSub.html($submenu).addClass('show');
+//      } else {
+//        $globalSub.removeClass('show').empty();
+//      }
+//    });
  
-   // li or global-submenu에서 마우스가 나가면 닫힘
-   $('.nav-list, .global-submenu').mouseleave(function(e){
-     // 네비/서브메뉴 위에서 벗어났을 때
-     setTimeout(()=>{
-       if (!$(e.relatedTarget).closest('.nav-list').length && !$(e.relatedTarget).closest('.global-submenu').length) {
-         $globalSub.removeClass('show').empty();
-       }
-     }, 100);
-   });
+//    // li or global-submenu에서 마우스가 나가면 닫힘
+//    $('.nav-list, .global-submenu').mouseleave(function(e){
+//      // 네비/서브메뉴 위에서 벗어났을 때
+//      setTimeout(()=>{
+//        if (!$(e.relatedTarget).closest('.nav-list').length && !$(e.relatedTarget).closest('.global-submenu').length) {
+//          $globalSub.removeClass('show').empty();
+//        }
+//      }, 100);
+//    });
  
-   // global-submenu 위에서 마우스가 떠났을 때 닫힘
-   $globalSub.mouseleave(function(){
-     $globalSub.removeClass('show').empty();
-   });
- });
+//    // global-submenu 위에서 마우스가 떠났을 때 닫힘
+//    $globalSub.mouseleave(function(){
+//      $globalSub.removeClass('show').empty();
+//    });
+//  });
  
 // === Header end ===

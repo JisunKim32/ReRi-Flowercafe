@@ -100,6 +100,7 @@ body {
 
 header {
   width: 100%;
+  height: 80px;
   padding: 0.625rem 0;
   margin: auto;
   position: fixed;
@@ -120,11 +121,15 @@ header.hidden {
 }
 header .container {
   width: 100%;
+  height: 100%;
   margin: 0 auto;
+  align-items: center;
 }
 header .container .gnb {
   align-items: center;
   flex-direction: row;
+  height: 100%;
+  align-items: center;
 }
 header .container .gnb .navbar {
   display: flex;
@@ -179,7 +184,7 @@ header .nav-logo a {
   }
 }
 header .nav-list {
-  width: 420px;
+  width: 520px;
   z-index: 9999;
   display: none;
   align-items: center;
@@ -191,11 +196,12 @@ header .nav-list {
   }
 }
 header .nav-list li {
-  width: 140px;
+  width: 130px;
   position: relative;
   padding: 10px 0;
 }
 header .nav-list li a {
+  font-family: "Cabinest", serif;
   list-style: none;
   text-decoration: none;
   text-align: center;
@@ -210,27 +216,27 @@ header .nav-list li a {
 }
 @media (min-width: 576px) {
   header .nav-list li a {
-    font-size: 0.875rem;
+    font-size: 1rem;
   }
 }
 @media (min-width: 768px) {
   header .nav-list li a {
-    font-size: 1rem;
+    font-size: 1.125rem;
   }
 }
 @media (min-width: 1024px) {
   header .nav-list li a {
-    font-size: 1.125rem;
+    font-size: 1.25rem;
   }
 }
 @media (min-width: 1280px) {
   header .nav-list li a {
-    font-size: 1.125rem;
+    font-size: 1.25rem;
   }
 }
 @media (min-width: 1560px) {
   header .nav-list li a {
-    font-size: 1.125rem;
+    font-size: 1.375rem;
   }
 }
 header .nav-list li a:hover {
@@ -239,104 +245,11 @@ header .nav-list li a:hover {
 header .nav-list li a:after {
   background-color: #ff3a1e;
 }
-header .nav-list li li:first-child a {
-  font-family: "Cabinest", serif;
-  font-size: 1rem;
-  letter-spacing: 0.11rem;
-}
-@media (min-width: 375px) {
-  header .nav-list li li:first-child a {
-    font-size: 1rem;
-  }
-}
-@media (min-width: 576px) {
-  header .nav-list li li:first-child a {
-    font-size: 1rem;
-  }
-}
-@media (min-width: 768px) {
-  header .nav-list li li:first-child a {
-    font-size: 1.25rem;
-  }
-}
-@media (min-width: 1024px) {
-  header .nav-list li li:first-child a {
-    font-size: 1.25rem;
-  }
-}
-@media (min-width: 1280px) {
-  header .nav-list li li:first-child a {
-    font-size: 1.25rem;
-  }
-}
-@media (min-width: 1560px) {
-  header .nav-list li li:first-child a {
-    font-size: 1.375rem;
-  }
-}
-header .nav-list li .sub-menu {
-  display: none;
-  position: absolute;
-  justify-content: center;
-  padding-top: 10px;
-  padding-bottom: 20px;
-  z-index: 9999;
-}
-header .nav-list li .sub-menu li {
-  padding: 10px 0;
-  width: 140px;
-}
-header .nav-list li .sub-menu li a {
-  width: 140px;
-  list-style: none;
-  text-decoration: none;
-  font-family: "Pretendard", sans-serif;
-  text-align: center;
-  color: #ff3a1e;
-  font-size: 0.75rem;
-  font-weight: 500;
-}
-@media (min-width: 375px) {
-  header .nav-list li .sub-menu li a {
-    font-size: 0.75rem;
-  }
-}
-@media (min-width: 576px) {
-  header .nav-list li .sub-menu li a {
-    font-size: 0.75rem;
-  }
-}
-@media (min-width: 768px) {
-  header .nav-list li .sub-menu li a {
-    font-size: 0.875rem;
-  }
-}
-@media (min-width: 1024px) {
-  header .nav-list li .sub-menu li a {
-    font-size: 1rem;
-  }
-}
-@media (min-width: 1280px) {
-  header .nav-list li .sub-menu li a {
-    font-size: 1rem;
-  }
-}
-@media (min-width: 1560px) {
-  header .nav-list li .sub-menu li a {
-    font-size: 1.125rem;
-  }
-}
-header .nav-list li .sub-menu li a:hover {
-  color: #ea1d00;
-}
-header .nav-list li .sub-menu li a:after {
-  background-color: #ff3a1e;
-}
-header .nav-list .nav > li:after {
+header .nav-list > li:after {
   content: "";
   position: absolute;
   bottom: 0;
-  left: 15px;
+  left: 7px;
   width: 110px;
   height: 2px;
   background-color: rgba(255, 58, 30, 0.3);
@@ -345,70 +258,74 @@ header .nav-list .nav > li:after {
   transform-origin: left;
   transition: transform 0.3s ease-in-out;
 }
-header .nav-list .nav > li:hover:after {
+header .nav-list > li:hover:after {
   transform: scaleX(1);
 }
-header .hamburger {
+
+.hamburger {
   width: 24px;
   background: transparent;
   border: none;
   display: block;
+  z-index: 9999;
 }
 @media (min-width: 1024px) {
-  header .hamburger {
+  .hamburger {
     display: none;
   }
 }
-header .hamburger .hamburger-box {
+.hamburger .hamburger-box {
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 5px 0;
 }
-header .hamburger .hamburger-box .hamburger-inner {
+.hamburger .hamburger-box .hamburger-inner {
   width: 100%;
   height: 1px;
   border: 1px solid #ff3a1e;
   border-radius: 300px;
   background: #ff3a1e;
 }
-header .hamburger:hover {
+.hamburger:hover {
   opacity: 0.7;
 }
-header .megamenu {
-  position: fixed;
-  top: 80px;
-  left: 0;
-  width: 100vw;
+
+.megamenu {
+  top: auto;
+  left: auto;
+  width: 100%;
+  max-width: 100vw;
   height: 100vh;
-  background: #fff;
+  background: transparent;
   opacity: 0;
   visibility: hidden;
   transform: translateX(100%);
   transition: all 0.4s cubic-bezier(0.76, 0, 0.24, 1);
+  z-index: 9990;
 }
-header .megamenu.active {
+.megamenu.active {
   opacity: 1;
   visibility: visible;
   transform: translateX(0);
 }
-header .megamenu .megamenu-box {
+.megamenu .megamenu-box {
   width: 100%;
   text-align: left;
 }
-header .megamenu .megamenu-box .megamenu-list ul {
+.megamenu .megamenu-box .megamenu-list ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-header .megamenu .megamenu-box .megamenu-list ul li {
+.megamenu .megamenu-box .megamenu-list ul li {
   margin: 1.2rem 0;
 }
-header .megamenu .megamenu-box .megamenu-list ul li a {
+.megamenu .megamenu-box .megamenu-list ul li a {
   font-size: 2.25rem;
   font-weight: 800;
   color: transparent;
-  -webkit-text-stroke: 1.5px #ff3a1e;
+  -webkit-text-stroke: 1px #ff3a1e;
   text-decoration: none;
   transition: all 0.2s ease;
   text-align: center;
@@ -416,52 +333,57 @@ header .megamenu .megamenu-box .megamenu-list ul li a {
   cursor: pointer;
 }
 @media (min-width: 375px) {
-  header .megamenu .megamenu-box .megamenu-list ul li a {
+  .megamenu .megamenu-box .megamenu-list ul li a {
     font-size: 2.25rem;
   }
 }
 @media (min-width: 576px) {
-  header .megamenu .megamenu-box .megamenu-list ul li a {
+  .megamenu .megamenu-box .megamenu-list ul li a {
     font-size: 2.25rem;
   }
 }
 @media (min-width: 768px) {
-  header .megamenu .megamenu-box .megamenu-list ul li a {
+  .megamenu .megamenu-box .megamenu-list ul li a {
     font-size: 2.625rem;
   }
 }
 @media (min-width: 1024px) {
-  header .megamenu .megamenu-box .megamenu-list ul li a {
+  .megamenu .megamenu-box .megamenu-list ul li a {
     font-size: 3.375rem;
   }
 }
 @media (min-width: 1280px) {
-  header .megamenu .megamenu-box .megamenu-list ul li a {
+  .megamenu .megamenu-box .megamenu-list ul li a {
     font-size: 3.375rem;
   }
 }
 @media (min-width: 1560px) {
-  header .megamenu .megamenu-box .megamenu-list ul li a {
+  .megamenu .megamenu-box .megamenu-list ul li a {
     font-size: 4rem;
   }
 }
-header .megamenu .megamenu-box .megamenu-list ul li a:hover {
+.megamenu .megamenu-box .megamenu-list ul li a:hover {
   color: #ff3a1e;
 }
-header .overlay {
+
+.overlay {
   position: fixed;
-  display: none;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 400px;
-  background-color: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(4px);
-  z-index: 9990;
+  width: 100vw;
+  height: 100vh;
+  background: #fff;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 100;
+  display: block;
+  transform: translateX(100%);
+  transition: all 0.4s cubic-bezier(0.76, 0, 0.24, 1);
 }
-header .overlay.active {
+.overlay.active {
   opacity: 1;
   visibility: visible;
+  transform: translateX(0);
 }
 
 @keyframes fadeIn {
@@ -638,12 +560,12 @@ header .nav-list .nav li a:after {
 }
 header .nav-list .nav li:first-child a {
   font-family: "Cabinest", serif;
-  font-size: 1rem;
+  font-size: 0.875rem;
   letter-spacing: 0.11rem;
 }
 @media (min-width: 375px) {
   header .nav-list .nav li:first-child a {
-    font-size: 1rem;
+    font-size: 0.875rem;
   }
 }
 @media (min-width: 576px) {
@@ -653,7 +575,7 @@ header .nav-list .nav li:first-child a {
 }
 @media (min-width: 768px) {
   header .nav-list .nav li:first-child a {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
   }
 }
 @media (min-width: 1024px) {

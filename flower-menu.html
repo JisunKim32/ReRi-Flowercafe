@@ -4,7 +4,7 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Document</title>
+   <title>Re:Ri's Flower</title>
    <!-- icon -->
    <link href="https://cdn.jsdelivr.net/xeicon/2/xeicon.min.css" rel="stylesheet">
    <!-- bootstrap -->
@@ -26,22 +26,25 @@
                   <ul class="nav-list">
                      <li>
                         <a href="brand-story.html">Re:Ri</a>
-                        <ul class="sub-menu">
+                        <!-- <ul class="sub-menu">
                            <li><a href="brand-story.html">Brand Story</a></li>
-                        </ul>
+                        </ul> -->
                      </li>
                      <li>
-                        <a href="cafe-menu.html">리리 메뉴</a>
-                        <ul class="sub-menu">
+                        <a href="cafe-menu.html">Cafe</a>
+                        <!-- <ul class="sub-menu">
                            <li><a href="cafe-menu.html">Re:Ri's Cafe</a></li>
                            <li><a href="flower-menu.html">Re:Ri's Flower</a></li>
-                        </ul>
+                        </ul> -->
+                     </li>
+                     <li>
+                        <a href="flower-menu.html">Flower</a>
                      </li>
                      <!-- <li>
                         <a href="event.html">이벤트</a>
                      </li> -->
                      <li>
-                        <a href="location.html">매장 안내</a>
+                        <a href="location.html">Store</a>
                      </li>
                   </ul>
                <!-- </div> -->
@@ -53,36 +56,36 @@
                   </div>
                </button>
             </div>
+            <nav id="site-nav" role="navigation" class="megamenu col-md-12">
+               <div class="megamenu-box">
+                  <div class="megamenu-list">
+                     <!-- <h4>Re:Ri</h4> -->
+                     <ul>
+                        <li><a href="brand-story.html">Brand Story</a></li>
+                     </ul>
+                  </div>
+                  <div class="megamenu-list">
+                     <!-- <h4>시그니처 메뉴</h4> -->
+                     <ul>
+                        <li><a href="cafe-menu.html">Cafe</a></li>
+                        <li><a href="flower-menu.html">Flowers</a></li>
+                     </ul>
+                  </div>
+                  <!-- <div class="megamenu-list">
+                     <h4>리리 메뉴</h4>
+                     <ul>
+                        <li><a href="event.html">이벤트</a></li>
+                     </ul>
+                  </div> -->
+                  <div class="megamenu-list">
+                     <!-- <h4>오시는 길</h4> -->
+                     <ul>
+                        <li><a href="location.html">매장 안내</a></li>
+                     </ul>
+                  </div>
+               </div>
+            </nav>
          </div>
-         <nav id="site-nav" role="navigation" class="megamenu ">
-            <div class="col-lg-12 megamenu-box">
-               <div class="megamenu-list">
-                  <!-- <h4>Re:Ri</h4> -->
-                  <ul>
-                     <li><a href="brand-story.html">Brand Story</a></li>
-                  </ul>
-               </div>
-               <div class="megamenu-list">
-                  <!-- <h4>시그니처 메뉴</h4> -->
-                  <ul>
-                     <li><a href="cafe-menu.html">Cafe</a></li>
-                     <li><a href="flower-menu.html">Flowers</a></li>
-                  </ul>
-               </div>
-               <!-- <div class="megamenu-list">
-                  <h4>리리 메뉴</h4>
-                  <ul>
-                     <li><a href="event.html">이벤트</a></li>
-                  </ul>
-               </div> -->
-               <div class="megamenu-list">
-                  <!-- <h4>오시는 길</h4> -->
-                  <ul>
-                     <li><a href="location.html">매장 안내</a></li>
-                  </ul>
-               </div>
-            </div>
-         </nav>
       </div>
       <!-- <div class="global-submenu"></div> -->
       <div class="overlay"></div>
@@ -107,7 +110,7 @@
    <!-- === Sec02 === -->
    <section class="sec02">
       <div class="image-wrapper">
-         <img src="assets/images/FlowerMenu-sec01-bg.png" alt="">
+         <img src="assets/images/FlowerMenu-sec01-bg3.jpeg" alt="">
       </div>
    </section>
    <!-- === Sec02 end === -->
@@ -120,40 +123,46 @@
             <div class="col-md-12">
                <ul class="nav nav-tabs" id="myTab" role="tablist">
                   <li class="nav-item" role="presentation">
-                     <button class="nav-link active" id="signature-tab" data-bs-toggle="tab" data-bs-target="#signature"
-                        type="button" role="tab" aria-controls="signature" aria-selected="true">가격대별 꽃다발</button>
+                     <button class="nav-link active" id="price-tab" data-bs-toggle="tab" data-bs-target="#price"
+                        type="button" role="tab" aria-controls="price" aria-selected="true">가격대별 꽃다발</button>
                   </li>
                   <li class="nav-item" role="presentation">
-                     <button class="nav-link" id="coffee-tab" data-bs-toggle="tab" data-bs-target="#coffee"
-                        type="button" role="tab" aria-controls="coffee" aria-selected="false">졸업/입학</button>
+                     <button class="nav-link" id="graduation-tab" data-bs-toggle="tab" data-bs-target="#graduation"
+                        type="button" role="tab" aria-controls="graduation" aria-selected="false">졸업/입학</button>
                   </li>
                   <li class="nav-item" role="presentation">
-                     <button class="nav-link" id="season-tab" data-bs-toggle="tab" data-bs-target="#season"
-                        type="button" role="tab" aria-controls="season" aria-selected="false">프로포즈</button>
+                     <button class="nav-link" id="proposal-tab" data-bs-toggle="tab" data-bs-target="#proposal"
+                        type="button" role="tab" aria-controls="proposal" aria-selected="false">프로포즈</button>
                   </li>
                   <li class="nav-item" role="presentation">
-                     <button class="nav-link" id="drink-tab" data-bs-toggle="tab" data-bs-target="#drink" type="button"
-                        role="tab" aria-controls="drink" aria-selected="false">꽃바구니</button>
+                     <button class="nav-link" id="bucket-tab" data-bs-toggle="tab" data-bs-target="#bucket" type="button"
+                        role="tab" aria-controls="bucket" aria-selected="false">꽃바구니</button>
                   </li>
                   <li class="nav-item" role="presentation">
-                     <button class="nav-link" id="dessert-tab" data-bs-toggle="tab" data-bs-target="#dessert"
-                        type="button" role="tab" aria-controls="dessert" aria-selected="false">이벤트</button>
+                     <button class="nav-link" id="event-tab" data-bs-toggle="tab" data-bs-target="#event"
+                        type="button" role="tab" aria-controls="event" aria-selected="false">이벤트</button>
                   </li>
                </ul>
             </div>
          </div>
          <div class="tab-content" id="myTabContent">
-            <div class="tab-pane fade show active" id="signature" role="tabpanel" aria-labelledby="signature-tab">
+            <div class="tab-pane fade show active" id="price" role="tabpanel" aria-labelledby="price-tab">
                <div class="row tab-content__list">
-                  <div class="col-md-3 menuContentBox text-center">
+                  <div class="col-6 col-md-3 menuContentBox text-center">
                      <div class="menuContent">
                         <div class="menuContent__img">
                            <img src="assets/images/sec04-flower01.png" alt="">
                         </div>
                         <div class="menuContent__hover">
-                           <div class="menuContent__hover-info">
-                              <h6>칼로리: 200</h6>
-                              <h6>당도 : 100</h6>
+                           <div class="menuContent__hover-wrap">
+                              <div class="menuContent__hover-info">
+                                 <h6 class="hover-title">#레드카라</h6>
+                                 <h6 class="hover-text">열정, 사랑, 욕망</h6>
+                              </div>
+                              <div class="menuContent__hover-info">
+                                 <h6 class="hover-title">#레드튤립</h6>
+                                 <h6 class="hover-text">사랑의 고백, 영원한 사랑</h6>
+                              </div>
                            </div>
                         </div>
                      </div>
@@ -161,15 +170,21 @@
                         <h6>코랄 스펙타클 XL</h6>
                      </div>
                   </div>
-                  <div class="col-md-3 menuContentBox text-center">
+                  <div class="col-6 col-md-3 menuContentBox text-center">
                      <div class="menuContent">
                         <div class="menuContent__img">
                            <img src="assets/images/sec04-flower02.png" alt="">
                         </div>
                         <div class="menuContent__hover">
-                           <div class="menuContent__hover-info">
-                              <h6>칼로리: 200</h6>
-                              <h6>당도 : 100</h6>
+                           <div class="menuContent__hover-wrap">
+                              <div class="menuContent__hover-info">
+                                 <h6 class="hover-title">#라넌큘러스</h6>
+                                 <h6 class="hover-text">우정, 순수함, 은은한 사랑</h6>
+                              </div>
+                              <div class="menuContent__hover-info">
+                                 <h6 class="hover-title">#후리지아</h6>
+                                 <h6 class="hover-text">순수한 마음, 결백, 순결</h6>
+                              </div>
                            </div>
                         </div>
                      </div>
@@ -177,15 +192,21 @@
                         <h6>선샤인 모먼트</h6>
                      </div>
                   </div>
-                  <div class="col-md-3 menuContentBox text-center">
+                  <div class="col-6 col-md-3 menuContentBox text-center">
                      <div class="menuContent">
                         <div class="menuContent__img">
                            <img src="assets/images/sec04-flower03.png" alt="">
                         </div>
                         <div class="menuContent__hover">
-                           <div class="menuContent__hover-info">
-                              <h6>칼로리: 200</h6>
-                              <h6>당도 : 100</h6>
+                           <div class="menuContent__hover-wrap">
+                              <div class="menuContent__hover-info">
+                                 <h6 class="hover-title">#핑크지나장미</h6>
+                                 <h6 class="hover-text">감사, 우아함, 사랑의 맹세</h6>
+                              </div>
+                              <div class="menuContent__hover-info">
+                                 <h6 class="hover-title">#핑크거베라</h6>
+                                 <h6 class="hover-text">감사, 친절, 높은 존경</h6>
+                              </div>
                            </div>
                         </div>
                      </div>
@@ -193,15 +214,21 @@
                         <h6>피치 뮤즈</h6>
                      </div>
                   </div>
-                  <div class="col-md-3 menuContentBox text-center">
+                  <div class="col-6 col-md-3 menuContentBox text-center">
                      <div class="menuContent">
                         <div class="menuContent__img">
                            <img src="assets/images/sec04-flower04.png" alt="">
                         </div>
                         <div class="menuContent__hover">
-                           <div class="menuContent__hover-info">
-                              <h6>칼로리: 200</h6>
-                              <h6>당도 : 100</h6>
+                           <div class="menuContent__hover-wrap">
+                              <div class="menuContent__hover-info">
+                                 <h6 class="hover-title">#레드장미</h6>
+                                 <h6 class="hover-text">열정, 정열, 진실한 사랑</h6>
+                              </div>
+                              <div class="menuContent__hover-info">
+                                 <h6 class="hover-title">#화이트리시안셔스</h6>
+                                 <h6 class="hover-text">기품, 우아함, 영원한 사랑</h6>
+                              </div>
                            </div>
                         </div>
                      </div>
@@ -210,15 +237,21 @@
                      </div>
                   </div>
                   <!--  -->
-                  <div class="col-md-3 menuContentBox text-center">
+                  <div class="col-6 col-md-3 menuContentBox text-center">
                      <div class="menuContent">
                         <div class="menuContent__img">
                            <img src="assets/images/sec04-flower01.png" alt="">
                         </div>
                         <div class="menuContent__hover">
-                           <div class="menuContent__hover-info">
-                              <h6>칼로리: 200</h6>
-                              <h6>당도 : 100</h6>
+                           <div class="menuContent__hover-wrap">
+                              <div class="menuContent__hover-info">
+                                 <h6 class="hover-title">#레드카라</h6>
+                                 <h6 class="hover-text">열정, 사랑, 욕망</h6>
+                              </div>
+                              <div class="menuContent__hover-info">
+                                 <h6 class="hover-title">#레드튤립</h6>
+                                 <h6 class="hover-text">사랑의 고백, 영원한 사랑</h6>
+                              </div>
                            </div>
                         </div>
                      </div>
@@ -226,15 +259,21 @@
                         <h6>코랄 스펙타클 XL</h6>
                      </div>
                   </div>
-                  <div class="col-md-3 menuContentBox text-center">
+                  <div class="col-6 col-md-3 menuContentBox text-center">
                      <div class="menuContent">
                         <div class="menuContent__img">
                            <img src="assets/images/sec04-flower02.png" alt="">
                         </div>
                         <div class="menuContent__hover">
-                           <div class="menuContent__hover-info">
-                              <h6>칼로리: 200</h6>
-                              <h6>당도 : 100</h6>
+                           <div class="menuContent__hover-wrap">
+                              <div class="menuContent__hover-info">
+                                 <h6 class="hover-title">#라넌큘러스</h6>
+                                 <h6 class="hover-text">우정, 순수함, 은은한 사랑</h6>
+                              </div>
+                              <div class="menuContent__hover-info">
+                                 <h6 class="hover-title">#후리지아</h6>
+                                 <h6 class="hover-text">순수한 마음, 결백, 순결</h6>
+                              </div>
                            </div>
                         </div>
                      </div>
@@ -242,15 +281,21 @@
                         <h6>선샤인 모먼트</h6>
                      </div>
                   </div>
-                  <div class="col-md-3 menuContentBox text-center">
+                  <div class="col-6 col-md-3 menuContentBox text-center">
                      <div class="menuContent">
                         <div class="menuContent__img">
                            <img src="assets/images/sec04-flower03.png" alt="">
                         </div>
                         <div class="menuContent__hover">
-                           <div class="menuContent__hover-info">
-                              <h6>칼로리: 200</h6>
-                              <h6>당도 : 100</h6>
+                           <div class="menuContent__hover-wrap">
+                              <div class="menuContent__hover-info">
+                                 <h6 class="hover-title">#핑크지나장미</h6>
+                                 <h6 class="hover-text">감사, 우아함, 사랑의 맹세</h6>
+                              </div>
+                              <div class="menuContent__hover-info">
+                                 <h6 class="hover-title">#핑크거베라</h6>
+                                 <h6 class="hover-text">감사, 친절, 높은 존경</h6>
+                              </div>
                            </div>
                         </div>
                      </div>
@@ -258,15 +303,21 @@
                         <h6>피치 뮤즈</h6>
                      </div>
                   </div>
-                  <div class="col-md-3 menuContentBox text-center">
+                  <div class="col-6 col-md-3 menuContentBox text-center">
                      <div class="menuContent">
                         <div class="menuContent__img">
                            <img src="assets/images/sec04-flower04.png" alt="">
                         </div>
                         <div class="menuContent__hover">
-                           <div class="menuContent__hover-info">
-                              <h6>칼로리: 200</h6>
-                              <h6>당도 : 100</h6>
+                           <div class="menuContent__hover-wrap">
+                              <div class="menuContent__hover-info">
+                                 <h6 class="hover-title">#레드장미</h6>
+                                 <h6 class="hover-text">열정, 정열, 진실한 사랑</h6>
+                              </div>
+                              <div class="menuContent__hover-info">
+                                 <h6 class="hover-title">#화이트리시안셔스</h6>
+                                 <h6 class="hover-text">기품, 우아함, 영원한 사랑</h6>
+                              </div>
                            </div>
                         </div>
                      </div>
@@ -275,84 +326,26 @@
                      </div>
                   </div>
                   <!--  -->
-                  <div class="col-md-3 menuContentBox text-center">
-                     <div class="menuContent">
-                        <div class="menuContent__img">
-                           <img src="assets/images/sec04-flower01.png" alt="">
-                        </div>
-                        <div class="menuContent__hover">
-                           <div class="menuContent__hover-info">
-                              <h6>칼로리: 200</h6>
-                              <h6>당도 : 100</h6>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="menuCotent__name">
-                        <h6>코랄 스펙타클 XL</h6>
-                     </div>
-                  </div>
-                  <div class="col-md-3 menuContentBox text-center">
-                     <div class="menuContent">
-                        <div class="menuContent__img">
-                           <img src="assets/images/sec04-flower02.png" alt="">
-                        </div>
-                        <div class="menuContent__hover">
-                           <div class="menuContent__hover-info">
-                              <h6>칼로리: 200</h6>
-                              <h6>당도 : 100</h6>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="menuCotent__name">
-                        <h6>선샤인 모먼트</h6>
-                     </div>
-                  </div>
-                  <div class="col-md-3 menuContentBox text-center">
-                     <div class="menuContent">
-                        <div class="menuContent__img">
-                           <img src="assets/images/sec04-flower03.png" alt="">
-                        </div>
-                        <div class="menuContent__hover">
-                           <div class="menuContent__hover-info">
-                              <h6>칼로리: 200</h6>
-                              <h6>당도 : 100</h6>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="menuCotent__name">
-                        <h6>피치 뮤즈</h6>
-                     </div>
-                  </div>
-                  <div class="col-md-3 menuContentBox text-center">
-                     <div class="menuContent">
-                        <div class="menuContent__img">
-                           <img src="assets/images/sec04-flower04.png" alt="">
-                        </div>
-                        <div class="menuContent__hover">
-                           <div class="menuContent__hover-info">
-                              <h6>칼로리: 200</h6>
-                              <h6>당도 : 100</h6>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="menuCotent__name">
-                        <h6>미니 블룸</h6>
-                     </div>
-                  </div>
                </div>
             </div>
 
-            <div class="tab-pane fade" id="coffee" role="tabpanel" aria-labelledby="coffee-tab">
+            <div class="tab-pane fade" id="graduation" role="tabpanel" aria-labelledby="graduation-tab">
                <div class="row tab-content__list">
-                  <div class="col-md-3 menuContentBox text-center">
+                  <div class="col-6 col-md-3 menuContentBox text-center">
                      <div class="menuContent">
                         <div class="menuContent__img">
                            <img src="assets/images/sec04-flower01.png" alt="">
                         </div>
                         <div class="menuContent__hover">
-                           <div class="menuContent__hover-info">
-                              <h6>칼로리: 200</h6>
-                              <h6>당도 : 100</h6>
+                           <div class="menuContent__hover-wrap">
+                              <div class="menuContent__hover-info">
+                                 <h6 class="hover-title">#레드카라</h6>
+                                 <h6 class="hover-text">열정, 사랑, 욕망</h6>
+                              </div>
+                              <div class="menuContent__hover-info">
+                                 <h6 class="hover-title">#레드튤립</h6>
+                                 <h6 class="hover-text">사랑의 고백, 영원한 사랑</h6>
+                              </div>
                            </div>
                         </div>
                      </div>
@@ -360,15 +353,21 @@
                         <h6>코랄 스펙타클 XL</h6>
                      </div>
                   </div>
-                  <div class="col-md-3 menuContentBox text-center">
+                  <div class="col-6 col-md-3 menuContentBox text-center">
                      <div class="menuContent">
                         <div class="menuContent__img">
                            <img src="assets/images/sec04-flower02.png" alt="">
                         </div>
                         <div class="menuContent__hover">
-                           <div class="menuContent__hover-info">
-                              <h6>칼로리: 200</h6>
-                              <h6>당도 : 100</h6>
+                           <div class="menuContent__hover-wrap">
+                              <div class="menuContent__hover-info">
+                                 <h6 class="hover-title">#라넌큘러스</h6>
+                                 <h6 class="hover-text">우정, 순수함, 은은한 사랑</h6>
+                              </div>
+                              <div class="menuContent__hover-info">
+                                 <h6 class="hover-title">#후리지아</h6>
+                                 <h6 class="hover-text">순수한 마음, 결백, 순결</h6>
+                              </div>
                            </div>
                         </div>
                      </div>
@@ -376,15 +375,21 @@
                         <h6>선샤인 모먼트</h6>
                      </div>
                   </div>
-                  <div class="col-md-3 menuContentBox text-center">
+                  <div class="col-6 col-md-3 menuContentBox text-center">
                      <div class="menuContent">
                         <div class="menuContent__img">
                            <img src="assets/images/sec04-flower03.png" alt="">
                         </div>
                         <div class="menuContent__hover">
-                           <div class="menuContent__hover-info">
-                              <h6>칼로리: 200</h6>
-                              <h6>당도 : 100</h6>
+                           <div class="menuContent__hover-wrap">
+                              <div class="menuContent__hover-info">
+                                 <h6 class="hover-title">#핑크지나장미</h6>
+                                 <h6 class="hover-text">감사, 우아함, 사랑의 맹세</h6>
+                              </div>
+                              <div class="menuContent__hover-info">
+                                 <h6 class="hover-title">#핑크거베라</h6>
+                                 <h6 class="hover-text">감사, 친절, 높은 존경</h6>
+                              </div>
                            </div>
                         </div>
                      </div>
@@ -392,15 +397,21 @@
                         <h6>피치 뮤즈</h6>
                      </div>
                   </div>
-                  <div class="col-md-3 menuContentBox text-center">
+                  <div class="col-6 col-md-3 menuContentBox text-center">
                      <div class="menuContent">
                         <div class="menuContent__img">
                            <img src="assets/images/sec04-flower04.png" alt="">
                         </div>
                         <div class="menuContent__hover">
-                           <div class="menuContent__hover-info">
-                              <h6>칼로리: 200</h6>
-                              <h6>당도 : 100</h6>
+                           <div class="menuContent__hover-wrap">
+                              <div class="menuContent__hover-info">
+                                 <h6 class="hover-title">#레드장미</h6>
+                                 <h6 class="hover-text">열정, 정열, 진실한 사랑</h6>
+                              </div>
+                              <div class="menuContent__hover-info">
+                                 <h6 class="hover-title">#화이트리시안셔스</h6>
+                                 <h6 class="hover-text">기품, 우아함, 영원한 사랑</h6>
+                              </div>
                            </div>
                         </div>
                      </div>
@@ -409,15 +420,21 @@
                      </div>
                   </div>
                   <!--  -->
-                  <div class="col-md-3 menuContentBox text-center">
+                  <div class="col-6 col-md-3 menuContentBox text-center">
                      <div class="menuContent">
                         <div class="menuContent__img">
                            <img src="assets/images/sec04-flower01.png" alt="">
                         </div>
                         <div class="menuContent__hover">
-                           <div class="menuContent__hover-info">
-                              <h6>칼로리: 200</h6>
-                              <h6>당도 : 100</h6>
+                           <div class="menuContent__hover-wrap">
+                              <div class="menuContent__hover-info">
+                                 <h6 class="hover-title">#레드카라</h6>
+                                 <h6 class="hover-text">열정, 사랑, 욕망</h6>
+                              </div>
+                              <div class="menuContent__hover-info">
+                                 <h6 class="hover-title">#레드튤립</h6>
+                                 <h6 class="hover-text">사랑의 고백, 영원한 사랑</h6>
+                              </div>
                            </div>
                         </div>
                      </div>
@@ -425,15 +442,21 @@
                         <h6>코랄 스펙타클 XL</h6>
                      </div>
                   </div>
-                  <div class="col-md-3 menuContentBox text-center">
+                  <div class="col-6 col-md-3 menuContentBox text-center">
                      <div class="menuContent">
                         <div class="menuContent__img">
                            <img src="assets/images/sec04-flower02.png" alt="">
                         </div>
                         <div class="menuContent__hover">
-                           <div class="menuContent__hover-info">
-                              <h6>칼로리: 200</h6>
-                              <h6>당도 : 100</h6>
+                           <div class="menuContent__hover-wrap">
+                              <div class="menuContent__hover-info">
+                                 <h6 class="hover-title">#라넌큘러스</h6>
+                                 <h6 class="hover-text">우정, 순수함, 은은한 사랑</h6>
+                              </div>
+                              <div class="menuContent__hover-info">
+                                 <h6 class="hover-title">#후리지아</h6>
+                                 <h6 class="hover-text">순수한 마음, 결백, 순결</h6>
+                              </div>
                            </div>
                         </div>
                      </div>
@@ -441,15 +464,21 @@
                         <h6>선샤인 모먼트</h6>
                      </div>
                   </div>
-                  <div class="col-md-3 menuContentBox text-center">
+                  <div class="col-6 col-md-3 menuContentBox text-center">
                      <div class="menuContent">
                         <div class="menuContent__img">
                            <img src="assets/images/sec04-flower03.png" alt="">
                         </div>
                         <div class="menuContent__hover">
-                           <div class="menuContent__hover-info">
-                              <h6>칼로리: 200</h6>
-                              <h6>당도 : 100</h6>
+                           <div class="menuContent__hover-wrap">
+                              <div class="menuContent__hover-info">
+                                 <h6 class="hover-title">#핑크지나장미</h6>
+                                 <h6 class="hover-text">감사, 우아함, 사랑의 맹세</h6>
+                              </div>
+                              <div class="menuContent__hover-info">
+                                 <h6 class="hover-title">#핑크거베라</h6>
+                                 <h6 class="hover-text">감사, 친절, 높은 존경</h6>
+                              </div>
                            </div>
                         </div>
                      </div>
@@ -457,15 +486,21 @@
                         <h6>피치 뮤즈</h6>
                      </div>
                   </div>
-                  <div class="col-md-3 menuContentBox text-center">
+                  <div class="col-6 col-md-3 menuContentBox text-center">
                      <div class="menuContent">
                         <div class="menuContent__img">
                            <img src="assets/images/sec04-flower04.png" alt="">
                         </div>
                         <div class="menuContent__hover">
-                           <div class="menuContent__hover-info">
-                              <h6>칼로리: 200</h6>
-                              <h6>당도 : 100</h6>
+                           <div class="menuContent__hover-wrap">
+                              <div class="menuContent__hover-info">
+                                 <h6 class="hover-title">#레드장미</h6>
+                                 <h6 class="hover-text">열정, 정열, 진실한 사랑</h6>
+                              </div>
+                              <div class="menuContent__hover-info">
+                                 <h6 class="hover-title">#화이트리시안셔스</h6>
+                                 <h6 class="hover-text">기품, 우아함, 영원한 사랑</h6>
+                              </div>
                            </div>
                         </div>
                      </div>
@@ -474,84 +509,26 @@
                      </div>
                   </div>
                   <!--  -->
-                  <div class="col-md-3 menuContentBox text-center">
-                     <div class="menuContent">
-                        <div class="menuContent__img">
-                           <img src="assets/images/sec04-flower01.png" alt="">
-                        </div>
-                        <div class="menuContent__hover">
-                           <div class="menuContent__hover-info">
-                              <h6>칼로리: 200</h6>
-                              <h6>당도 : 100</h6>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="menuCotent__name">
-                        <h6>코랄 스펙타클 XL</h6>
-                     </div>
-                  </div>
-                  <div class="col-md-3 menuContentBox text-center">
-                     <div class="menuContent">
-                        <div class="menuContent__img">
-                           <img src="assets/images/sec04-flower02.png" alt="">
-                        </div>
-                        <div class="menuContent__hover">
-                           <div class="menuContent__hover-info">
-                              <h6>칼로리: 200</h6>
-                              <h6>당도 : 100</h6>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="menuCotent__name">
-                        <h6>선샤인 모먼트</h6>
-                     </div>
-                  </div>
-                  <div class="col-md-3 menuContentBox text-center">
-                     <div class="menuContent">
-                        <div class="menuContent__img">
-                           <img src="assets/images/sec04-flower03.png" alt="">
-                        </div>
-                        <div class="menuContent__hover">
-                           <div class="menuContent__hover-info">
-                              <h6>칼로리: 200</h6>
-                              <h6>당도 : 100</h6>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="menuCotent__name">
-                        <h6>피치 뮤즈</h6>
-                     </div>
-                  </div>
-                  <div class="col-md-3 menuContentBox text-center">
-                     <div class="menuContent">
-                        <div class="menuContent__img">
-                           <img src="assets/images/sec04-flower04.png" alt="">
-                        </div>
-                        <div class="menuContent__hover">
-                           <div class="menuContent__hover-info">
-                              <h6>칼로리: 200</h6>
-                              <h6>당도 : 100</h6>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="menuCotent__name">
-                        <h6>미니 블룸</h6>
-                     </div>
-                  </div>
                </div>
             </div>
 
-            <div class="tab-pane fade" id="season" role="tabpanel" aria-labelledby="season-tab">
+            <div class="tab-pane fade" id="proposal" role="tabpanel" aria-labelledby="proposal-tab">
                <div class="row tab-content__list">
-                  <div class="col-md-3 menuContentBox text-center">
+                  <div class="col-6 col-md-3 menuContentBox text-center">
                      <div class="menuContent">
                         <div class="menuContent__img">
                            <img src="assets/images/sec04-flower01.png" alt="">
                         </div>
                         <div class="menuContent__hover">
-                           <div class="menuContent__hover-info">
-                              <h6>칼로리: 200</h6>
-                              <h6>당도 : 100</h6>
+                           <div class="menuContent__hover-wrap">
+                              <div class="menuContent__hover-info">
+                                 <h6 class="hover-title">#레드카라</h6>
+                                 <h6 class="hover-text">열정, 사랑, 욕망</h6>
+                              </div>
+                              <div class="menuContent__hover-info">
+                                 <h6 class="hover-title">#레드튤립</h6>
+                                 <h6 class="hover-text">사랑의 고백, 영원한 사랑</h6>
+                              </div>
                            </div>
                         </div>
                      </div>
@@ -559,15 +536,21 @@
                         <h6>코랄 스펙타클 XL</h6>
                      </div>
                   </div>
-                  <div class="col-md-3 menuContentBox text-center">
+                  <div class="col-6 col-md-3 menuContentBox text-center">
                      <div class="menuContent">
                         <div class="menuContent__img">
                            <img src="assets/images/sec04-flower02.png" alt="">
                         </div>
                         <div class="menuContent__hover">
-                           <div class="menuContent__hover-info">
-                              <h6>칼로리: 200</h6>
-                              <h6>당도 : 100</h6>
+                           <div class="menuContent__hover-wrap">
+                              <div class="menuContent__hover-info">
+                                 <h6 class="hover-title">#라넌큘러스</h6>
+                                 <h6 class="hover-text">우정, 순수함, 은은한 사랑</h6>
+                              </div>
+                              <div class="menuContent__hover-info">
+                                 <h6 class="hover-title">#후리지아</h6>
+                                 <h6 class="hover-text">순수한 마음, 결백, 순결</h6>
+                              </div>
                            </div>
                         </div>
                      </div>
@@ -575,15 +558,21 @@
                         <h6>선샤인 모먼트</h6>
                      </div>
                   </div>
-                  <div class="col-md-3 menuContentBox text-center">
+                  <div class="col-6 col-md-3 menuContentBox text-center">
                      <div class="menuContent">
                         <div class="menuContent__img">
                            <img src="assets/images/sec04-flower03.png" alt="">
                         </div>
                         <div class="menuContent__hover">
-                           <div class="menuContent__hover-info">
-                              <h6>칼로리: 200</h6>
-                              <h6>당도 : 100</h6>
+                           <div class="menuContent__hover-wrap">
+                              <div class="menuContent__hover-info">
+                                 <h6 class="hover-title">#핑크지나장미</h6>
+                                 <h6 class="hover-text">감사, 우아함, 사랑의 맹세</h6>
+                              </div>
+                              <div class="menuContent__hover-info">
+                                 <h6 class="hover-title">#핑크거베라</h6>
+                                 <h6 class="hover-text">감사, 친절, 높은 존경</h6>
+                              </div>
                            </div>
                         </div>
                      </div>
@@ -591,15 +580,21 @@
                         <h6>피치 뮤즈</h6>
                      </div>
                   </div>
-                  <div class="col-md-3 menuContentBox text-center">
+                  <div class="col-6 col-md-3 menuContentBox text-center">
                      <div class="menuContent">
                         <div class="menuContent__img">
                            <img src="assets/images/sec04-flower04.png" alt="">
                         </div>
                         <div class="menuContent__hover">
-                           <div class="menuContent__hover-info">
-                              <h6>칼로리: 200</h6>
-                              <h6>당도 : 100</h6>
+                           <div class="menuContent__hover-wrap">
+                              <div class="menuContent__hover-info">
+                                 <h6 class="hover-title">#레드장미</h6>
+                                 <h6 class="hover-text">열정, 정열, 진실한 사랑</h6>
+                              </div>
+                              <div class="menuContent__hover-info">
+                                 <h6 class="hover-title">#화이트리시안셔스</h6>
+                                 <h6 class="hover-text">기품, 우아함, 영원한 사랑</h6>
+                              </div>
                            </div>
                         </div>
                      </div>
@@ -608,15 +603,21 @@
                      </div>
                   </div>
                   <!--  -->
-                  <div class="col-md-3 menuContentBox text-center">
+                  <div class="col-6 col-md-3 menuContentBox text-center">
                      <div class="menuContent">
                         <div class="menuContent__img">
                            <img src="assets/images/sec04-flower01.png" alt="">
                         </div>
                         <div class="menuContent__hover">
-                           <div class="menuContent__hover-info">
-                              <h6>칼로리: 200</h6>
-                              <h6>당도 : 100</h6>
+                           <div class="menuContent__hover-wrap">
+                              <div class="menuContent__hover-info">
+                                 <h6 class="hover-title">#레드카라</h6>
+                                 <h6 class="hover-text">열정, 사랑, 욕망</h6>
+                              </div>
+                              <div class="menuContent__hover-info">
+                                 <h6 class="hover-title">#레드튤립</h6>
+                                 <h6 class="hover-text">사랑의 고백, 영원한 사랑</h6>
+                              </div>
                            </div>
                         </div>
                      </div>
@@ -624,15 +625,21 @@
                         <h6>코랄 스펙타클 XL</h6>
                      </div>
                   </div>
-                  <div class="col-md-3 menuContentBox text-center">
+                  <div class="col-6 col-md-3 menuContentBox text-center">
                      <div class="menuContent">
                         <div class="menuContent__img">
                            <img src="assets/images/sec04-flower02.png" alt="">
                         </div>
                         <div class="menuContent__hover">
-                           <div class="menuContent__hover-info">
-                              <h6>칼로리: 200</h6>
-                              <h6>당도 : 100</h6>
+                           <div class="menuContent__hover-wrap">
+                              <div class="menuContent__hover-info">
+                                 <h6 class="hover-title">#라넌큘러스</h6>
+                                 <h6 class="hover-text">우정, 순수함, 은은한 사랑</h6>
+                              </div>
+                              <div class="menuContent__hover-info">
+                                 <h6 class="hover-title">#후리지아</h6>
+                                 <h6 class="hover-text">순수한 마음, 결백, 순결</h6>
+                              </div>
                            </div>
                         </div>
                      </div>
@@ -640,15 +647,21 @@
                         <h6>선샤인 모먼트</h6>
                      </div>
                   </div>
-                  <div class="col-md-3 menuContentBox text-center">
+                  <div class="col-6 col-md-3 menuContentBox text-center">
                      <div class="menuContent">
                         <div class="menuContent__img">
                            <img src="assets/images/sec04-flower03.png" alt="">
                         </div>
                         <div class="menuContent__hover">
-                           <div class="menuContent__hover-info">
-                              <h6>칼로리: 200</h6>
-                              <h6>당도 : 100</h6>
+                           <div class="menuContent__hover-wrap">
+                              <div class="menuContent__hover-info">
+                                 <h6 class="hover-title">#핑크지나장미</h6>
+                                 <h6 class="hover-text">감사, 우아함, 사랑의 맹세</h6>
+                              </div>
+                              <div class="menuContent__hover-info">
+                                 <h6 class="hover-title">#핑크거베라</h6>
+                                 <h6 class="hover-text">감사, 친절, 높은 존경</h6>
+                              </div>
                            </div>
                         </div>
                      </div>
@@ -656,15 +669,21 @@
                         <h6>피치 뮤즈</h6>
                      </div>
                   </div>
-                  <div class="col-md-3 menuContentBox text-center">
+                  <div class="col-6 col-md-3 menuContentBox text-center">
                      <div class="menuContent">
                         <div class="menuContent__img">
                            <img src="assets/images/sec04-flower04.png" alt="">
                         </div>
                         <div class="menuContent__hover">
-                           <div class="menuContent__hover-info">
-                              <h6>칼로리: 200</h6>
-                              <h6>당도 : 100</h6>
+                           <div class="menuContent__hover-wrap">
+                              <div class="menuContent__hover-info">
+                                 <h6 class="hover-title">#레드장미</h6>
+                                 <h6 class="hover-text">열정, 정열, 진실한 사랑</h6>
+                              </div>
+                              <div class="menuContent__hover-info">
+                                 <h6 class="hover-title">#화이트리시안셔스</h6>
+                                 <h6 class="hover-text">기품, 우아함, 영원한 사랑</h6>
+                              </div>
                            </div>
                         </div>
                      </div>
@@ -673,84 +692,26 @@
                      </div>
                   </div>
                   <!--  -->
-                  <div class="col-md-3 menuContentBox text-center">
-                     <div class="menuContent">
-                        <div class="menuContent__img">
-                           <img src="assets/images/sec04-flower01.png" alt="">
-                        </div>
-                        <div class="menuContent__hover">
-                           <div class="menuContent__hover-info">
-                              <h6>칼로리: 200</h6>
-                              <h6>당도 : 100</h6>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="menuCotent__name">
-                        <h6>코랄 스펙타클 XL</h6>
-                     </div>
-                  </div>
-                  <div class="col-md-3 menuContentBox text-center">
-                     <div class="menuContent">
-                        <div class="menuContent__img">
-                           <img src="assets/images/sec04-flower02.png" alt="">
-                        </div>
-                        <div class="menuContent__hover">
-                           <div class="menuContent__hover-info">
-                              <h6>칼로리: 200</h6>
-                              <h6>당도 : 100</h6>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="menuCotent__name">
-                        <h6>선샤인 모먼트</h6>
-                     </div>
-                  </div>
-                  <div class="col-md-3 menuContentBox text-center">
-                     <div class="menuContent">
-                        <div class="menuContent__img">
-                           <img src="assets/images/sec04-flower03.png" alt="">
-                        </div>
-                        <div class="menuContent__hover">
-                           <div class="menuContent__hover-info">
-                              <h6>칼로리: 200</h6>
-                              <h6>당도 : 100</h6>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="menuCotent__name">
-                        <h6>피치 뮤즈</h6>
-                     </div>
-                  </div>
-                  <div class="col-md-3 menuContentBox text-center">
-                     <div class="menuContent">
-                        <div class="menuContent__img">
-                           <img src="assets/images/sec04-flower04.png" alt="">
-                        </div>
-                        <div class="menuContent__hover">
-                           <div class="menuContent__hover-info">
-                              <h6>칼로리: 200</h6>
-                              <h6>당도 : 100</h6>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="menuCotent__name">
-                        <h6>미니 블룸</h6>
-                     </div>
-                  </div>
                </div>
             </div>
 
-            <div class="tab-pane fade" id="drink" role="tabpanel" aria-labelledby="drink-tab">
+            <div class="tab-pane fade" id="bucket" role="tabpanel" aria-labelledby="bucket-tab">
                <div class="row tab-content__list">
-                  <div class="col-md-3 menuContentBox text-center">
+                  <div class="col-6 col-md-3 menuContentBox text-center">
                      <div class="menuContent">
                         <div class="menuContent__img">
                            <img src="assets/images/sec04-flower01.png" alt="">
                         </div>
                         <div class="menuContent__hover">
-                           <div class="menuContent__hover-info">
-                              <h6>칼로리: 200</h6>
-                              <h6>당도 : 100</h6>
+                           <div class="menuContent__hover-wrap">
+                              <div class="menuContent__hover-info">
+                                 <h6 class="hover-title">#레드카라</h6>
+                                 <h6 class="hover-text">열정, 사랑, 욕망</h6>
+                              </div>
+                              <div class="menuContent__hover-info">
+                                 <h6 class="hover-title">#레드튤립</h6>
+                                 <h6 class="hover-text">사랑의 고백, 영원한 사랑</h6>
+                              </div>
                            </div>
                         </div>
                      </div>
@@ -758,15 +719,21 @@
                         <h6>코랄 스펙타클 XL</h6>
                      </div>
                   </div>
-                  <div class="col-md-3 menuContentBox text-center">
+                  <div class="col-6 col-md-3 menuContentBox text-center">
                      <div class="menuContent">
                         <div class="menuContent__img">
                            <img src="assets/images/sec04-flower02.png" alt="">
                         </div>
                         <div class="menuContent__hover">
-                           <div class="menuContent__hover-info">
-                              <h6>칼로리: 200</h6>
-                              <h6>당도 : 100</h6>
+                           <div class="menuContent__hover-wrap">
+                              <div class="menuContent__hover-info">
+                                 <h6 class="hover-title">#라넌큘러스</h6>
+                                 <h6 class="hover-text">우정, 순수함, 은은한 사랑</h6>
+                              </div>
+                              <div class="menuContent__hover-info">
+                                 <h6 class="hover-title">#후리지아</h6>
+                                 <h6 class="hover-text">순수한 마음, 결백, 순결</h6>
+                              </div>
                            </div>
                         </div>
                      </div>
@@ -774,15 +741,21 @@
                         <h6>선샤인 모먼트</h6>
                      </div>
                   </div>
-                  <div class="col-md-3 menuContentBox text-center">
+                  <div class="col-6 col-md-3 menuContentBox text-center">
                      <div class="menuContent">
                         <div class="menuContent__img">
                            <img src="assets/images/sec04-flower03.png" alt="">
                         </div>
                         <div class="menuContent__hover">
-                           <div class="menuContent__hover-info">
-                              <h6>칼로리: 200</h6>
-                              <h6>당도 : 100</h6>
+                           <div class="menuContent__hover-wrap">
+                              <div class="menuContent__hover-info">
+                                 <h6 class="hover-title">#핑크지나장미</h6>
+                                 <h6 class="hover-text">감사, 우아함, 사랑의 맹세</h6>
+                              </div>
+                              <div class="menuContent__hover-info">
+                                 <h6 class="hover-title">#핑크거베라</h6>
+                                 <h6 class="hover-text">감사, 친절, 높은 존경</h6>
+                              </div>
                            </div>
                         </div>
                      </div>
@@ -790,15 +763,21 @@
                         <h6>피치 뮤즈</h6>
                      </div>
                   </div>
-                  <div class="col-md-3 menuContentBox text-center">
+                  <div class="col-6 col-md-3 menuContentBox text-center">
                      <div class="menuContent">
                         <div class="menuContent__img">
                            <img src="assets/images/sec04-flower04.png" alt="">
                         </div>
                         <div class="menuContent__hover">
-                           <div class="menuContent__hover-info">
-                              <h6>칼로리: 200</h6>
-                              <h6>당도 : 100</h6>
+                           <div class="menuContent__hover-wrap">
+                              <div class="menuContent__hover-info">
+                                 <h6 class="hover-title">#레드장미</h6>
+                                 <h6 class="hover-text">열정, 정열, 진실한 사랑</h6>
+                              </div>
+                              <div class="menuContent__hover-info">
+                                 <h6 class="hover-title">#화이트리시안셔스</h6>
+                                 <h6 class="hover-text">기품, 우아함, 영원한 사랑</h6>
+                              </div>
                            </div>
                         </div>
                      </div>
@@ -807,15 +786,21 @@
                      </div>
                   </div>
                   <!--  -->
-                  <div class="col-md-3 menuContentBox text-center">
+                  <div class="col-6 col-md-3 menuContentBox text-center">
                      <div class="menuContent">
                         <div class="menuContent__img">
                            <img src="assets/images/sec04-flower01.png" alt="">
                         </div>
                         <div class="menuContent__hover">
-                           <div class="menuContent__hover-info">
-                              <h6>칼로리: 200</h6>
-                              <h6>당도 : 100</h6>
+                           <div class="menuContent__hover-wrap">
+                              <div class="menuContent__hover-info">
+                                 <h6 class="hover-title">#레드카라</h6>
+                                 <h6 class="hover-text">열정, 사랑, 욕망</h6>
+                              </div>
+                              <div class="menuContent__hover-info">
+                                 <h6 class="hover-title">#레드튤립</h6>
+                                 <h6 class="hover-text">사랑의 고백, 영원한 사랑</h6>
+                              </div>
                            </div>
                         </div>
                      </div>
@@ -823,15 +808,21 @@
                         <h6>코랄 스펙타클 XL</h6>
                      </div>
                   </div>
-                  <div class="col-md-3 menuContentBox text-center">
+                  <div class="col-6 col-md-3 menuContentBox text-center">
                      <div class="menuContent">
                         <div class="menuContent__img">
                            <img src="assets/images/sec04-flower02.png" alt="">
                         </div>
                         <div class="menuContent__hover">
-                           <div class="menuContent__hover-info">
-                              <h6>칼로리: 200</h6>
-                              <h6>당도 : 100</h6>
+                           <div class="menuContent__hover-wrap">
+                              <div class="menuContent__hover-info">
+                                 <h6 class="hover-title">#라넌큘러스</h6>
+                                 <h6 class="hover-text">우정, 순수함, 은은한 사랑</h6>
+                              </div>
+                              <div class="menuContent__hover-info">
+                                 <h6 class="hover-title">#후리지아</h6>
+                                 <h6 class="hover-text">순수한 마음, 결백, 순결</h6>
+                              </div>
                            </div>
                         </div>
                      </div>
@@ -839,15 +830,21 @@
                         <h6>선샤인 모먼트</h6>
                      </div>
                   </div>
-                  <div class="col-md-3 menuContentBox text-center">
+                  <div class="col-6 col-md-3 menuContentBox text-center">
                      <div class="menuContent">
                         <div class="menuContent__img">
                            <img src="assets/images/sec04-flower03.png" alt="">
                         </div>
                         <div class="menuContent__hover">
-                           <div class="menuContent__hover-info">
-                              <h6>칼로리: 200</h6>
-                              <h6>당도 : 100</h6>
+                           <div class="menuContent__hover-wrap">
+                              <div class="menuContent__hover-info">
+                                 <h6 class="hover-title">#핑크지나장미</h6>
+                                 <h6 class="hover-text">감사, 우아함, 사랑의 맹세</h6>
+                              </div>
+                              <div class="menuContent__hover-info">
+                                 <h6 class="hover-title">#핑크거베라</h6>
+                                 <h6 class="hover-text">감사, 친절, 높은 존경</h6>
+                              </div>
                            </div>
                         </div>
                      </div>
@@ -855,15 +852,21 @@
                         <h6>피치 뮤즈</h6>
                      </div>
                   </div>
-                  <div class="col-md-3 menuContentBox text-center">
+                  <div class="col-6 col-md-3 menuContentBox text-center">
                      <div class="menuContent">
                         <div class="menuContent__img">
                            <img src="assets/images/sec04-flower04.png" alt="">
                         </div>
                         <div class="menuContent__hover">
-                           <div class="menuContent__hover-info">
-                              <h6>칼로리: 200</h6>
-                              <h6>당도 : 100</h6>
+                           <div class="menuContent__hover-wrap">
+                              <div class="menuContent__hover-info">
+                                 <h6 class="hover-title">#레드장미</h6>
+                                 <h6 class="hover-text">열정, 정열, 진실한 사랑</h6>
+                              </div>
+                              <div class="menuContent__hover-info">
+                                 <h6 class="hover-title">#화이트리시안셔스</h6>
+                                 <h6 class="hover-text">기품, 우아함, 영원한 사랑</h6>
+                              </div>
                            </div>
                         </div>
                      </div>
@@ -872,84 +875,26 @@
                      </div>
                   </div>
                   <!--  -->
-                  <div class="col-md-3 menuContentBox text-center">
-                     <div class="menuContent">
-                        <div class="menuContent__img">
-                           <img src="assets/images/sec04-flower01.png" alt="">
-                        </div>
-                        <div class="menuContent__hover">
-                           <div class="menuContent__hover-info">
-                              <h6>칼로리: 200</h6>
-                              <h6>당도 : 100</h6>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="menuCotent__name">
-                        <h6>코랄 스펙타클 XL</h6>
-                     </div>
-                  </div>
-                  <div class="col-md-3 menuContentBox text-center">
-                     <div class="menuContent">
-                        <div class="menuContent__img">
-                           <img src="assets/images/sec04-flower02.png" alt="">
-                        </div>
-                        <div class="menuContent__hover">
-                           <div class="menuContent__hover-info">
-                              <h6>칼로리: 200</h6>
-                              <h6>당도 : 100</h6>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="menuCotent__name">
-                        <h6>선샤인 모먼트</h6>
-                     </div>
-                  </div>
-                  <div class="col-md-3 menuContentBox text-center">
-                     <div class="menuContent">
-                        <div class="menuContent__img">
-                           <img src="assets/images/sec04-flower03.png" alt="">
-                        </div>
-                        <div class="menuContent__hover">
-                           <div class="menuContent__hover-info">
-                              <h6>칼로리: 200</h6>
-                              <h6>당도 : 100</h6>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="menuCotent__name">
-                        <h6>피치 뮤즈</h6>
-                     </div>
-                  </div>
-                  <div class="col-md-3 menuContentBox text-center">
-                     <div class="menuContent">
-                        <div class="menuContent__img">
-                           <img src="assets/images/sec04-flower04.png" alt="">
-                        </div>
-                        <div class="menuContent__hover">
-                           <div class="menuContent__hover-info">
-                              <h6>칼로리: 200</h6>
-                              <h6>당도 : 100</h6>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="menuCotent__name">
-                        <h6>미니 블룸</h6>
-                     </div>
-                  </div>
                </div>
             </div>
 
-            <div class="tab-pane fade" id="dessert" role="tabpanel" aria-labelledby="dessert-tab">
+            <div class="tab-pane fade" id="event" role="tabpanel" aria-labelledby="event-tab">
                <div class="row tab-content__list">
-                  <div class="col-md-3 menuContentBox text-center">
+                  <div class="col-6 col-md-3 menuContentBox text-center">
                      <div class="menuContent">
                         <div class="menuContent__img">
                            <img src="assets/images/sec04-flower01.png" alt="">
                         </div>
                         <div class="menuContent__hover">
-                           <div class="menuContent__hover-info">
-                              <h6>칼로리: 200</h6>
-                              <h6>당도 : 100</h6>
+                           <div class="menuContent__hover-wrap">
+                              <div class="menuContent__hover-info">
+                                 <h6 class="hover-title">#레드카라</h6>
+                                 <h6 class="hover-text">열정, 사랑, 욕망</h6>
+                              </div>
+                              <div class="menuContent__hover-info">
+                                 <h6 class="hover-title">#레드튤립</h6>
+                                 <h6 class="hover-text">사랑의 고백, 영원한 사랑</h6>
+                              </div>
                            </div>
                         </div>
                      </div>
@@ -957,15 +902,21 @@
                         <h6>코랄 스펙타클 XL</h6>
                      </div>
                   </div>
-                  <div class="col-md-3 menuContentBox text-center">
+                  <div class="col-6 col-md-3 menuContentBox text-center">
                      <div class="menuContent">
                         <div class="menuContent__img">
                            <img src="assets/images/sec04-flower02.png" alt="">
                         </div>
                         <div class="menuContent__hover">
-                           <div class="menuContent__hover-info">
-                              <h6>칼로리: 200</h6>
-                              <h6>당도 : 100</h6>
+                           <div class="menuContent__hover-wrap">
+                              <div class="menuContent__hover-info">
+                                 <h6 class="hover-title">#라넌큘러스</h6>
+                                 <h6 class="hover-text">우정, 순수함, 은은한 사랑</h6>
+                              </div>
+                              <div class="menuContent__hover-info">
+                                 <h6 class="hover-title">#후리지아</h6>
+                                 <h6 class="hover-text">순수한 마음, 결백, 순결</h6>
+                              </div>
                            </div>
                         </div>
                      </div>
@@ -973,15 +924,21 @@
                         <h6>선샤인 모먼트</h6>
                      </div>
                   </div>
-                  <div class="col-md-3 menuContentBox text-center">
+                  <div class="col-6 col-md-3 menuContentBox text-center">
                      <div class="menuContent">
                         <div class="menuContent__img">
                            <img src="assets/images/sec04-flower03.png" alt="">
                         </div>
                         <div class="menuContent__hover">
-                           <div class="menuContent__hover-info">
-                              <h6>칼로리: 200</h6>
-                              <h6>당도 : 100</h6>
+                           <div class="menuContent__hover-wrap">
+                              <div class="menuContent__hover-info">
+                                 <h6 class="hover-title">#핑크지나장미</h6>
+                                 <h6 class="hover-text">감사, 우아함, 사랑의 맹세</h6>
+                              </div>
+                              <div class="menuContent__hover-info">
+                                 <h6 class="hover-title">#핑크거베라</h6>
+                                 <h6 class="hover-text">감사, 친절, 높은 존경</h6>
+                              </div>
                            </div>
                         </div>
                      </div>
@@ -989,15 +946,21 @@
                         <h6>피치 뮤즈</h6>
                      </div>
                   </div>
-                  <div class="col-md-3 menuContentBox text-center">
+                  <div class="col-6 col-md-3 menuContentBox text-center">
                      <div class="menuContent">
                         <div class="menuContent__img">
                            <img src="assets/images/sec04-flower04.png" alt="">
                         </div>
                         <div class="menuContent__hover">
-                           <div class="menuContent__hover-info">
-                              <h6>칼로리: 200</h6>
-                              <h6>당도 : 100</h6>
+                           <div class="menuContent__hover-wrap">
+                              <div class="menuContent__hover-info">
+                                 <h6 class="hover-title">#레드장미</h6>
+                                 <h6 class="hover-text">열정, 정열, 진실한 사랑</h6>
+                              </div>
+                              <div class="menuContent__hover-info">
+                                 <h6 class="hover-title">#화이트리시안셔스</h6>
+                                 <h6 class="hover-text">기품, 우아함, 영원한 사랑</h6>
+                              </div>
                            </div>
                         </div>
                      </div>
@@ -1006,15 +969,21 @@
                      </div>
                   </div>
                   <!--  -->
-                  <div class="col-md-3 menuContentBox text-center">
+                  <div class="col-6 col-md-3 menuContentBox text-center">
                      <div class="menuContent">
                         <div class="menuContent__img">
                            <img src="assets/images/sec04-flower01.png" alt="">
                         </div>
                         <div class="menuContent__hover">
-                           <div class="menuContent__hover-info">
-                              <h6>칼로리: 200</h6>
-                              <h6>당도 : 100</h6>
+                           <div class="menuContent__hover-wrap">
+                              <div class="menuContent__hover-info">
+                                 <h6 class="hover-title">#레드카라</h6>
+                                 <h6 class="hover-text">열정, 사랑, 욕망</h6>
+                              </div>
+                              <div class="menuContent__hover-info">
+                                 <h6 class="hover-title">#레드튤립</h6>
+                                 <h6 class="hover-text">사랑의 고백, 영원한 사랑</h6>
+                              </div>
                            </div>
                         </div>
                      </div>
@@ -1022,15 +991,21 @@
                         <h6>코랄 스펙타클 XL</h6>
                      </div>
                   </div>
-                  <div class="col-md-3 menuContentBox text-center">
+                  <div class="col-6 col-md-3 menuContentBox text-center">
                      <div class="menuContent">
                         <div class="menuContent__img">
                            <img src="assets/images/sec04-flower02.png" alt="">
                         </div>
                         <div class="menuContent__hover">
-                           <div class="menuContent__hover-info">
-                              <h6>칼로리: 200</h6>
-                              <h6>당도 : 100</h6>
+                           <div class="menuContent__hover-wrap">
+                              <div class="menuContent__hover-info">
+                                 <h6 class="hover-title">#라넌큘러스</h6>
+                                 <h6 class="hover-text">우정, 순수함, 은은한 사랑</h6>
+                              </div>
+                              <div class="menuContent__hover-info">
+                                 <h6 class="hover-title">#후리지아</h6>
+                                 <h6 class="hover-text">순수한 마음, 결백, 순결</h6>
+                              </div>
                            </div>
                         </div>
                      </div>
@@ -1038,15 +1013,21 @@
                         <h6>선샤인 모먼트</h6>
                      </div>
                   </div>
-                  <div class="col-md-3 menuContentBox text-center">
+                  <div class="col-6 col-md-3 menuContentBox text-center">
                      <div class="menuContent">
                         <div class="menuContent__img">
                            <img src="assets/images/sec04-flower03.png" alt="">
                         </div>
                         <div class="menuContent__hover">
-                           <div class="menuContent__hover-info">
-                              <h6>칼로리: 200</h6>
-                              <h6>당도 : 100</h6>
+                           <div class="menuContent__hover-wrap">
+                              <div class="menuContent__hover-info">
+                                 <h6 class="hover-title">#핑크지나장미</h6>
+                                 <h6 class="hover-text">감사, 우아함, 사랑의 맹세</h6>
+                              </div>
+                              <div class="menuContent__hover-info">
+                                 <h6 class="hover-title">#핑크거베라</h6>
+                                 <h6 class="hover-text">감사, 친절, 높은 존경</h6>
+                              </div>
                            </div>
                         </div>
                      </div>
@@ -1054,15 +1035,21 @@
                         <h6>피치 뮤즈</h6>
                      </div>
                   </div>
-                  <div class="col-md-3 menuContentBox text-center">
+                  <div class="col-6 col-md-3 menuContentBox text-center">
                      <div class="menuContent">
                         <div class="menuContent__img">
                            <img src="assets/images/sec04-flower04.png" alt="">
                         </div>
                         <div class="menuContent__hover">
-                           <div class="menuContent__hover-info">
-                              <h6>칼로리: 200</h6>
-                              <h6>당도 : 100</h6>
+                           <div class="menuContent__hover-wrap">
+                              <div class="menuContent__hover-info">
+                                 <h6 class="hover-title">#레드장미</h6>
+                                 <h6 class="hover-text">열정, 정열, 진실한 사랑</h6>
+                              </div>
+                              <div class="menuContent__hover-info">
+                                 <h6 class="hover-title">#화이트리시안셔스</h6>
+                                 <h6 class="hover-text">기품, 우아함, 영원한 사랑</h6>
+                              </div>
                            </div>
                         </div>
                      </div>
@@ -1071,70 +1058,6 @@
                      </div>
                   </div>
                   <!--  -->
-                  <div class="col-md-3 menuContentBox text-center">
-                     <div class="menuContent">
-                        <div class="menuContent__img">
-                           <img src="assets/images/sec04-flower01.png" alt="">
-                        </div>
-                        <div class="menuContent__hover">
-                           <div class="menuContent__hover-info">
-                              <h6>칼로리: 200</h6>
-                              <h6>당도 : 100</h6>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="menuCotent__name">
-                        <h6>코랄 스펙타클 XL</h6>
-                     </div>
-                  </div>
-                  <div class="col-md-3 menuContentBox text-center">
-                     <div class="menuContent">
-                        <div class="menuContent__img">
-                           <img src="assets/images/sec04-flower02.png" alt="">
-                        </div>
-                        <div class="menuContent__hover">
-                           <div class="menuContent__hover-info">
-                              <h6>칼로리: 200</h6>
-                              <h6>당도 : 100</h6>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="menuCotent__name">
-                        <h6>선샤인 모먼트</h6>
-                     </div>
-                  </div>
-                  <div class="col-md-3 menuContentBox text-center">
-                     <div class="menuContent">
-                        <div class="menuContent__img">
-                           <img src="assets/images/sec04-flower03.png" alt="">
-                        </div>
-                        <div class="menuContent__hover">
-                           <div class="menuContent__hover-info">
-                              <h6>칼로리: 200</h6>
-                              <h6>당도 : 100</h6>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="menuCotent__name">
-                        <h6>피치 뮤즈</h6>
-                     </div>
-                  </div>
-                  <div class="col-md-3 menuContentBox text-center">
-                     <div class="menuContent">
-                        <div class="menuContent__img">
-                           <img src="assets/images/sec04-flower04.png" alt="">
-                        </div>
-                        <div class="menuContent__hover">
-                           <div class="menuContent__hover-info">
-                              <h6>칼로리: 200</h6>
-                              <h6>당도 : 100</h6>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="menuCotent__name">
-                        <h6>미니 블룸</h6>
-                     </div>
-                  </div>
                </div>
             </div>
          </div>

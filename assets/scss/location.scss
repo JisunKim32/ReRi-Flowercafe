@@ -81,9 +81,10 @@
             border-top: 1px solid rgba(var.$color-primary, 0.3);
             border-bottom: 1px solid rgba(var.$color-primary, 0.3);
             cursor: pointer;
-
+            transition: all 0.2s ease-in-out;
             &:hover {
                background-color: rgba(var.$color-black, 0.02);
+               // transform: scale(1.005);
             }
          }
          td {
@@ -105,8 +106,6 @@
 .sec04__faq {
    background: var.$color-bg01;
    padding: map-get(var.$spacers, 14);
-   margin-bottom: map-get(var.$spacers, 14);
-   
    .sec04__faq-left {
       display: flex;
       justify-content: left;
@@ -135,10 +134,15 @@
          }
       }
       .accordion-body {
-         @include resp.responsive-font-size(h7);
+         @include resp.responsive-font-size(h6);
          font-weight: var.$font-weight-light;
-         color: var.$color-gray-900;
+         color: var.$color-gray-600;
          background: var.$color-bg01;
+
+         & b{
+            color: var.$color-gray-700;
+            font-weight: var.$font-weight-regular;
+         }
       }
       .accordion-button::after {
          background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill="none" stroke="%23ff3a1e" stroke-width="2" d="M1.5 6.5l6 6 6-6"/></svg>');
@@ -209,8 +213,8 @@
    visibility: hidden;
    display: block;
    transition: all 0.3s ease;
-   width: 700px;
-   height: 640px;
+   width: 350px;
+   height: 600px;
    border: 1px solid var.$color-primary;
    border-radius: 10px;
    position: fixed;
@@ -220,7 +224,18 @@
    transform: translate(-50%, -50%);
    padding: 30px;
    background: var.$color-white;
-
+   @include resp.respond-to(sm) {
+      width: 516px;
+      height: 580px;
+   }
+   @include resp.respond-to(md) {
+      width: 696px;
+      height: 640px;
+   }
+   @include resp.respond-to(lg) {
+      width: 700px;
+      height: 640px;
+   }
    &.show {
       opacity: 1;
       visibility: visible;
@@ -329,13 +344,20 @@
             .operating-time {
                display: flex;
                flex-direction: column;
-               margin-bottom: map-get(var.$spacers, 8);
+               margin-bottom: map-get(var.$spacers, 10);
+               @include resp.respond-to(md) {
+                  margin-bottom: map-get(var.$spacers, 8);
+               }
             }
          }
       }
       .modal__socail-btn {
          display: flex;
          gap: 0 10px;
+         // margin-top: 18px;
+         // @include resp.respond-to(lg) {
+         //    margin-top: 0;
+         // }
          .social-btn {
             border: none;
             background: none;

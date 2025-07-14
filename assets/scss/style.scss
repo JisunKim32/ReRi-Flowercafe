@@ -1,6 +1,6 @@
+@use "components";
 @use "variables" as var;
 @use "responsive" as resp;
-@use "components";
 @use "common";
 
 
@@ -70,6 +70,10 @@
             @include resp.responsive-font-size(h6);
             color: var.$color-primary;
             font-weight: var.$font-weight-regular;
+            transition: all 0.2s ease-in-out;
+            &:hover {
+                transform: scale(1.01);
+            }
         }
     }
     .nav-tabs .nav-item.show .nav-link,
@@ -92,15 +96,18 @@
             margin-left: 0;
             .menuContentBox {
                 align-items: center;
+                transition: all 0.2s ease-in-out;
+                &:hover {
+                    transform: scale(1.01);
+                }
 
                 .menuContent {
                     // height: 420px;
                     border: 1px solid var.$color-primary;
                     border-radius: 10px;
-                    padding: map-get(var.$spacers, 7);
-
+                    cursor: pointer;
                     img {
-                        width: 90%;
+                        width: 100%;
                     }
 
                     .menuCotent__name {
@@ -108,8 +115,53 @@
                             @include resp.responsive-font-size(h6);
                             color: var.$color-primary;
                             margin-top: map-get(var.$spacers, 4);
+                            .br-none01 {
+                                display: none;
+                            }
+                            .br-none02 {
+                                display: none;
+                            }
+                        }
+                        .pd-none01 {
+                            padding-bottom: 19.6px;
+                            @media (min-width: 420px) {
+                                padding-bottom: 0;
+                            }
+                            @include resp.respond-to(lg) {
+                                padding-bottom: 28px;
+                            }
+                            @media (min-width: 1200px) {
+                                padding-bottom: 0;
+                            }
+                        }
+                        .pd-none02 {
+                            padding-bottom: 19.6px;
+                            @media (min-width: 420px) {
+                                padding-bottom: 0;
+                            }
+                            @include resp.respond-to(md) {
+                                padding-bottom: 25.2px;
+                            }
+                            @media (min-width: 992px) {
+                                padding-bottom: 0;
+                            }
+                            @include resp.respond-to(lg) {
+                                padding-bottom: 28px;
+                            }
+                            @media (min-width: 1200px) {
+                                padding-bottom: 0;
+                            }
                         }
                     }
+                }
+                .cafe__menuContent {
+                    padding: map-get(var.$spacers, 8) 0;
+                    img {
+                        width: 81%;
+                    }
+                }
+                .flower__menuContent {
+                    padding: map-get(var.$spacers, 7);
                 }
             }
         }
@@ -117,25 +169,40 @@
 
     .sec02-moreBtn {
         margin-top: map-get(var.$spacers, 9);
-
+        
         .sec02-moreBtn__text {
             @include resp.responsive-font-size(p);
             color: var.$color-primary;
             background: transparent;
             border: 1px solid var.$color-primary;
             border-radius: 300px;
+            transition: all 0.2s ease-in-out;
+            &:hover {
+                background: var.$color-primary;
+                color: var.$color-white;
+                transform: scale(1.01);
+            }
         }
+        
     }
 }
 // === Sec02 end ===
 
 // === Sec03 ===
 .sec03 {
-    padding: map-get(var.$spacers, 14) map-get(var.$spacers, 0);
+    padding: map-get(var.$spacers, 10) map-get(var.$spacers, 0);
+    @include resp.respond-to(md) {
+        padding: map-get(var.$spacers, 14) map-get(var.$spacers, 0);
+    }
 
     .sec03-frame {
         width: 100%;
-        margin: map-get(var.$spacers, 14) auto;
+        @include resp.respond-to(md) {
+            margin: map-get(var.$spacers, 10) auto;
+        }
+        @include resp.respond-to(lg) {
+            margin: map-get(var.$spacers, 14) auto;
+        }
 
         .sec03-title {
             margin: map-get(var.$spacers, 7) 0;
@@ -145,33 +212,13 @@
                 font-weight: var.$font-weight-bold;
                 color: var.$color-primary;
                 margin-bottom: map-get(var.$spacers, 9);
-
-                // @include resp.respond-to(xl) {
-                //     font-size: map-get(map-get(var.$font-sizes, xl), h2);
-                // }
-                // @include resp.respond-to(md) {
-                //     font-size: map-get(map-get(var.$font-sizes, md), h2);
-                // }
-                // @include resp.respond-to(sm) {
-                //     font-size: map-get(map-get(var.$font-sizes, sm), h2);
-                // }
             }
 
-            h4 {
-                @include resp.responsive-font-size(h4);
+            h5 {
+                @include resp.responsive-font-size(h5);
                 font-weight: var.$font-weight-light;
                 color: var.$color-black;
                 line-height: 160%;
-
-                // @include resp.respond-to(xl) {
-                //     font-size: map-get(map-get(var.$font-sizes, xl), h4);
-                // }
-                // @include resp.respond-to(md) {
-                //     font-size: map-get(map-get(var.$font-sizes, md), h4);
-                // }
-                // @include resp.respond-to(sm) {
-                //     font-size: map-get(map-get(var.$font-sizes, sm), h4);
-                // }
             }
         }
     }
@@ -215,18 +262,15 @@
     .sec04__insta-content {
         gap: 24px 0;
         .sec04_content {
-            // 꼭 .img-fluid 로 타겟!
+            transition: all 0.2s ease-in-out;
+            &:hover {
+                transform: scale(1.01);
+            }
             img.img-fluid {
                 max-width: 100%;
                 height: auto;
                 display: block;
             }
-
-            // // ≤767px(md) 에 50% 너비 → 2열
-            // @include resp.respond-to(md) {
-            //     flex: 0 0 50% !important;
-            //     max-width: 50% !important;
-            // }
         }
     }
 }
@@ -234,7 +278,10 @@
 
 // === Sec05 ===
 .sec05-order {
-    padding: map-get(var.$spacers, 15) 0 12.5rem 0; //70px
+    padding: map-get(var.$spacers, 10) 0 12.5rem 0; //70px
+    @include resp.respond-to(md) {
+        padding: map-get(var.$spacers, 10) 0 12.5rem 0; //70px
+    }
 
     .sec05__text {
         margin-bottom: map-get(var.$spacers, 11); //30px;
@@ -243,27 +290,11 @@
             @include resp.responsive-font-size(h4);
             font-weight: var.$font-weight-light;
             color: var.$color-black;
-
-            // @include resp.respond-to(xl) {
-            //     font-size: map-get(map-get(var.$font-sizes, xl), h4);
-            // }
-            // @include resp.respond-to(md) {
-            //     font-size: map-get(map-get(var.$font-sizes, md), h4);
-            // }
-            // @include resp.respond-to(sm) {
-            //     font-size: map-get(map-get(var.$font-sizes, sm), h4);
-            // }
         }
     }
 
     .sec05__iconbox {
-        // width: 23px;
         margin-bottom: map-get(var.$spacers, 11); //30px;
-        // margin: 0 auto;
-
-        // img {
-        //    width: 100%;
-        // }
     }
 
     .sec05__title {
@@ -274,32 +305,12 @@
             @include resp.responsive-font-size(h2);
             font-weight: var.$font-weight-regular;
             color: var.$color-black;
-
-            // @include resp.respond-to(xl) {
-            //     font-size: map-get(map-get(var.$font-sizes, xl), h4);
-            // }
-            // @include resp.respond-to(md) {
-            //     font-size: map-get(map-get(var.$font-sizes, md), h4);
-            // }
-            // @include resp.respond-to(sm) {
-            //     font-size: map-get(map-get(var.$font-sizes, sm), h4);
-            // }
         }
 
         h3 {
             @include resp.responsive-font-size(h2);
             font-weight: var.$font-weight-semibold;
             color: var.$color-black;
-
-            // @include resp.respond-to(xl) {
-            //     font-size: map-get(map-get(var.$font-sizes, xl), h4);
-            // }
-            // @include resp.respond-to(md) {
-            //     font-size: map-get(map-get(var.$font-sizes, md), h4);
-            // }
-            // @include resp.respond-to(sm) {
-            //     font-size: map-get(map-get(var.$font-sizes, sm), h4);
-            // }
         }
     }
 
@@ -308,6 +319,10 @@
         font-weight: var.$font-weight-light;
         letter-spacing: 0.1rem;
         color: var.$color-white;
+        transition: all 0.2s ease-in-out;
+        &:hover {
+            transform: scale(1.1);
+        }
     }
 }
 // === Sec05 end ===
@@ -320,10 +335,6 @@
     .footer__logo {
         margin-bottom: map-get(var.$spacers, 4); //20px
     }
-    // .footer__hr{
-    //    color: var.$color-white;
-    //    height: 1px;
-    // }
 
     .footer__line {
         width: 100%;
@@ -343,16 +354,6 @@
             font-weight: var.$font-weight-light;
             color: var.$color-white;
 
-            // @include resp.respond-to(xl) {
-            //     font-size: map-get(map-get(var.$font-sizes, xl), p);
-            // }
-            // @include resp.respond-to(md) {
-            //     font-size: map-get(map-get(var.$font-sizes, md), p);
-            // }
-            // @include resp.respond-to(sm) {
-            //     font-size: map-get(map-get(var.$font-sizes, sm), p);
-            // }
-
             & + .footer__info-list::before {
                 content: "|";
                 margin: map-get(var.$spacers, 1);
@@ -366,16 +367,6 @@
             @include resp.responsive-font-size(p);
             font-weight: var.$font-weight-extralight;
             color: var.$color-white;
-
-            // @include resp.respond-to(xl) {
-            //     font-size: map-get(map-get(var.$font-sizes, xl), p);
-            // }
-            // @include resp.respond-to(md) {
-            //     font-size: map-get(map-get(var.$font-sizes, xl), p);
-            // }
-            // @include resp.respond-to(sm) {
-            //     font-size: map-get(map-get(var.$font-sizes, xl), p);
-            // }
         }
     }
 
@@ -384,17 +375,6 @@
         @include resp.responsive-font-size(p);
         font-weight: var.$font-weight-extralight;
         color: var.$color-white;
-        // border-bottom: 1px solid var.$color-white;
-
-        // @include resp.respond-to(xl) {
-        //     font-size: map-get(map-get(var.$font-sizes, xl), p);
-        // }
-        // @include resp.respond-to(md) {
-        //     font-size: map-get(map-get(var.$font-sizes, md), p);
-        // }
-        // @include resp.respond-to(sm) {
-        //     font-size: map-get(map-get(var.$font-sizes, sm), p);
-        // }
 
         ul {
             margin-bottom: map-get(var.$spacers, 1); //10px;
