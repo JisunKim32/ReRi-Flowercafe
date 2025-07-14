@@ -32,7 +32,7 @@ h1, h2, h3, h4, h5, h6, p, a, span {
    padding: 0;
 }
 
-// === font-face ===
+// === Ogg font ===
 @font-face {
     font-family: 'Ogg TRIAL';
     src: url('../fonts/OggTRIAL-Bold.woff2') format('woff2'),
@@ -77,6 +77,20 @@ h1, h2, h3, h4, h5, h6, p, a, span {
     font-style: normal;
     font-display: swap;
 }
+
+
+// === cabinest font ===
+@font-face {
+    font-family: 'Cabinest';
+    src: url('../fonts/CabinestRegular.eot');
+    src: url('../fonts/CabinestRegular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/CabinestRegular.woff2') format('woff2'),
+        url('../fonts/CabinestRegular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
 
 
 // .col-md-12{

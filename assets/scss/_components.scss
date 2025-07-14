@@ -78,7 +78,7 @@ header {
       a {
          font-family: var.$font-title;
          @include resp.responsive-font-size(h4);
-         font-weight: var.$font-weight-medium;
+         font-weight: var.$font-weight-normal;
          letter-spacing: 0.1rem;
          line-height: 2.688rem;
          text-align: center;
@@ -118,7 +118,7 @@ header {
                text-align: center;
                color: var.$color-primary;
                @include resp.responsive-font-size(h6);
-               font-weight: var.$font-weight-medium;
+               font-weight: var.$font-weight-normal;
                // letter-spacing: 0;
                &:hover {
                   color: darken(var.$color-primary, 10%);
